@@ -24,30 +24,25 @@ public class PressorController : MonoBehaviour
 
     private void Start()
     {
-        mousePosition = Input.mousePosition;
         point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
     }
+
     void Update()
     {
-
         Vector2 size = pressorCollider.size;
         size.y = new Vector2(transform.position.x - lineRenderer.GetPosition(1).x, transform.position.y - lineRenderer.GetPosition(1).y).magnitude;
         pressorCollider.size = size;
         pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
 
         if (Input.GetKeyDown(KeyCode.Y))
-        {
-          
+        {          
             if (photonView.IsMine)
             {
                 mousePosition = Input.mousePosition;
                 point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
                 photonView.RPC("firePressorRPC", RpcTarget.AllBuffered, point);
-                lineRenderer.SetPosition(1, new Vector3(point.x, point.y, 0));
-
             }
         }
-
         lineRenderer.material.color = Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.9f, 1f);
         lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.1f, 0.5f));
         lineRenderer.SetPosition(0, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z));
@@ -80,12 +75,12 @@ public class PressorController : MonoBehaviour
     [PunRPC]
     public void moveBeam(Vector2 p)
     {
+        point = p;
         lineRenderer.SetPosition(1, new Vector3(p.x, p.y, 0));
         Vector2 size = pressorCollider.size;
         size.y = new Vector2(transform.position.x - p.x, transform.position.y - p.y).magnitude;
         pressorCollider.size = size;
         pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
-        RotateTowards(p);
 
     }
 

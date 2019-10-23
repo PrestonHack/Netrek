@@ -126,6 +126,7 @@
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\WorldSpaceTransitions\fading\fadingShaders\FadingTransparent.shader" />
     <None Include="Assets\WorldSpaceTransitions\fading\fadingShaders\CGIncludes\standard_shadow_CS.cginc" />
+    <None Include="Assets\TODO.txt" />
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
     <None Include="Assets\WorldSpaceTransitions\fading\fadingShaders\FadingScreenMetalBumpedDS.shader" />
     <None Include="Assets\WorldSpaceTransitions\fading\fadingShaders\CGIncludes\section_clipping_CS.cginc" />

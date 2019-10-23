@@ -261,10 +261,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         Debug.Log(col.transform.gameObject.name.ToString() + "  ontriggerstay_player");
 
-        if (col.GetComponentInParent<Transform>().root.name != this.gameObject.GetComponentInParent<Transform>().root.name && col.gameObject.name == "tractor")
+        if (col.GetComponentInParent<Transform>().parent.name != this.gameObject.GetComponentInParent<Transform>().parent.name && col.gameObject.name == "tractor")
         {
-            this.gameObject.transform.position -= (this.gameObject.transform.position - col.transform.position) * 0.0015f;
-
+            this.gameObject.transform.position -= (this.gameObject.transform.position - col.transform.position).normalized * 0.0015f;
 
         }
         if (col.GetComponentInParent<Transform>().parent.name != this.gameObject.GetComponentInParent<Transform>().parent.name && col.gameObject.name == "pressor")
