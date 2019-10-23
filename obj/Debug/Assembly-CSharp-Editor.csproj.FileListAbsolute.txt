@@ -1,0 +1,2 @@
+C:\Users\prest\AppData\Roaming\Unity\Asset Store-5.x\Netrek\obj\Debug\Assembly-CSharp-Editor.csprojAssemblyReference.cache
+C:\Users\prest\AppData\Roaming\Unity\Asset Store-5.x\Netrek\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache
