@@ -343,6 +343,21 @@
     <Reference Include="NSubstitute">
       <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Library/PackageCache/com.unity.2d.common@1.2.0-preview.1/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
     </Reference>
+    <Reference Include="GitHub.Api.45">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Unity.45">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
+    </Reference>
+    <Reference Include="sfw.net">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.UnityShim">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Logging">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
@@ -705,6 +720,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{A01501FD-78D3-F505-91AA-E0DA298AC72C}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{7CAE6A7C-E372-A3EB-54A9-5B19AB2BADF0}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
       <Project>{45DF5777-B6A7-1FCB-0428-EF9BACC15C9A}</Project>

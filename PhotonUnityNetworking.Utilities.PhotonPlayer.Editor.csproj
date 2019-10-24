@@ -274,6 +274,21 @@
     <Reference Include="NSubstitute">
       <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Library/PackageCache/com.unity.2d.common@1.2.0-preview.1/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
     </Reference>
+    <Reference Include="GitHub.Api.45">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Unity.45">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
+    </Reference>
+    <Reference Include="sfw.net">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.UnityShim">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Logging">
+      <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/prest/AppData/Roaming/Unity/Asset Store-5.x/Netrek/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
