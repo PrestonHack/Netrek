@@ -1,5 +1,5 @@
 TODO 
-1 fix tractor and pusher
+1 shield button should be S, put in cloak and death animations, are stats that need put in WT ET, HP, Fu 
 2 collisions for torpedos 
 3 collisions for phasers
 4 shields and health

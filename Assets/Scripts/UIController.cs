@@ -9,7 +9,7 @@ using Photon.Pun.UtilityScripts;
 using System;
 
 
-public class UIController : MonoBehaviourPunCallbacks
+public class UIController : MonoBehaviour
 {
     [SerializeField]
     private Text userNameInput;
@@ -23,8 +23,10 @@ public class UIController : MonoBehaviourPunCallbacks
     private GameObject shipInstance;
     [SerializeField]
     private PhotonView pv;
+    [SerializeField]
+    private Canvas playerOverlay;
     
-
+  
     public void onLoginButtonClick()
     {
         PhotonNetwork.LocalPlayer.NickName = userNameInput.text;
@@ -63,7 +65,12 @@ public class UIController : MonoBehaviourPunCallbacks
         shipInstance = PhotonNetwork.Instantiate(Path.Combine("ships", PhotonNetwork.LocalPlayer.GetTeam().ToString(), "Player_" + PhotonNetwork.LocalPlayer.GetTeam().ToString() + "_" + shipType.ToString()), Vector3.zero, Quaternion.identity);
         teamShipCanvas.enabled = false;
         shipInstance.gameObject.name = PhotonNetwork.LocalPlayer.NickName.ToString();
+        GameObject go = GameObject.Find("PlayerUI");
+        Transform t = go.transform.Find("OverlayCanvas");
+        playerOverlay = t.GetComponent<Canvas>();
+        playerOverlay.gameObject.SetActive(true);
         
+
     }    
 
 }

@@ -5,10 +5,11 @@ using Photon.Pun;
 using UnityEngine.UI;
 using ExitGames.Client.Photon;
 
-public class ShipManager : MonoBehaviour
+public class ShipManager : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private Button readyButton;
+
 
     private void Awake()
     {

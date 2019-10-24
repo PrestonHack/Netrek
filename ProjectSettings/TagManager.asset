@@ -8,6 +8,7 @@ TagManager:
   - PlayerCamera
   - TeamShipCanvas
   - test
+  - PlayerUI
   layers:
   - Default
   - TransparentFX
