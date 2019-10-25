@@ -77,8 +77,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         navPoint = Vector2.up;
         pv = GetComponent<PhotonView>();
         emblem = PhotonNetwork.LocalPlayer.GetTeam().ToString().Substring(0, 1) + PhotonNetwork.LocalPlayer.ActorNumber.ToString();
-        playerLabel.GetComponentInChildren<TMP_Text>().text = emblem;
-        mapEmblem.GetComponentInChildren<TMP_Text>().text = emblem;
+        pv.RPC("setEmblemName", RpcTarget.AllBuffered, emblem, PhotonNetwork.LocalPlayer.NickName);
     }
 
     // Update is called once per frame
@@ -144,6 +143,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
                 pv.RPC("activateCloak", RpcTarget.AllBufferedViaServer);
         }
 
+    }
+
+    [PunRPC]
+    public void setEmblemName(string em, string nickname)
+    {
+        this.gameObject.transform.root.gameObject.name = nickname;
+        playerLabel.GetComponentInChildren<TMP_Text>().text = em;
+        mapEmblem.GetComponentInChildren<TMP_Text>().text = em;
     }
 
     [PunRPC]
