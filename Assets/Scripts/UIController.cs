@@ -68,9 +68,7 @@ public class UIController : MonoBehaviour
         GameObject go = GameObject.Find("PlayerUI");
         Transform t = go.transform.Find("OverlayCanvas");
         playerOverlay = t.GetComponent<Canvas>();
-        playerOverlay.gameObject.SetActive(true);
-        
-
+        playerOverlay.gameObject.SetActive(true);        
     }    
 
 }

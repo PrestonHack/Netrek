@@ -336,6 +336,7 @@ MonoBehaviour:
   loginButton: {fileID: 622559219}
   shipInstance: {fileID: 0}
   pv: {fileID: 0}
+  playerOverlay: {fileID: 0}
 --- !u!1 &117839433
 GameObject:
   m_ObjectHideFlags: 0

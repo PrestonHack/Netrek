@@ -45,5 +45,6 @@ MonoBehaviour:
   - fireTractorRPC
   - firePressorRPC
   - moveBeam
+  - activateCloak
   DisableAutoOpenWizard: 1
   ShowSettings: 1

@@ -4,9 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Realtime;
 using ExitGames.Client;
+using UnityEngine.UI;
+using TMPro;
+using System.IO;
+using Photon.Pun.UtilityScripts;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
+    [SerializeField]
+    private string emblem;
+    [SerializeField]
+    private SpriteRenderer shipSprite;
     [SerializeField]
     private Vector3 crosshairPosition;
     [SerializeField]
@@ -24,6 +32,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public GameObject weapon;
     [SerializeField]
     private GameObject shield;
+    [SerializeField]
+    private GameObject cloak;
+    [SerializeField]
+    private GameObject mapCloak;
+    [SerializeField]
+    private GameObject mapEmblem;
+    [SerializeField]
+    private GameObject playerLabel;
     [SerializeField]
     private Vector3 navPosition;
     [SerializeField]
@@ -46,7 +62,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     Vector2 velocity;
     [SerializeField]
-    private Canvas teamShipCanvas; 
+    private Canvas teamShipCanvas;
     public PhotonView pv;
     [SerializeField]
     float distance;
@@ -59,22 +75,25 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         teamShipCanvas = GameObject.Find("TeamShipCanvas").GetComponent<Canvas>();
         navPoint = Vector2.up;
-        pv = GetComponent<PhotonView>();       
+        pv = GetComponent<PhotonView>();
+        emblem = PhotonNetwork.LocalPlayer.GetTeam().ToString().Substring(0, 1) + PhotonNetwork.LocalPlayer.ActorNumber.ToString();
+        playerLabel.GetComponentInChildren<TMP_Text>().text = emblem;
+        mapEmblem.GetComponentInChildren<TMP_Text>().text = emblem;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
- 
+
         distance = Vector2.Distance(navPoint, start);
-        currentPosition = transform.position;        
+        currentPosition = transform.position;
         //move cam
         cam.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10);
         //movement code
         crosshairPosition = Input.mousePosition;
         crosshairPoint = cam.ScreenToWorldPoint(new Vector3(crosshairPosition.x, crosshairPosition.y, crosshairPosition.z));
         crosshairPoint = new Vector2(crosshairPoint.x, crosshairPoint.y);
-        crosshairDebug = new Vector2(crosshairPoint.x , crosshairPoint.y);
+        crosshairDebug = new Vector2(crosshairPoint.x, crosshairPoint.y);
 
         if (Input.GetMouseButton(1) && !teamShipCanvas.enabled)
         {
@@ -86,32 +105,66 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
         start = new Vector3(transform.position.x, transform.position.y);
         length = Vector3.Distance(end, start);
-        if(length < 0.1f)
+        if (length < 0.1f)
         {
-            navPoint = new Vector3(transform.position.x, transform.position.y,0) + transform.up;
+            navPoint = new Vector3(transform.position.x, transform.position.y, 0) + transform.up;
             end = navPoint;
         }
-        Debug.DrawLine(start, end, Color.yellow);       
-        move(); 
+        Debug.DrawLine(start, end, Color.yellow);
+        move();
 
         //torpedo code
-        if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy)
         {
             nextFire = Time.time + fireRate;
             Vector3 weaponPosition = weapon.transform.position;
             Quaternion weaponRotation = weapon.transform.rotation;
-            pv.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition,weaponRotation, this.gameObject.layer);
+            pv.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer);
 
         }
         Debug.DrawLine(start, crosshairDebug);
 
         //shield code
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S))
         {
             pv.RPC("activateShield", RpcTarget.AllBufferedViaServer);
         }
 
+        //cloak code
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (cloak.activeInHierarchy)
+            {
+                cloak.SetActive(false);
+            }
+            else
+            {
+                cloak.SetActive(true);
+            }
+                pv.RPC("activateCloak", RpcTarget.AllBufferedViaServer);
+        }
 
+    }
+
+    [PunRPC]
+    public void activateCloak()
+    {
+        if (cloak.activeInHierarchy)
+        {
+            mapCloak.SetActive(true);
+            playerLabel.SetActive(false);
+            mapEmblem.SetActive(false);
+            shipSprite.enabled = false;
+            weapon.SetActive(false);
+        }
+        else
+        {
+            mapCloak.SetActive(false);
+            playerLabel.SetActive(true);
+            mapEmblem.SetActive(true);
+            shipSprite.enabled = true;
+            weapon.SetActive(true);
+        }
     }
 
     [PunRPC]

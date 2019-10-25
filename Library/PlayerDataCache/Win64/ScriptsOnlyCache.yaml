@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - PressorController
     - ShipManager
     - TeamManager
+    - TextRotation
     - TractorController
     - UIController
     - UIManager
@@ -40,10 +41,18 @@ ScriptsOnlyBuild:
     - UnityEditor.Experimental.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.Experimental.U2D.IK.IKEditorManager
+    - UnityEditor.Experimental.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.Experimental.U2D.IK.IKEditorManagerHelper
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -76,6 +85,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 54
@@ -99,6 +110,8 @@ ScriptsOnlyBuild:
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 109
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9722}
@@ -124,6 +137,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10650}
     - Class: 114
       Script: {instanceID: 10766}
+    - Class: 114
+      Script: {instanceID: 10818}
     - Class: 114
       Script: {instanceID: 10866}
     - Class: 114
@@ -151,6 +166,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11828}
     - Class: 114
+      Script: {instanceID: 11838}
+    - Class: 114
+      Script: {instanceID: 11858}
+    - Class: 114
       Script: {instanceID: 11964}
     - Class: 114
       Script: {instanceID: 12062}
@@ -173,6 +192,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12438}
     - Class: 114
+      Script: {instanceID: 12542}
+    - Class: 114
+      Script: {instanceID: 12714}
+    - Class: 114
       Script: {instanceID: 12776}
     - Class: 114
       Script: {instanceID: 12888}
@@ -180,6 +203,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12926}
     - Class: 114
       Script: {instanceID: 12938}
+    - Class: 114
+      Script: {instanceID: 61264}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1318,7 +1343,7 @@ ScriptsOnlyBuild:
     className: Asteroid
   - hash:
       serializedVersion: 2
-      Hash: 55c57ba40e5cefd29c143cb8cdd26c9b
+      Hash: 5939c2b1d5dd65e0c8ff6f45136f171d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1742,6 +1767,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TextRotation
   platform: 19
   scenePathNames:
   - Assets/Scenes/newscene.unity
