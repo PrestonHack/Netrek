@@ -792,6 +792,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2631201915604063077}
+    - target: {fileID: 6400131789686045271, guid: 9d81dfd17634da44eb32a2e76d25eb58,
+        type: 3}
+      propertyPath: maxRange
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3888808517199892426, guid: 9d81dfd17634da44eb32a2e76d25eb58,
         type: 3}
       propertyPath: m_RootOrder

@@ -371,12 +371,6 @@ ScriptsOnlyBuild:
     className: ServerAddressProperty
   - hash:
       serializedVersion: 2
-      Hash: 55c1a72c64c937e85a577d26e1ca28a6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Phaser
-  - hash:
-      serializedVersion: 2
       Hash: ee1dba1a186ac062d564e9eb73a1c56f
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -827,7 +821,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: edad55e75478c826e8a5ba9444bfdf70
+      Hash: 24687fa11ce580add2158b670e12a3ca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhaserController
@@ -893,7 +887,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: ff4db2a0d442a0a79851ab099a034f5b
+      Hash: 2e7867b2f735c2a837d110a4bf017058
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TractorController
@@ -1319,7 +1313,7 @@ ScriptsOnlyBuild:
     className: RoomListView
   - hash:
       serializedVersion: 2
-      Hash: 0dca605da9df3c4f1e7fdb00c8c32a9d
+      Hash: f91979e8f9960da033801755980bd921
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PressorController

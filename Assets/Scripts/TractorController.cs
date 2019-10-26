@@ -6,6 +6,8 @@ using Photon.Pun;
 public class TractorController : MonoBehaviour
 {
     [SerializeField]
+    private bool tractorOn;
+    [SerializeField]
     private LineRenderer lineRenderer;
     [SerializeField]
     private BoxCollider2D tractorCollider;
@@ -15,8 +17,17 @@ public class TractorController : MonoBehaviour
     public Vector2 point;
     [SerializeField]
     private Camera cam;
+    private Vector2 direction;
     [SerializeField]
-    private float rotationSpeed;
+    private Vector2 start;
+    [SerializeField]
+    private Vector2 end;
+    [SerializeField]
+    public float distance;
+    [SerializeField]
+    public float currentLength;
+    [SerializeField]
+    private float maxRange = 2.25f;
     [SerializeField]
     private float angle;
     [SerializeField]
@@ -33,16 +44,27 @@ public class TractorController : MonoBehaviour
         size.y = new Vector2(transform.position.x - lineRenderer.GetPosition(1).x, transform.position.y - lineRenderer.GetPosition(1).y).magnitude;
         tractorCollider.size = size;
         tractorCollider.offset = new Vector2(0, tractorCollider.size.y / 2);
-
+        
         if (Input.GetKeyDown(KeyCode.T) && Input.GetKey(KeyCode.LeftShift))
         {
             if (photonView.IsMine)
             {
+                currentLength = 0;
                 mousePosition = Input.mousePosition;
                 point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
-
-                photonView.RPC("fireTractorRPC", RpcTarget.AllBuffered, point);
+                start = new Vector2(transform.position.x, transform.position.y);
+                direction = point - start;
+                distance = Mathf.Clamp(Vector2.Distance(start, point), 0, maxRange);
+                end = start + (direction.normalized * distance);
+                photonView.RPC("fireTractorRPC", RpcTarget.AllBuffered, end);
             }
+        }
+
+        currentLength = Vector2.Distance(transform.position, end);
+
+        if (tractorOn && currentLength > maxRange)
+        {
+            photonView.RPC("turnOff", RpcTarget.All);
         }
         lineRenderer.material.color = Random.ColorHSV(0.17f, 0.3f, 1f, 1f, 0.9f, 1f);
         lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.17f, 0.4f, 1f, 1f, 0.1f, 0.5f));
@@ -52,6 +74,15 @@ public class TractorController : MonoBehaviour
     private void FixedUpdate()
     {
         RotateTowards(point);
+    }
+
+    [PunRPC]
+    public void turnOff()
+    {
+        lineRenderer.enabled = false;
+        tractorCollider.enabled = false;
+        point = Vector2.one;
+        tractorOn = false;
     }
 
     [PunRPC]
@@ -67,13 +98,14 @@ public class TractorController : MonoBehaviour
             tractorCollider.offset = new Vector2(0, tractorCollider.size.y / 2);
             lineRenderer.enabled = true;
             tractorCollider.enabled = true;
+            tractorOn = true;
         }
         else
         {
             lineRenderer.enabled = false;
             tractorCollider.enabled = false;
             point = Vector2.one;
-
+            tractorOn = false;
         }
     }
 
@@ -122,6 +154,6 @@ public class TractorController : MonoBehaviour
         direction.Normalize();
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
-        this.transform.rotation = rotation;// Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        this.transform.rotation = rotation;
     }
 }

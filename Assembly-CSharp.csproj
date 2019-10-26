@@ -80,7 +80,6 @@
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\MyTransformView.cs" />
     <Compile Include="Assets\Scripts\NetworkController.cs" />
-    <Compile Include="Assets\Scripts\Phaser.cs" />
     <Compile Include="Assets\Scripts\PhaserController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerManager 1.cs" />

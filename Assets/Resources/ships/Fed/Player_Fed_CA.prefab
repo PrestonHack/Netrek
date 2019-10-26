@@ -376,6 +376,11 @@ PrefabInstance:
       propertyPath: parentTransform
       value: 
       objectReference: {fileID: 6203029751484841376}
+    - target: {fileID: 1686294025776078311, guid: f3876ac6ed971c4459359c7f79a621da,
+        type: 3}
+      propertyPath: maxRange
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3876ac6ed971c4459359c7f79a621da, type: 3}
 --- !u!1001 &3643355070072801222
@@ -460,6 +465,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 5874573385519167806}
+    - target: {fileID: 4102832479193812760, guid: 160e38cace763de45a5b32dfe0ac2d7b,
+        type: 3}
+      propertyPath: maxRange
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 160e38cace763de45a5b32dfe0ac2d7b, type: 3}
 --- !u!1001 &4017679768161198662

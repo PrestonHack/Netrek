@@ -6,6 +6,8 @@ using Photon.Pun;
 public class PressorController : MonoBehaviour
 {
     [SerializeField]
+    private bool pressorOn;
+    [SerializeField]
     private LineRenderer lineRenderer;
     [SerializeField]
     private BoxCollider2D pressorCollider;
@@ -16,7 +18,17 @@ public class PressorController : MonoBehaviour
     [SerializeField]
     private Camera cam;
     [SerializeField]
-    private float rotationSpeed;
+    private Vector2 direction;
+    [SerializeField]
+    private Vector2 start;
+    [SerializeField]
+    private Vector2 end;
+    [SerializeField]
+    public float distance;
+    [SerializeField]
+    public float currentLength; 
+    [SerializeField]
+    private float maxRange = 2.25f;
     [SerializeField]
     private float angle;
     [SerializeField]
@@ -38,11 +50,25 @@ public class PressorController : MonoBehaviour
         {          
             if (photonView.IsMine)
             {
+                currentLength = 0;
                 mousePosition = Input.mousePosition;
                 point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
-                photonView.RPC("firePressorRPC", RpcTarget.AllBuffered, point);
+                start = new Vector2(transform.position.x,transform.position.y);
+                direction = point - start;
+                distance = Mathf.Clamp(Vector2.Distance(start, point), 0, maxRange);
+                end = start + (direction.normalized * distance);
+                photonView.RPC("firePressorRPC", RpcTarget.AllBuffered, end);
             }
         }
+
+
+        currentLength = Vector2.Distance(transform.position, end);
+
+        if (pressorOn && currentLength > maxRange)
+        {
+            photonView.RPC("turnOff", RpcTarget.All);
+        }
+
         lineRenderer.material.color = Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.9f, 1f);
         lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.1f, 0.5f));
         lineRenderer.SetPosition(0, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z));
@@ -51,6 +77,15 @@ public class PressorController : MonoBehaviour
     private void FixedUpdate()
     {
         RotateTowards(point);
+    }
+
+    [PunRPC]
+    public void turnOff()
+    {
+        lineRenderer.enabled = false;
+        pressorCollider.enabled = false;
+        point = Vector2.one;
+        pressorOn = false;
     }
 
     [PunRPC]
@@ -65,13 +100,17 @@ public class PressorController : MonoBehaviour
             pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
             lineRenderer.enabled = true;
             pressorCollider.enabled = true;
+            pressorOn = true;
         }
         else
         {
             lineRenderer.enabled = false;
             pressorCollider.enabled = false;
+            point = Vector2.one;
+            pressorOn = false;
         }
     }
+
     [PunRPC]
     public void moveBeam(Vector2 p)
     {
@@ -81,7 +120,6 @@ public class PressorController : MonoBehaviour
         size.y = new Vector2(transform.position.x - p.x, transform.position.y - p.y).magnitude;
         pressorCollider.size = size;
         pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
-
     }
 
 
@@ -117,7 +155,6 @@ public class PressorController : MonoBehaviour
         direction.Normalize();
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
-        //this.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         transform.rotation = rotation;
     }
 }

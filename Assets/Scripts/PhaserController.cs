@@ -23,10 +23,21 @@ public class PhaserController : MonoBehaviour
     private float angle;
     [SerializeField]
     private PhotonView photonView;
+    [SerializeField]
+    private Vector2 direction;
+    [SerializeField]
+    private Vector2 start;
+    [SerializeField]
+    private Vector2 end;
+    [SerializeField]
+    public float distance;
+    [SerializeField]
+    private float maxRange = 1.75f ;
+    
   
     void Update()
     {
-
+        
         Vector2 size = phaserCollider.size;
         size.y = new Vector2(transform.position.x - lineRenderer.GetPosition(1).x, transform.position.y - lineRenderer.GetPosition(1).y).magnitude;
         phaserCollider.size = size;
@@ -38,7 +49,12 @@ public class PhaserController : MonoBehaviour
             {
                 mousePosition = Input.mousePosition;
                 point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
-                photonView.RPC("firePhaserRPC", RpcTarget.AllBuffered, point);
+ 
+                start = new Vector2(transform.position.x, transform.position.y);
+                direction = point - start;
+                distance = Mathf.Clamp(Vector2.Distance(start, point), 0, maxRange);
+                end = start + (direction.normalized * distance);
+                photonView.RPC("firePhaserRPC", RpcTarget.AllBuffered, end);
             }
   
         }

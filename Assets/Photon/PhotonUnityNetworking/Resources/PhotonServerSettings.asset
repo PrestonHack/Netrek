@@ -47,5 +47,6 @@ MonoBehaviour:
   - moveBeam
   - activateCloak
   - setEmblemName
+  - turnOff
   DisableAutoOpenWizard: 1
   ShowSettings: 1
