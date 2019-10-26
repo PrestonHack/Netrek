@@ -1,10 +1,9 @@
 TODO 
-1 shield button should be S, put in cloak and death animations, are stats that need put in WT ET, HP, Fu 
 2 collisions for torpedos 
 3 collisions for phasers
 4 shields and health
-5 dashboard ui
 6 player / leaderboard ui
 7 gameboard 
 8 match making lobby
 9 voice chat
+10 user login 

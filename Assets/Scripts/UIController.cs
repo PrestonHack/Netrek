@@ -65,10 +65,6 @@ public class UIController : MonoBehaviour
         shipInstance = PhotonNetwork.Instantiate(Path.Combine("ships", PhotonNetwork.LocalPlayer.GetTeam().ToString(), "Player_" + PhotonNetwork.LocalPlayer.GetTeam().ToString() + "_" + shipType.ToString()), Vector3.zero, Quaternion.identity);
         teamShipCanvas.enabled = false;
         shipInstance.gameObject.name = PhotonNetwork.LocalPlayer.NickName.ToString();
-        GameObject go = GameObject.Find("PlayerUI");
-        Transform t = go.transform.Find("OverlayCanvas");
-        playerOverlay = t.GetComponent<Canvas>();
-        playerOverlay.gameObject.SetActive(true);        
-    }    
+    }
 
 }

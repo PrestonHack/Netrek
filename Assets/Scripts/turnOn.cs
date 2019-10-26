@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class turnOn : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class turnOn : MonoBehaviour
     private Photon.Pun.PhotonView pv;
     [SerializeField]
     AudioListener al;
+    [SerializeField]
+    private GameObject playerUI;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class turnOn : MonoBehaviour
             playerCam.enabled = true;
             pc.enabled = true;
             al.enabled = true;
+            playerUI.SetActive(true);
 
         }
     }
