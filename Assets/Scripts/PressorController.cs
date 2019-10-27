@@ -60,15 +60,14 @@ public class PressorController : MonoBehaviour
                 photonView.RPC("firePressorRPC", RpcTarget.AllBuffered, end);
             }
         }
-
-
-        currentLength = Vector2.Distance(transform.position, end);
-
-        if (pressorOn && currentLength > maxRange)
+        if (photonView.IsMine)
         {
-            photonView.RPC("turnOff", RpcTarget.All);
+            currentLength = Vector2.Distance(transform.position, end);
+            if (pressorOn && currentLength > maxRange)
+            {
+                photonView.RPC("turnOff", RpcTarget.All);
+            }
         }
-
         lineRenderer.material.color = Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.9f, 1f);
         lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.1f, 0.5f));
         lineRenderer.SetPosition(0, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z));

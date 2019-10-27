@@ -58,17 +58,17 @@ public class PhaserController : MonoBehaviour
             }
   
         }
-        if(this.gameObject.layer == 10)
+        if(this.gameObject.layer == 22)
         {
             lineRenderer.material.color = Random.ColorHSV(0.0f, 0.17f, 1f, 1f, 0.9f, 1f);
             lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.0f, 0.17f, 1f, 1f, 0.1f, 0.5f));
         }
-        else if(this.gameObject.layer == 11)
+        else if(this.gameObject.layer == 23)
         {
             lineRenderer.material.color = Random.ColorHSV(0.17f, 0.3f, 1f, 1f, 0.9f, 1f);
             lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.17f, 0.4f, 1f, 1f, 0.1f, 0.5f));
         }
-        else if (this.gameObject.layer == 12)
+        else if (this.gameObject.layer == 24)
         {
             lineRenderer.material.color = Random.ColorHSV(0.35f, 0.7f, 1f, 1f, 0.9f, 1f);
             lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.35f, 0.7f, 1f, 1f, 0.1f, 0.5f));

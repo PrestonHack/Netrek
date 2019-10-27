@@ -59,12 +59,13 @@ public class TractorController : MonoBehaviour
                 photonView.RPC("fireTractorRPC", RpcTarget.AllBuffered, end);
             }
         }
-
-        currentLength = Vector2.Distance(transform.position, end);
-
-        if (tractorOn && currentLength > maxRange)
+        if (photonView.IsMine)
         {
-            photonView.RPC("turnOff", RpcTarget.All);
+            currentLength = Vector2.Distance(transform.position, end);
+            if (tractorOn && currentLength > maxRange)
+            {
+                photonView.RPC("turnOff", RpcTarget.All);
+            }
         }
         lineRenderer.material.color = Random.ColorHSV(0.17f, 0.3f, 1f, 1f, 0.9f, 1f);
         lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.17f, 0.4f, 1f, 1f, 0.1f, 0.5f));
