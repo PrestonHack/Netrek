@@ -48,5 +48,7 @@ MonoBehaviour:
   - activateCloak
   - setEmblemName
   - turnOff
+  - die
+  - endDie
   DisableAutoOpenWizard: 1
   ShowSettings: 1

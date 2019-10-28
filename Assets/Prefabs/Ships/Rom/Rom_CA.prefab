@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 4168831355641168506}
   - component: {fileID: 8772184830066317197}
   - component: {fileID: 4492053586179547766}
-  - component: {fileID: 5396646720836628699}
   m_Layer: 0
   m_Name: Rom_CA
   m_TagString: Untagged
@@ -213,17 +212,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b05cacba29c3f54fb198e3ffe502bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emblem: 
+  shipSprite: {fileID: 0}
   crosshairPosition: {x: 0, y: 0, z: 0}
   navPoint: {x: 0, y: 0}
   crosshairPoint: {x: 0, y: 0}
   angle: 0
   cam: {fileID: 0}
-  torpPrefab: {fileID: 4679716588885577523, guid: 76a37f34eaf71f44ca84861b081254e7,
-    type: 3}
+  torpDamage: 0
   torp: {fileID: 0}
   crosshairDebug: {x: 0, y: 0}
   weapon: {fileID: 6327191934848491206}
   shield: {fileID: 0}
+  cloak: {fileID: 0}
+  mapCloak: {fileID: 0}
+  mapEmblem: {fileID: 0}
+  playerLabel: {fileID: 0}
   navPosition: {x: 0, y: 0, z: 0}
   point: {x: 0, y: 0, z: 0}
   rotationSpeed: 0
@@ -236,15 +240,9 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0}
   lastPosition: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
-  future: {x: 0, y: 0}
-  transformView: {fileID: 8772184830066317197}
   teamShipCanvas: {fileID: 0}
-  lag: 0
-  networkRotation: {x: 0, y: 0, z: 0, w: 0}
   pv: {fileID: 4168831355641168506}
   distance: 0
-  direction: {x: 0, y: 0, z: 0}
-  heading: {x: 0, y: 0, z: 0}
   hullCollider: {fileID: 0}
 --- !u!114 &4168831355641168506
 MonoBehaviour:
@@ -319,32 +317,8 @@ MonoBehaviour:
   pc: {fileID: 507892134366312007}
   pv: {fileID: 4168831355641168506}
   al: {fileID: 0}
---- !u!61 &5396646720836628699
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7307705634308257326}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17, y: 0.12}
-  m_EdgeRadius: 0
+  playerUI: {fileID: 0}
+  dashManager: {fileID: 0}
 --- !u!1 &8351831954069146296
 GameObject:
   m_ObjectHideFlags: 0

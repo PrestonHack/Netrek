@@ -9,6 +9,7 @@ public class torpedoBehavior : MonoBehaviour
     private float torpSpeed;
     [SerializeField]
     private float ttl;
+    public int damage;
     // Start is called before the first frame update
     private void OnEnable()
     {

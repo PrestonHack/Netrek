@@ -20,7 +20,8 @@ public class turnOn : MonoBehaviour
     AudioListener al;
     [SerializeField]
     private GameObject playerUI;
-    
+    [SerializeField]
+    private GameObject dashManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class turnOn : MonoBehaviour
             pc.enabled = true;
             al.enabled = true;
             playerUI.SetActive(true);
-
+            dashManager.SetActive(true);
         }
     }
 

@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System.IO;
 
 public class DashController : MonoBehaviour
 {
@@ -19,17 +21,22 @@ public class DashController : MonoBehaviour
     private TMP_Text shield;
     [SerializeField]
     private TMP_Text hull;
+    [SerializeField]
+    private Image hullImage;
+    [SerializeField]
+    private HullController hullController;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {        
+        hull.text = string.Format("Hu[{0}/{1}]", hullController.hullHealth, hullController.maxHealth);
+        hullImage.fillAmount = hullController.healthPercent;
     }
 }

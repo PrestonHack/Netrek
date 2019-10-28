@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     private Camera cam;
     [SerializeField]
+    private int torpDamage;
+    [SerializeField]
     private GameObject torp;
     [SerializeField]
     private Vector2 crosshairDebug;
@@ -118,7 +120,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             nextFire = Time.time + fireRate;
             Vector3 weaponPosition = weapon.transform.position;
             Quaternion weaponRotation = weapon.transform.rotation;
-            pv.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer);
+            pv.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage);
 
         }
         Debug.DrawLine(start, crosshairDebug);
@@ -191,7 +193,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
 
     [PunRPC]
-    public void fireTorp(Vector3 position, Quaternion rotation, int layer)
+    public void fireTorp(Vector3 position, Quaternion rotation, int layer, int damage)
     {
         if(layer == 10)
         {
@@ -213,7 +215,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             torp = PoolManager.Instance.romRequestTorp();
 
         }
-
+        torp.GetComponent<torpedoBehavior>().damage = damage;
         torp.transform.position = position;
         torp.transform.rotation = rotation;
         torp.SetActive(true);
