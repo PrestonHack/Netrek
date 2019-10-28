@@ -717,9 +717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7469940018485039584 stripped
+--- !u!114 &6979824668810432917 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6453430493335016250, guid: d1d6a24b2e0c065408ed763f4dcac79b,
+  m_CorrespondingSourceObject: {fileID: 6843482997901661007, guid: d1d6a24b2e0c065408ed763f4dcac79b,
     type: 3}
   m_PrefabInstance: {fileID: 4478194350465925850}
   m_PrefabAsset: {fileID: 0}
@@ -1216,7 +1216,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hullImage
       value: 
-      objectReference: {fileID: 7469940018485039584}
+      objectReference: {fileID: 6979824668810432917}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9af4c181ac34be429dda7827cd0013d, type: 3}
 --- !u!1 &6041983938673817047 stripped

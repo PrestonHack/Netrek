@@ -1,24 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1642170319828241266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064361529992851046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deef76a42fc78844bb4abd1ad7a9be4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 200
-  hullHealth: 0
-  healthPercent: 0
-  hullCollider: {fileID: 7440533260097986023}
-  explosionAnimator: {fileID: 2703915282560973970}
-  explosion: {fileID: 7626005716001740650}
-  shipSprite: {fileID: 2120025944066661241}
 --- !u!60 &7440533260097986023
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -51,6 +32,25 @@ PolygonCollider2D:
       - {x: -0.06182901, y: -0.07899323}
       - {x: 0.07166684, y: -0.07937095}
       - {x: 0.072943196, y: 0.02829598}
+--- !u!114 &1642170319828241266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064361529992851046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deef76a42fc78844bb4abd1ad7a9be4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  hullHealth: 0
+  healthPercent: 0
+  hullCollider: {fileID: 7440533260097986023}
+  explosionAnimator: {fileID: 2703915282560973970}
+  explosion: {fileID: 7626005716001740650}
+  shipSprite: {fileID: 2120025944066661241}
 --- !u!114 &8924973094126061006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hullImage
       value: 
-      objectReference: {fileID: 3814583914834266411}
+      objectReference: {fileID: 3713148127938562398}
     - target: {fileID: 2329830499503841983, guid: f9af4c181ac34be429dda7827cd0013d,
         type: 3}
       propertyPath: shield
@@ -870,9 +870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3814583914834266411 stripped
+--- !u!114 &3713148127938562398 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6453430493335016250, guid: d1d6a24b2e0c065408ed763f4dcac79b,
+  m_CorrespondingSourceObject: {fileID: 6843482997901661007, guid: d1d6a24b2e0c065408ed763f4dcac79b,
     type: 3}
   m_PrefabInstance: {fileID: 7890076799159622161}
   m_PrefabAsset: {fileID: 0}

@@ -29,12 +29,12 @@ public class HullController : MonoBehaviour
         healthPercent = (hullHealth / maxHealth);
         if(hullHealth <= 0)
         {
-            this.gameObject.GetComponent<PhotonView>().RPC("die", RpcTarget.AllViaServer);
+            this.gameObject.GetComponent<PhotonView>().RPC("die", RpcTarget.AllBufferedViaServer);
         }
 
         if (explosionAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !explosionAnimator.IsInTransition(0))
         {
-            this.gameObject.GetComponent<PhotonView>().RPC("endDie", RpcTarget.AllViaServer);
+            this.gameObject.GetComponent<PhotonView>().RPC("endDie", RpcTarget.AllBufferedViaServer);
 
         }
     }
@@ -61,6 +61,7 @@ public class HullController : MonoBehaviour
         {
             Debug.Log("TORP!");
             hullHealth -= other.gameObject.GetComponentInParent<torpedoBehavior>().damage;
+            other.gameObject.transform.parent.gameObject.SetActive(false);
         }        
     }
     
