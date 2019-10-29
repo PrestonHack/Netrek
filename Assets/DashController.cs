@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.IO;
+using System;
 
 public class DashController : MonoBehaviour
 {
@@ -38,10 +39,10 @@ public class DashController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        hull.text = string.Format("Hu[{0}/{1}]", hullController.hullHealth, hullController.hullMaxHealth);
+        hull.text = string.Format("Hu[{0}/{1}]",  Math.Round(hullController.hullHealth, 2), hullController.hullMaxHealth);
         hullImage.fillAmount = hullController.hullPercent;
 
-        shield.text = string.Format("Sh[{0}/{1}]", hullController.shieldHealth, hullController.shieldMaxHealth);
+        shield.text = string.Format("Sh[{0}/{1}]", Math.Round(hullController.shieldHealth, 2), hullController.shieldMaxHealth);
         shieldImage.fillAmount = hullController.shieldPercent;
     }
 }

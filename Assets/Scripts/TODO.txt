@@ -1,7 +1,12 @@
 TODO 
-2 collisions for torpedos 
-3 collisions for phasers
-4 shields and health
+torp detonation 
+torp limit
+acceleration 
+costs and fuel 
+weapon temps
+engine temps
+
+
 6 player / leaderboard ui
 7 gameboard 
 8 match making lobby
