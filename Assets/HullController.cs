@@ -6,9 +6,12 @@ using Photon.Pun;
 
 public class HullController : MonoBehaviour
 {
-    public float maxHealth;
+    public float hullMaxHealth;
     public float hullHealth;
-    public float healthPercent;
+    public float hullPercent;
+    public float shieldMaxHealth;
+    public float shieldHealth;
+    public float shieldPercent;
     [SerializeField]
     private PolygonCollider2D hullCollider;
     [SerializeField]
@@ -20,18 +23,23 @@ public class HullController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hullHealth = maxHealth;
+        hullHealth = hullMaxHealth;
+        shieldHealth = shieldMaxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthPercent = (hullHealth / maxHealth);
+        hullPercent = (hullHealth / hullMaxHealth);
+        shieldPercent = (shieldHealth / shieldMaxHealth);
+
+
         if(hullHealth <= 0)
         {
             this.gameObject.GetComponent<PhotonView>().RPC("die", RpcTarget.AllBufferedViaServer);
         }
 
+        
         if (explosionAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !explosionAnimator.IsInTransition(0))
         {
             this.gameObject.GetComponent<PhotonView>().RPC("endDie", RpcTarget.AllBufferedViaServer);
@@ -62,7 +70,11 @@ public class HullController : MonoBehaviour
             Debug.Log("TORP!");
             hullHealth -= other.gameObject.GetComponentInParent<torpedoBehavior>().damage;
             other.gameObject.transform.parent.gameObject.SetActive(false);
-        }        
+        }  
+        if(Regex.IsMatch(other.gameObject.name, "phaser"))
+        {
+            hullHealth -= other.gameObject.GetComponentInParent<PhaserController>().damage;
+        }
     }
     
 

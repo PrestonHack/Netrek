@@ -20,6 +20,8 @@ public class DashController : MonoBehaviour
     [SerializeField]
     private TMP_Text shield;
     [SerializeField]
+    private Image shieldImage;
+    [SerializeField]
     private TMP_Text hull;
     [SerializeField]
     private Image hullImage;
@@ -36,7 +38,10 @@ public class DashController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        hull.text = string.Format("Hu[{0}/{1}]", hullController.hullHealth, hullController.maxHealth);
-        hullImage.fillAmount = hullController.healthPercent;
+        hull.text = string.Format("Hu[{0}/{1}]", hullController.hullHealth, hullController.hullMaxHealth);
+        hullImage.fillAmount = hullController.hullPercent;
+
+        shield.text = string.Format("Sh[{0}/{1}]", hullController.shieldHealth, hullController.shieldMaxHealth);
+        shieldImage.fillAmount = hullController.shieldPercent;
     }
 }

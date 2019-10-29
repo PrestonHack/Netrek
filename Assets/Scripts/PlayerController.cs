@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     float distance;
     [SerializeField]
     private Collider2D hullCollider;
+    [SerializeField]
+    private HullController hullController;
 
 
     // Start is called before the first frame update
@@ -126,7 +128,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         Debug.DrawLine(start, crosshairDebug);
 
         //shield code
-        if (Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S) && hullController.shieldHealth > 0)
         {
             pv.RPC("activateShield", RpcTarget.AllBufferedViaServer);
         }
@@ -323,12 +325,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         Debug.Log(col.transform.gameObject.name.ToString() + "  ontriggerstay_player");
 
-        if (col.GetComponentInParent<Transform>().root.name != this.gameObject.GetComponentInParent<Transform>().root.name && col.gameObject.name == "tractor")
+        if (col.transform.root.name != this.gameObject.transform.root.name && col.gameObject.name == "tractor")
         {
             this.gameObject.transform.position -= (this.gameObject.transform.position - col.transform.position).normalized * 0.0015f;
 
         }
-        if (col.GetComponentInParent<Transform>().root.name != this.gameObject.GetComponentInParent<Transform>().root.name && col.gameObject.name == "pressor")
+        if (col.transform.root.name != this.gameObject.transform.root.name && col.gameObject.name == "pressor")
         {
             this.gameObject.transform.position -= (col.transform.position - this.gameObject.transform.position).normalized * 0.0015f;
 

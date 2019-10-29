@@ -119,14 +119,6 @@ public class TractorController : MonoBehaviour
         size.y = new Vector2(transform.position.x - p.x, transform.position.y - p.y).magnitude;
         tractorCollider.size = size;
         tractorCollider.offset = new Vector2(0, tractorCollider.size.y / 2);
-
-    }
-
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("OnCollisionEnter2D_Tractor");
-
     }
 
     private void OnTriggerEnter2D(Collider2D col)
