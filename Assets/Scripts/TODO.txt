@@ -3,6 +3,15 @@ torp detonation
 torp limit
 acceleration 
 costs and fuel 
+>fuel recharge 
+>subtract phaser and torp costs on fire 
+>subtract warp cost every update
+>if tractor enabled subract tractor and/or pusher
+>if cloack enabled subtract cloack cost
+>if shield enabled subtract the shield cost
+ only thing that needs subtracted in the fuel controller is the warp cost and tractor and pusher--  everything else is subtracted from the current fuel as needed
+
+
 weapon temps
 engine temps
 
