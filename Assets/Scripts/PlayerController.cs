@@ -81,8 +81,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Collider2D hullCollider;
     [SerializeField]
     private HullController hullController;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -147,17 +145,57 @@ public class PlayerController : MonoBehaviourPunCallbacks
         //cloak code
         if (Input.GetKeyDown(KeyCode.C))
         {
+            int layer;
+
             if (cloak.activeInHierarchy)
             {
                 cloak.SetActive(false);
                 cloakOn = false;
+                weapon.SetActive(true);
+                shipSprite.enabled = true;
+                if (this.gameObject.layer == 10)
+                {
+                    layer = 10;
+                }
+                else if (this.gameObject.layer == 11)
+                {
+                    layer = 11;
+                }
+                else if (this.gameObject.layer == 12)
+                {
+                    layer = 12;
+                }
+                else
+                {
+                    layer = 13;
+                }
+
             }
             else
             {
                 cloak.SetActive(true);
                 cloakOn = true;
+                weapon.SetActive(false);
+                shipSprite.enabled = false;
+                if(this.gameObject.layer == 10)
+                {
+                    layer = 26;
+                }
+                else if(this.gameObject.layer == 11)
+                {
+                    layer = 27;
+                }
+                else if (this.gameObject.layer == 12)
+                {
+                    layer = 28;
+                }
+                else
+                {
+                    layer = 29;
+                }
+
             }
-            pv.RPC("activateCloak", RpcTarget.AllBufferedViaServer);
+            pv.RPC("activateCloak", RpcTarget.OthersBuffered, cloakOn, layer);
         }
 
     }
@@ -171,23 +209,26 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void activateCloak()
+    public void activateCloak(bool on, int layer)
     {
-        if (cloak.activeInHierarchy)
+        if (on)
         {
             mapCloak.SetActive(true);
             playerLabel.SetActive(false);
             mapEmblem.SetActive(false);
             shipSprite.enabled = false;
-            weapon.SetActive(false);
+            cloak.SetActive(true);
+            shield.layer = layer;
+
         }
         else
-        {
+        {  
             mapCloak.SetActive(false);
             playerLabel.SetActive(true);
             mapEmblem.SetActive(true);
             shipSprite.enabled = true;
-            weapon.SetActive(true);
+            cloak.SetActive(false);
+            shield.layer = layer;
         }
     }
 
@@ -212,6 +253,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void fireTorp(Vector3 position, Quaternion rotation, int layer, int damage)
     {
+        
         if(layer == 10)
         {
             torp = PoolManager.Instance.fedRequestTorp();

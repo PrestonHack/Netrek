@@ -36,10 +36,10 @@ TagManager:
   - Kli_Weapon
   - Ori_Weapon
   - Rom_Weapon
-  - 
-  - 
-  - 
-  - 
+  - Fed_Cloak
+  - Kli_Cloak
+  - Ori_Cloak
+  - Rom_Cloak
   - 
   - 
   m_SortingLayers:

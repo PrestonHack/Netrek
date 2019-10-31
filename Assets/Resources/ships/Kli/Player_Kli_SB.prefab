@@ -393,6 +393,11 @@ PrefabInstance:
       propertyPath: warpCost
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3263807282153393620, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: shieldRenderer
+      value: 
+      objectReference: {fileID: 1483274840470730140}
     - target: {fileID: 5636612349081616704, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: viewIdField
@@ -401,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 143126379673265064, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 178061753963126912, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
@@ -418,6 +423,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 358625574053118858}
+    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6609449464902517614}
     - target: {fileID: 3496166537154421613, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: m_Layer
@@ -443,16 +458,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 23
       objectReference: {fileID: 0}
-    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 358625574053118858}
-    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+    - target: {fileID: 7190105548029288598, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: parentTransform
       value: 
       objectReference: {fileID: 6609449464902517614}
+    - target: {fileID: 7190105548029288598, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 358625574053118858}
     - target: {fileID: 650748312433487652, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: m_IsTrigger
@@ -498,16 +513,6 @@ PrefabInstance:
       propertyPath: phaserCost
       value: 960
       objectReference: {fileID: 0}
-    - target: {fileID: 7190105548029288598, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6609449464902517614}
-    - target: {fileID: 7190105548029288598, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 358625574053118858}
     - target: {fileID: 8675878461708141158, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: cam
@@ -584,6 +589,12 @@ GameObject:
 --- !u!1 &2298701666515033891 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 860915970012144469, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1446841303595940982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1483274840470730140 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 36469581622725098, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
     type: 3}
   m_PrefabInstance: {fileID: 1446841303595940982}
   m_PrefabAsset: {fileID: 0}
@@ -888,6 +899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005944643529296498, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 201080631
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084, type: 3}

@@ -334,6 +334,9 @@ MonoBehaviour:
   loginCanvas: {fileID: 1747418530}
   teamShipCanvas: {fileID: 3374773375805172922}
   loginButton: {fileID: 622559219}
+  shipInstance: {fileID: 0}
+  pv: {fileID: 0}
+  playerOverlay: {fileID: 0}
 --- !u!1 &117839433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428944138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 916.6275, y: 714.89343, z: -1449.5807}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

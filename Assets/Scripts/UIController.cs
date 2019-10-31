@@ -65,6 +65,11 @@ public class UIController : MonoBehaviour
         shipInstance = PhotonNetwork.Instantiate(Path.Combine("ships", PhotonNetwork.LocalPlayer.GetTeam().ToString(), "Player_" + PhotonNetwork.LocalPlayer.GetTeam().ToString() + "_" + shipType.ToString()), Vector3.zero, Quaternion.identity);
         teamShipCanvas.enabled = false;
         shipInstance.gameObject.name = PhotonNetwork.LocalPlayer.NickName.ToString();
+        GameObject cam = GameObject.Find("Camera");
+        cam.GetComponent<AudioListener>().enabled = false;
+        cam.GetComponent<AudioSource>().enabled = false;
+        GameObject readySound = GameObject.Find("ReadySound");
+        readySound.GetComponent<AudioSource>().enabled = true;
     }
 
 }

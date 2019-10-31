@@ -324,21 +324,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5141321788280746050, guid: fe49915037bb8eb4cab2d948885c5b3f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317872704967959488, guid: fe49915037bb8eb4cab2d948885c5b3f,
-        type: 3}
-      propertyPath: ObservedComponents.Array.data[0]
-      value: 
-      objectReference: {fileID: 8384666008082302904}
-    - target: {fileID: 8608090275495688091, guid: fe49915037bb8eb4cab2d948885c5b3f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2922122682945959861, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -464,6 +449,11 @@ PrefabInstance:
       propertyPath: torpCost
       value: 210
       objectReference: {fileID: 0}
+    - target: {fileID: 6393426022534776914, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: shieldRenderer
+      value: 
+      objectReference: {fileID: 8761766448735948137}
     - target: {fileID: 7340347408755115026, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: mapCam
@@ -489,6 +479,16 @@ PrefabInstance:
       propertyPath: dashManager
       value: 
       objectReference: {fileID: 5035747894879886204}
+    - target: {fileID: 8608090275495688091, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141321788280746050, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 6829961904549851090, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -504,6 +504,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 4956320718082507055, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 5784943029956824089}
+    - target: {fileID: 4956320718082507055, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 7319876578444780218}
     - target: {fileID: 7797029356837579839, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: m_Layer
@@ -529,21 +539,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 4956320718082507055, guid: fe49915037bb8eb4cab2d948885c5b3f,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 5784943029956824089}
-    - target: {fileID: 4956320718082507055, guid: fe49915037bb8eb4cab2d948885c5b3f,
+    - target: {fileID: 4573439455871053764, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 7319876578444780218}
+    - target: {fileID: 4573439455871053764, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 5784943029956824089}
     - target: {fileID: 6176563979454947446, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7317872704967959488, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 8384666008082302904}
     - target: {fileID: 1344618041176813625, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: photonView
@@ -574,16 +589,6 @@ PrefabInstance:
       propertyPath: fuelController
       value: 
       objectReference: {fileID: 1546823444694056627}
-    - target: {fileID: 4573439455871053764, guid: fe49915037bb8eb4cab2d948885c5b3f,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 7319876578444780218}
-    - target: {fileID: 4573439455871053764, guid: fe49915037bb8eb4cab2d948885c5b3f,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 5784943029956824089}
     - target: {fileID: 2654473321868512564, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: cam
@@ -591,9 +596,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe49915037bb8eb4cab2d948885c5b3f, type: 3}
---- !u!1 &3756875505780509640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8608090275495688091, guid: fe49915037bb8eb4cab2d948885c5b3f,
+--- !u!4 &5784943029956824089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1377311110800158794, guid: fe49915037bb8eb4cab2d948885c5b3f,
     type: 3}
   m_PrefabInstance: {fileID: 4851799709968497747}
   m_PrefabAsset: {fileID: 0}
@@ -651,9 +656,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4851799709968497747}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5784943029956824089 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1377311110800158794, guid: fe49915037bb8eb4cab2d948885c5b3f,
+--- !u!212 &8761766448735948137 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4237045060355780922, guid: fe49915037bb8eb4cab2d948885c5b3f,
     type: 3}
   m_PrefabInstance: {fileID: 4851799709968497747}
   m_PrefabAsset: {fileID: 0}
@@ -699,6 +704,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a726ba4bfbfe98d4d9fdf28bce0b6be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3756875505780509640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8608090275495688091, guid: fe49915037bb8eb4cab2d948885c5b3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4851799709968497747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4886328840741300872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -963,6 +974,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4005944643529296498, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 133971767
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084, type: 3}
 --- !u!4 &2280452496565766546 stripped
@@ -1099,6 +1115,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7017272933860376689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 141382041271694399, guid: d1d6a24b2e0c065408ed763f4dcac79b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6959212313541375054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2136275575300165666 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9021138774862881900, guid: d1d6a24b2e0c065408ed763f4dcac79b,
@@ -1169,18 +1197,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7017272933860376689 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 141382041271694399, guid: d1d6a24b2e0c065408ed763f4dcac79b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6959212313541375054}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7729098930990060581

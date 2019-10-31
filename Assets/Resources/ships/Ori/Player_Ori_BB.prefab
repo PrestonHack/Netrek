@@ -363,6 +363,11 @@ PrefabInstance:
       propertyPath: warpCost
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1760243310115441639, guid: 72a12de94d63ee541bd39584388003c1,
+        type: 3}
+      propertyPath: shieldRenderer
+      value: 
+      objectReference: {fileID: 748244498285495322}
     - target: {fileID: 69740085248096413, guid: 72a12de94d63ee541bd39584388003c1,
         type: 3}
       propertyPath: viewIdField
@@ -416,8 +421,18 @@ PrefabInstance:
     - target: {fileID: 7803380946396187496, guid: 72a12de94d63ee541bd39584388003c1,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 1718566714838793533, guid: 72a12de94d63ee541bd39584388003c1,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 3306736219382667669}
+    - target: {fileID: 1718566714838793533, guid: 72a12de94d63ee541bd39584388003c1,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 9142337879679211627}
     - target: {fileID: 167971631023807756, guid: 72a12de94d63ee541bd39584388003c1,
         type: 3}
       propertyPath: m_Layer
@@ -443,16 +458,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 24
       objectReference: {fileID: 0}
-    - target: {fileID: 1718566714838793533, guid: 72a12de94d63ee541bd39584388003c1,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 3306736219382667669}
-    - target: {fileID: 1718566714838793533, guid: 72a12de94d63ee541bd39584388003c1,
+    - target: {fileID: 7812037574263968726, guid: 72a12de94d63ee541bd39584388003c1,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 9142337879679211627}
+    - target: {fileID: 7812037574263968726, guid: 72a12de94d63ee541bd39584388003c1,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 3306736219382667669}
     - target: {fileID: 4181741090314478272, guid: 72a12de94d63ee541bd39584388003c1,
         type: 3}
       propertyPath: cam
@@ -498,16 +513,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7812037574263968726, guid: 72a12de94d63ee541bd39584388003c1,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 9142337879679211627}
-    - target: {fileID: 7812037574263968726, guid: 72a12de94d63ee541bd39584388003c1,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 3306736219382667669}
     - target: {fileID: 898213907880796109, guid: 72a12de94d63ee541bd39584388003c1,
         type: 3}
       propertyPath: cam
@@ -572,6 +577,12 @@ GameObject:
 --- !u!1 &2965191729968983294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4573728366523733976, guid: 72a12de94d63ee541bd39584388003c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1612112317162224422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &748244498285495322 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2034804546794880828, guid: 72a12de94d63ee541bd39584388003c1,
     type: 3}
   m_PrefabInstance: {fileID: 1612112317162224422}
   m_PrefabAsset: {fileID: 0}
@@ -1273,6 +1284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005944643529296498, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 335298359
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084, type: 3}
