@@ -378,6 +378,21 @@ PrefabInstance:
       propertyPath: hullController
       value: 
       objectReference: {fileID: 6533876632738902765}
+    - target: {fileID: 3263807282153393620, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: fuelController
+      value: 
+      objectReference: {fileID: 8570893518195550912}
+    - target: {fileID: 3263807282153393620, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: torpCost
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263807282153393620, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: warpCost
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5636612349081616704, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: viewIdField
@@ -473,6 +488,16 @@ PrefabInstance:
       propertyPath: phaserDamage
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 5627659954250202987, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: fuelController
+      value: 
+      objectReference: {fileID: 8570893518195550912}
+    - target: {fileID: 5627659954250202987, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: phaserCost
+      value: 960
+      objectReference: {fileID: 0}
     - target: {fileID: 7190105548029288598, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: parentTransform
@@ -490,6 +515,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 777fcedc52f727e47bd5caf8bfd57d7f, type: 3}
+--- !u!114 &895135521455452683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1446841303595940982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a726ba4bfbfe98d4d9fdf28bce0b6be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3180053664101295554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4050398022136043956, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1446841303595940982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8611536657919127915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7176033596148600093, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
@@ -502,15 +545,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1446841303595940982}
   m_PrefabAsset: {fileID: 0}
---- !u!60 &4901040034209427093 stripped
-PolygonCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5771305259422421731, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+--- !u!114 &4134138507891634594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3263807282153393620, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
     type: 3}
   m_PrefabInstance: {fileID: 1446841303595940982}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3180053664101295554 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4050398022136043956, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+  m_GameObject: {fileID: 8611536657919127915}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b05cacba29c3f54fb198e3ffe502bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &4901040034209427093 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5771305259422421731, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
     type: 3}
   m_PrefabInstance: {fileID: 1446841303595940982}
   m_PrefabAsset: {fileID: 0}
@@ -550,6 +599,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1446841303595940982}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8636871202921192672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7190105548029288598, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1446841303595940982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346da1c6c0e52074f826fa1f31026d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2496900346018603960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -640,6 +701,127 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2496900346018603960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3657377853836539123
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5991112808621104605}
+    m_Modifications:
+    - target: {fileID: 7755313598833601922, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_Name
+      value: FuelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: tractorController
+      value: 
+      objectReference: {fileID: 8636871202921192672}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: pressorController
+      value: 
+      objectReference: {fileID: 895135521455452683}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 4134138507891634594}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: maxFuel
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: tractorFuelCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: cloakFuelCost
+      value: 380
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: shieldFuelCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: rechargeRate
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e0f148e031a78249b24711697d13a12, type: 3}
+--- !u!114 &8570893518195550912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+    type: 3}
+  m_PrefabInstance: {fileID: 3657377853836539123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fefc62e8642f84da8f79f10133fba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3705865883575372280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,15 +983,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fa125870da2f14419058562eae15d9f, type: 3}
---- !u!95 &6452133728565619274 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2238962134928364243, guid: 2fa125870da2f14419058562eae15d9f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5087081045078898841}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1389904590971232881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6183758529020205800, guid: 2fa125870da2f14419058562eae15d9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5087081045078898841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6452133728565619274 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2238962134928364243, guid: 2fa125870da2f14419058562eae15d9f,
     type: 3}
   m_PrefabInstance: {fileID: 5087081045078898841}
   m_PrefabAsset: {fileID: 0}
@@ -927,6 +1109,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5883100755341407703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 141382041271694399, guid: d1d6a24b2e0c065408ed763f4dcac79b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5787885009371824616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3270518413589407108 stripped
@@ -1208,6 +1402,16 @@ PrefabInstance:
       propertyPath: shieldImage
       value: 
       objectReference: {fileID: 8117997416479505105}
+    - target: {fileID: 2329830499503841983, guid: f9af4c181ac34be429dda7827cd0013d,
+        type: 3}
+      propertyPath: fuelImage
+      value: 
+      objectReference: {fileID: 5883100755341407703}
+    - target: {fileID: 2329830499503841983, guid: f9af4c181ac34be429dda7827cd0013d,
+        type: 3}
+      propertyPath: fuelController
+      value: 
+      objectReference: {fileID: 8570893518195550912}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9af4c181ac34be429dda7827cd0013d, type: 3}
 --- !u!1 &6710668992507242779 stripped
@@ -1285,15 +1489,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9273c1a4c6c827a4aadade772e43ea6a, type: 3}
---- !u!4 &5139421848085406238 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4306634738180954787, guid: 9273c1a4c6c827a4aadade772e43ea6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 8977602098042583229}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1897841057022938477 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7404100203929679312, guid: 9273c1a4c6c827a4aadade772e43ea6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8977602098042583229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5139421848085406238 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4306634738180954787, guid: 9273c1a4c6c827a4aadade772e43ea6a,
     type: 3}
   m_PrefabInstance: {fileID: 8977602098042583229}
   m_PrefabAsset: {fileID: 0}

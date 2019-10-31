@@ -5,8 +5,7 @@ using Photon.Pun;
 
 public class PressorController : MonoBehaviour
 {
-    [SerializeField]
-    private bool pressorOn;
+    public bool pressorOn;
     [SerializeField]
     private LineRenderer lineRenderer;
     [SerializeField]

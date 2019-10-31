@@ -38,6 +38,10 @@ public class PhaserController : MonoBehaviour
     private Vector2 length;
     public float phaserLengthPercent;
     [SerializeField]
+    private FuelController fuelController;
+    [SerializeField]
+    private int phaserCost;
+    [SerializeField]
     private float phaserDamage;
     public float damage;
   
@@ -49,26 +53,24 @@ public class PhaserController : MonoBehaviour
         phaserCollider.size = size;
         phaserCollider.offset = new Vector2(0, phaserCollider.size.y / 2);
  
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (photonView.IsMine)
-            {
-                mousePosition = Input.mousePosition;
-                point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
+        if (Input.GetMouseButtonDown(0) && photonView.IsMine && fuelController.currentFuel >= phaserCost)
+        {         
+            mousePosition = Input.mousePosition;
+            point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
  
-                start = new Vector2(transform.position.x, transform.position.y);
-                direction = point - start;
-                distance = Mathf.Clamp(Vector2.Distance(start, point), 0, maxRange);
-                end = start + (direction.normalized * distance);
-                length = end - start;
-                phaserLengthPercent = 1 - (length.magnitude / maxRange);
-                damage = phaserDamage * phaserLengthPercent;
-                damage = (float)Math.Round(damage, 2);
-                Debug.Log("Phaser damage: " + damage.ToString());
-                photonView.RPC("firePhaserRPC", RpcTarget.AllBuffered, end);
-            }
-  
+            start = new Vector2(transform.position.x, transform.position.y);
+            direction = point - start;
+            distance = Mathf.Clamp(Vector2.Distance(start, point), 0, maxRange);
+            end = start + (direction.normalized * distance);
+            length = end - start;
+            phaserLengthPercent = 1 - (length.magnitude / maxRange);
+            damage = phaserDamage * phaserLengthPercent;
+            damage = (float)Math.Round(damage, 2);
+            Debug.Log("Phaser damage: " + damage.ToString());
+            photonView.RPC("firePhaserRPC", RpcTarget.AllBuffered, end);
+            fuelController.currentFuel -= phaserCost;
         }
+
         if(this.gameObject.layer == 22)
         {
             lineRenderer.material.color = UnityEngine.Random.ColorHSV(0.0f, 0.17f, 1f, 1f, 0.9f, 1f);

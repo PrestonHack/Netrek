@@ -26,14 +26,23 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     private Camera cam;
     [SerializeField]
+    private FuelController fuelController;
+    [SerializeField]
     private int torpDamage;
+    [SerializeField]
+    private int torpCost;
+    [SerializeField]
+    private int warpCost;
+    public int warpFuelUse;
     [SerializeField]
     private GameObject torp;
     [SerializeField]
     private Vector2 crosshairDebug;
     public GameObject weapon;
+    public bool shieldOn;
     [SerializeField]
     private GameObject shield;
+    public bool cloakOn;
     [SerializeField]
     private GameObject cloak;
     [SerializeField]
@@ -82,6 +91,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         pv = GetComponent<PhotonView>();
         emblem = PhotonNetwork.LocalPlayer.GetTeam().ToString().Substring(0, 1) + PhotonNetwork.LocalPlayer.ActorNumber.ToString();
         pv.RPC("setEmblemName", RpcTarget.AllBuffered, emblem, PhotonNetwork.LocalPlayer.NickName);
+        warpFuelUse = 0;
     }
 
     // Update is called once per frame
@@ -117,12 +127,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
         move();
 
         //torpedo code
-        if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy)
+        if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy && fuelController.currentFuel >= torpCost)
         {
             nextFire = Time.time + fireRate;
             Vector3 weaponPosition = weapon.transform.position;
             Quaternion weaponRotation = weapon.transform.rotation;
             pv.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage);
+            fuelController.currentFuel -= torpCost;
 
         }
         Debug.DrawLine(start, crosshairDebug);
@@ -139,12 +150,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
             if (cloak.activeInHierarchy)
             {
                 cloak.SetActive(false);
+                cloakOn = false;
             }
             else
             {
                 cloak.SetActive(true);
+                cloakOn = true;
             }
-                pv.RPC("activateCloak", RpcTarget.AllBufferedViaServer);
+            pv.RPC("activateCloak", RpcTarget.AllBufferedViaServer);
         }
 
     }
@@ -183,11 +196,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         if (shield.activeInHierarchy)
         {
+            shieldOn = false;
             shield.SetActive(false);
             hullCollider.enabled = true;
         }
         else
         {
+            shieldOn = true;
             shield.SetActive(true);
             hullCollider.enabled = false;
         }
@@ -246,72 +261,85 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            playerSpeed = 0.05f;
-            rotationSpeed = 5f;
+            playerSpeed = 0.025f;
+            rotationSpeed = 5;
+            warpFuelUse = warpCost * 1;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            playerSpeed = 0.1f;
-            rotationSpeed = 4f;
+            playerSpeed = 0.05f;
+            rotationSpeed = 4;
+            warpFuelUse = warpCost * 2;
 
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            playerSpeed = 0.15f;
-            rotationSpeed = 3f;
+            playerSpeed = 0.075f;
+            rotationSpeed = 3;
+            warpFuelUse = warpCost * 3;
 
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
-            playerSpeed = 0.2f;
-            rotationSpeed = 2f;
+            playerSpeed = 0.15f;
+            rotationSpeed = 2;
+            warpFuelUse = warpCost * 4;
 
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha5))
         {
-            playerSpeed = 0.25f;
-            rotationSpeed = 0.1f;
+            playerSpeed = 0.2f;
+            rotationSpeed = 1;
+            warpFuelUse = warpCost * 5;
 
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha6))
         {
-            playerSpeed = 0.3f;
+            playerSpeed = 0.25f;
             rotationSpeed = 0.9f;
+            warpFuelUse = warpCost * 6;
 
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha7))
         {
-            playerSpeed = 0.35f;
+            playerSpeed = 0.3f;
             rotationSpeed = 0.8f;
+            warpFuelUse = warpCost * 7;
 
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha8))
         {
-            playerSpeed = 0.4f;
+            playerSpeed = 0.35f;
             rotationSpeed = 0.7f;
+            warpFuelUse = warpCost * 8;
 
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha9))
         {
-            playerSpeed = 0.45f;
+            playerSpeed = 0.4f;
             rotationSpeed = 0.6f;
-           // audioPlayer.volume = 0.6f;
-          //  audioPlayer.PlayOneShot(audioFiles[4]);
+            warpFuelUse = warpCost * 9;
+
+            // audioPlayer.volume = 0.6f;
+            //  audioPlayer.PlayOneShot(audioFiles[4]);
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha0))
         {
             playerSpeed = 0;
-         //   audioPlayer.volume = 0.4f;
-         //   audioPlayer.PlayOneShot(audioFiles[5]);
+            rotationSpeed = 5;
+            warpFuelUse = warpCost * 0;
+
+            //   audioPlayer.volume = 0.4f;
+            //   audioPlayer.PlayOneShot(audioFiles[5]);
             return playerSpeed;
         }
         return playerSpeed;

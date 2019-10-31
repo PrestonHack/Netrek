@@ -5,8 +5,7 @@ using Photon.Pun;
 
 public class TractorController : MonoBehaviour
 {
-    [SerializeField]
-    private bool tractorOn;
+    public bool tractorOn;
     [SerializeField]
     private LineRenderer lineRenderer;
     [SerializeField]

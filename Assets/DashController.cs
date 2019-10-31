@@ -8,14 +8,19 @@ using System;
 
 public class DashController : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text fuel;
+ 
     [SerializeField]
     private TMP_Text armys;
     [SerializeField]
     private TMP_Text weaponTemp;
     [SerializeField]
     private TMP_Text engineTemp;
+    [SerializeField]
+    private TMP_Text fuel;
+    [SerializeField]
+    private Image fuelImage;
+    [SerializeField]
+    private FuelController fuelController;
     [SerializeField]
     private TMP_Text speed;
     [SerializeField]
@@ -28,6 +33,7 @@ public class DashController : MonoBehaviour
     private Image hullImage;
     [SerializeField]
     private HullController hullController;
+
 
 
     // Start is called before the first frame update
@@ -44,5 +50,8 @@ public class DashController : MonoBehaviour
 
         shield.text = string.Format("Sh[{0}/{1}]", Math.Round(hullController.shieldHealth, 2), hullController.shieldMaxHealth);
         shieldImage.fillAmount = hullController.shieldPercent;
+
+        fuel.text = string.Format("Fu[{0}/{1}]", Math.Round(fuelController.currentFuel, 2), fuelController.maxFuel);
+        fuelImage.fillAmount = fuelController.fuelPercent;
     }
 }
