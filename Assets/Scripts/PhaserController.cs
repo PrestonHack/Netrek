@@ -40,6 +40,10 @@ public class PhaserController : MonoBehaviour
     [SerializeField]
     private FuelController fuelController;
     [SerializeField]
+    private TemperatureController temperatureController;
+    [SerializeField]
+    private int phaserWeaponTemp;
+    [SerializeField]
     private int phaserCost;
     [SerializeField]
     private float phaserDamage;
@@ -69,6 +73,7 @@ public class PhaserController : MonoBehaviour
             Debug.Log("Phaser damage: " + damage.ToString());
             photonView.RPC("firePhaserRPC", RpcTarget.AllBuffered, end);
             fuelController.currentFuel -= phaserCost;
+            temperatureController.currentWeaponTemp += phaserWeaponTemp / 10;
         }
 
         if(this.gameObject.layer == 22)

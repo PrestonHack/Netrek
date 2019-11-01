@@ -28,9 +28,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     private FuelController fuelController;
     [SerializeField]
+    private TemperatureController temperatureController;
+    [SerializeField]
     private int torpDamage;
     [SerializeField]
     private int torpCost;
+    [SerializeField]
+    private int torpWeaponTemp;
     [SerializeField]
     private int warpCost;
     public int warpFuelUse;
@@ -59,6 +63,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float rotationSpeed;
     [SerializeField]
     private float playerSpeed;
+    public float warpNumber;
     [SerializeField]
     private float fireRate;
     [SerializeField]
@@ -84,6 +89,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        warpNumber = 0;
         teamShipCanvas = GameObject.Find("TeamShipCanvas").GetComponent<Canvas>();
         navPoint = Vector2.up;
         pv = GetComponent<PhotonView>();
@@ -132,6 +138,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             Quaternion weaponRotation = weapon.transform.rotation;
             pv.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage);
             fuelController.currentFuel -= torpCost;
+            temperatureController.currentWeaponTemp += torpWeaponTemp / 10;
 
         }
         Debug.DrawLine(start, crosshairDebug);
@@ -306,6 +313,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.025f;
             rotationSpeed = 5;
             warpFuelUse = warpCost * 1;
+            warpNumber = 1;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha2))
@@ -313,7 +321,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.05f;
             rotationSpeed = 4;
             warpFuelUse = warpCost * 2;
-
+            warpNumber = 2;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha3))
@@ -321,7 +329,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.075f;
             rotationSpeed = 3;
             warpFuelUse = warpCost * 3;
-
+            warpNumber = 3;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha4))
@@ -329,7 +337,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.15f;
             rotationSpeed = 2;
             warpFuelUse = warpCost * 4;
-
+            warpNumber = 4;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha5))
@@ -337,7 +345,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.2f;
             rotationSpeed = 1;
             warpFuelUse = warpCost * 5;
-
+            warpNumber = 5;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha6))
@@ -345,7 +353,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.25f;
             rotationSpeed = 0.9f;
             warpFuelUse = warpCost * 6;
-
+            warpNumber = 6;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha7))
@@ -353,7 +361,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.3f;
             rotationSpeed = 0.8f;
             warpFuelUse = warpCost * 7;
-
+            warpNumber = 7;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha8))
@@ -361,7 +369,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.35f;
             rotationSpeed = 0.7f;
             warpFuelUse = warpCost * 8;
-
+            warpNumber = 8;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha9))
@@ -369,9 +377,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0.4f;
             rotationSpeed = 0.6f;
             warpFuelUse = warpCost * 9;
-
-            // audioPlayer.volume = 0.6f;
-            //  audioPlayer.PlayOneShot(audioFiles[4]);
+            warpNumber = 9;
             return playerSpeed;
         }
         if (Input.GetKey(KeyCode.Alpha0))
@@ -379,9 +385,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             playerSpeed = 0;
             rotationSpeed = 5;
             warpFuelUse = warpCost * 0;
-
-            //   audioPlayer.volume = 0.4f;
-            //   audioPlayer.PlayOneShot(audioFiles[5]);
+            warpNumber = 0;
             return playerSpeed;
         }
         return playerSpeed;
