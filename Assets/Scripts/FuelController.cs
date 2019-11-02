@@ -58,8 +58,6 @@ public class FuelController : MonoBehaviour
                 currentFuel -= (tractorFuelCost);
             }
             currentFuel = Mathf.Clamp(currentFuel, 0, maxFuel);
-            Debug.Log(currentFuel.ToString());
-
         }
 
         fuelPercent = (currentFuel/maxFuel);

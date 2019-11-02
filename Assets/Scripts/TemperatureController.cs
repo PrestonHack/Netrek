@@ -50,11 +50,11 @@ public class TemperatureController : MonoBehaviour
 
             if (tractorController.tractorOn)
             {
-                currentEngineTemp += tractorTemp;
+                currentEngineTemp += tractorTemp/10;
             }
             if (pressorController.pressorOn)
             {
-                currentEngineTemp += tractorTemp;
+                currentEngineTemp += tractorTemp/10;
             }
         }
         weaponTempPercent = (currentWeaponTemp / maxWeaponTemp);
