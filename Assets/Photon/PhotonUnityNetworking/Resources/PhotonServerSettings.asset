@@ -52,5 +52,6 @@ MonoBehaviour:
   - endDie
   - shieldFailure
   - phaserHit
+  - deactivateShield
   DisableAutoOpenWizard: 1
   ShowSettings: 1

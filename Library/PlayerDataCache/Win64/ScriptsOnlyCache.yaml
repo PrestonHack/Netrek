@@ -11,9 +11,11 @@ ScriptsOnlyBuild:
     - PlayerManager
     - PoolManager
     - PressorController
+    - RepairController
     - ShieldController
     - ShipManager
     - TeamManager
+    - TemperatureController
     - TextRotation
     - TractorController
     - UIController
@@ -141,89 +143,93 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10230}
     - Class: 114
-      Script: {instanceID: 10274}
+      Script: {instanceID: 10246}
     - Class: 114
-      Script: {instanceID: 10480}
+      Script: {instanceID: 10276}
     - Class: 114
-      Script: {instanceID: 10620}
+      Script: {instanceID: 10482}
     - Class: 114
-      Script: {instanceID: 10674}
+      Script: {instanceID: 10622}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 10792}
+      Script: {instanceID: 10754}
     - Class: 114
-      Script: {instanceID: 10844}
+      Script: {instanceID: 10794}
     - Class: 114
-      Script: {instanceID: 10892}
+      Script: {instanceID: 10846}
     - Class: 114
       Script: {instanceID: 10894}
     - Class: 114
-      Script: {instanceID: 11126}
+      Script: {instanceID: 10896}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 11128}
     - Class: 114
-      Script: {instanceID: 11220}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11488}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11490}
     - Class: 114
-      Script: {instanceID: 11568}
+      Script: {instanceID: 11514}
     - Class: 114
-      Script: {instanceID: 11664}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11776}
+      Script: {instanceID: 11666}
     - Class: 114
-      Script: {instanceID: 11790}
+      Script: {instanceID: 11778}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 11792}
     - Class: 114
-      Script: {instanceID: 11866}
+      Script: {instanceID: 11816}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 11868}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 11994}
+      Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 12092}
+      Script: {instanceID: 11996}
     - Class: 114
-      Script: {instanceID: 12098}
+      Script: {instanceID: 12094}
     - Class: 114
-      Script: {instanceID: 12112}
+      Script: {instanceID: 12100}
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12122}
+      Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12124}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12168}
     - Class: 114
-      Script: {instanceID: 12248}
+      Script: {instanceID: 12188}
     - Class: 114
-      Script: {instanceID: 12290}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12348}
+      Script: {instanceID: 12292}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12350}
     - Class: 114
-      Script: {instanceID: 12470}
+      Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 12574}
+      Script: {instanceID: 12472}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 12562}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12578}
     - Class: 114
-      Script: {instanceID: 12920}
+      Script: {instanceID: 12750}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12812}
     - Class: 114
-      Script: {instanceID: 12970}
+      Script: {instanceID: 12924}
+    - Class: 114
+      Script: {instanceID: 12962}
+    - Class: 114
+      Script: {instanceID: 12974}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -290,19 +296,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10012}
     - Class: 114
-      Script: {instanceID: 10332}
+      Script: {instanceID: 10334}
     - Class: 114
-      Script: {instanceID: 10792}
+      Script: {instanceID: 10794}
     - Class: 114
-      Script: {instanceID: 11048}
+      Script: {instanceID: 11050}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11856}
+      Script: {instanceID: 11858}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12812}
     - Class: 114
-      Script: {instanceID: 12920}
+      Script: {instanceID: 12924}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -578,6 +584,12 @@ ScriptsOnlyBuild:
     className: FuelController
   - hash:
       serializedVersion: 2
+      Hash: 12906102973edc3b79d8464feecb29a5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RepairController
+  - hash:
+      serializedVersion: 2
       Hash: 1ace54e71b4dcb79eb71b9b61b75a015
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -626,7 +638,7 @@ ScriptsOnlyBuild:
     className: CountOfPlayersProperty
   - hash:
       serializedVersion: 2
-      Hash: ba902dcc3027730b9272e79fb5847cc4
+      Hash: 0883b702239473be7b6f2e6fe84f0021
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: torpedoBehavior
@@ -782,7 +794,7 @@ ScriptsOnlyBuild:
     className: ConnectAndJoinRandom
   - hash:
       serializedVersion: 2
-      Hash: 2a383e396debfae75441397b7b734322
+      Hash: 4cb494bc76f3b467107676ef0dc94f45
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HullController
@@ -848,7 +860,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: a96123cb64a23c0a94ced0e6846ea440
+      Hash: 14df80a2c0ff382e23af7982ae05fe36
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhaserController
@@ -1088,7 +1100,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 2fd301fe83f03ae4a209216fdd50a143
+      Hash: 412f301e4fe21da1b0d8333b6171a9cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DashController
@@ -1376,7 +1388,7 @@ ScriptsOnlyBuild:
     className: Asteroid
   - hash:
       serializedVersion: 2
-      Hash: 88c9d2ed2fdf87cc82b5e749caa9ac25
+      Hash: 6151a2e053cdb716a22f91e486bfd90d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1530,6 +1542,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 01e7334894e4720c2e90d34dbd5c0f70
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TemperatureController
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d

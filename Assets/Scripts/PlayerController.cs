@@ -37,13 +37,18 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private int torpWeaponTemp;
     [SerializeField]
     private int warpCost;
+    public float maxWarp;
+    public float warpNumber;
+    public float warpPercent;
     public int warpFuelUse;
     [SerializeField]
     private GameObject torp;
+    public int torpCount;
     [SerializeField]
     private Vector2 crosshairDebug;
     public GameObject weapon;
     public bool shieldOn;
+    public bool repairOn;
     [SerializeField]
     private GameObject shield;
     public bool cloakOn;
@@ -63,7 +68,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float rotationSpeed;
     [SerializeField]
     private float playerSpeed;
-    public float warpNumber;
     [SerializeField]
     private float fireRate;
     [SerializeField]
@@ -89,6 +93,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        repairOn = false;
         warpNumber = 0;
         teamShipCanvas = GameObject.Find("TeamShipCanvas").GetComponent<Canvas>();
         navPoint = Vector2.up;
@@ -128,10 +133,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
             end = navPoint;
         }
         Debug.DrawLine(start, end, Color.yellow);
-        move();
+        if (!repairOn)
+        {
+            move();
+        }
+        warpPercent = (warpNumber / maxWarp);
 
         //torpedo code
-        if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy && fuelController.currentFuel >= torpCost)
+        if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy && fuelController.currentFuel >= torpCost && torpCount < 8)
         {
             nextFire = Time.time + fireRate;
             Vector3 weaponPosition = weapon.transform.position;
@@ -139,14 +148,29 @@ public class PlayerController : MonoBehaviourPunCallbacks
             pv.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage);
             fuelController.currentFuel -= torpCost;
             temperatureController.currentWeaponTemp += torpWeaponTemp / 10;
+            torpCount++;
 
         }
         Debug.DrawLine(start, crosshairDebug);
 
         //shield code
-        if (Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S) && hullController.shieldHealth > 0)
+        if (Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S) && hullController.shieldHealth > 0 && !repairOn)
         {
             pv.RPC("activateShield", RpcTarget.AllBufferedViaServer);
+        }
+
+        //repair code
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
+        {
+            if (!repairOn)
+            {
+                repairOn = true;
+                pv.RPC("deactivateShield", RpcTarget.AllBufferedViaServer);
+            }
+            else
+            {
+                repairOn = false;
+            }
         }
 
         //cloak code
@@ -255,6 +279,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
             hullCollider.enabled = false;
         }
     }
+    [PunRPC]
+    public void deactivateShield()
+    {
+        shieldOn = false;
+        shield.SetActive(false);
+        hullCollider.enabled = true;
+    }
 
 
     [PunRPC]
@@ -281,9 +312,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
             torp = PoolManager.Instance.romRequestTorp();
 
         }
-        torp.GetComponent<torpedoBehavior>().damage = damage;
+        torpedoBehavior torpBehavior = torp.GetComponent<torpedoBehavior>();
+        torpBehavior.damage = damage;
+        torpBehavior.playerController = this;
         torp.transform.position = position;
-        torp.transform.rotation = rotation;
+        torp.transform.rotation = rotation;        
         torp.SetActive(true);
             
     }

@@ -7,6 +7,8 @@ using System;
 public class PhaserController : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource soundClip;
+    [SerializeField]
     private LineRenderer lineRenderer;
     [SerializeField]
     private BoxCollider2D phaserCollider;
@@ -48,7 +50,11 @@ public class PhaserController : MonoBehaviour
     [SerializeField]
     private float phaserDamage;
     public float damage;
-  
+
+    private void Start()
+    {
+        soundClip = GetComponent<AudioSource>();
+    }
     void Update()
     {
         
@@ -112,6 +118,7 @@ public class PhaserController : MonoBehaviour
         phaserCollider.offset = new Vector2(0, phaserCollider.size.y/2);        
         lineRenderer.enabled = true;
         phaserCollider.enabled = true;
+        soundClip.enabled = true;
         StartCoroutine("deactivatePhaser");
     }
     [PunRPC]
@@ -133,6 +140,7 @@ public class PhaserController : MonoBehaviour
         yield return new WaitForSeconds(1);
         lineRenderer.enabled = false;
         phaserCollider.enabled = false;
+        soundClip.enabled = false;
     }
 
     private void OnTriggerStay2D(Collider2D col)

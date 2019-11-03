@@ -1,6 +1,7 @@
 TODO 
+UI flags for kill shields and repair
+
 torp detonation 
-torp limit
 acceleration 
 speed limits 
 limits for fuel and temps etc. 
@@ -10,3 +11,5 @@ limits for fuel and temps etc.
 8 match making lobby
 9 voice chat
 10 user login 
+
+

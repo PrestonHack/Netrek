@@ -20,6 +20,8 @@ public class HullController : MonoBehaviour
     private GameObject explosion;
     [SerializeField]
     private GameObject shipSprite;
+    [SerializeField]
+    torpedoBehavior torpBehavior;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +32,11 @@ public class HullController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hullHealth = Mathf.Clamp(hullHealth, 0, hullMaxHealth);
+        shieldHealth = Mathf.Clamp(shieldHealth, 0, shieldMaxHealth);
         hullPercent = (hullHealth / hullMaxHealth);
-        shieldPercent = (shieldHealth / shieldMaxHealth);
-
-
+        shieldPercent = (shieldHealth / shieldMaxHealth);        
+        
         if(hullHealth <= 0)
         {
             this.gameObject.GetComponent<PhotonView>().RPC("die", RpcTarget.AllBufferedViaServer);
@@ -43,7 +46,6 @@ public class HullController : MonoBehaviour
         if (explosionAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !explosionAnimator.IsInTransition(0))
         {
             this.gameObject.GetComponent<PhotonView>().RPC("endDie", RpcTarget.AllBufferedViaServer);
-
         }
     }
     [PunRPC]
@@ -51,6 +53,7 @@ public class HullController : MonoBehaviour
     {
         explosion.SetActive(false);
         this.gameObject.SetActive(false);
+        Destroy(this.gameObject.transform.parent.gameObject);
     }
 
     [PunRPC]
@@ -68,14 +71,14 @@ public class HullController : MonoBehaviour
         if (Regex.IsMatch(other.gameObject.name, "torp"))
         {
             Debug.Log("TORP!");
-            hullHealth -= other.gameObject.GetComponentInParent<torpedoBehavior>().damage;
+            torpBehavior = other.gameObject.GetComponentInParent<torpedoBehavior>();
+            hullHealth -= torpBehavior.damage;
+            torpBehavior.playerController.torpCount--;
             other.gameObject.transform.parent.gameObject.SetActive(false);
         }  
         if(Regex.IsMatch(other.gameObject.name, "phaser"))
         {
             hullHealth -= other.gameObject.GetComponentInParent<PhaserController>().damage;
         }
-    }
-    
-
+    } 
 }

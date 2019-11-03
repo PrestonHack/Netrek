@@ -28,7 +28,11 @@ public class DashController : MonoBehaviour
     [SerializeField]
     private FuelController fuelController;
     [SerializeField]
+    private PlayerController playerController;
+    [SerializeField]
     private TMP_Text speed;
+    [SerializeField]
+    private Image speedImage;
     [SerializeField]
     private TMP_Text shield;
     [SerializeField]
@@ -65,5 +69,9 @@ public class DashController : MonoBehaviour
 
         weaponTemp.text = string.Format("Wt[{0}/{1}]", Math.Round(temperatureController.currentWeaponTemp, 0), temperatureController.maxWeaponTemp);
         weaponImage.fillAmount = temperatureController.weaponTempPercent;
+
+        speed.text = string.Format("Sp[{0}/{1}]", playerController.warpNumber, playerController.maxWarp);
+        speedImage.fillAmount = playerController.warpPercent;
+
     }
 }
