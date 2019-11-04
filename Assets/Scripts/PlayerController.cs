@@ -36,11 +36,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     private int torpWeaponTemp;
     [SerializeField]
-    private int warpCost;
+    private float warpCost;
     public float maxWarp;
     public float warpNumber;
     public float warpPercent;
-    public int warpFuelUse;
+    public float warpFuelUse;
     [SerializeField]
     private GameObject torp;
     public int torpCount;
@@ -90,6 +90,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Collider2D hullCollider;
     [SerializeField]
     private HullController hullController;
+    [SerializeField]
+    private SpeedController speedController;
     // Start is called before the first frame update
     void Start()
     {
@@ -137,8 +139,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             move();
         }
-        warpPercent = (warpNumber / maxWarp);
-
+        warpPercent = (speedController.currentSpeed / maxWarp);
+        warpFuelUse = warpCost * speedController.desiredSpeed;
+        warpNumber = speedController.desiredSpeed;
+        rotationSpeed = speedController.rotationSpeed;
         //torpedo code
         if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy && fuelController.currentFuel >= torpCost && torpCount < 8)
         {
@@ -323,7 +327,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void move()
     {
-        playerSpeed = getMoveSpeed();
+        playerSpeed = speedController.moveSpeed;
         RotateTowards(navPoint);
         transform.position += transform.up* playerSpeed * Time.deltaTime;
     }
@@ -335,9 +339,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
         direction.Normalize();
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime *0.2f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
-
+    /*
     private float getMoveSpeed()
     {
 
@@ -423,7 +427,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
         return playerSpeed;
     }
-
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.transform.gameObject.name.ToString() + "  ontrigger_player");
