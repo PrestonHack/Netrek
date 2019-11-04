@@ -86,6 +86,7 @@ MonoBehaviour:
   pV: {fileID: 0}
   hullController: {fileID: 5796990260835707904}
   hullCollider: {fileID: 6365333551323863433}
+  playerController: {fileID: 0}
 --- !u!114 &5808383314380195431
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -135,10 +135,18 @@ public class PlayerController : MonoBehaviourPunCallbacks
             end = navPoint;
         }
         Debug.DrawLine(start, end, Color.yellow);
-        if (!repairOn)
+
+        if (speedController.desiredSpeed != 0)
         {
-            move();
+            repairOn = false;
         }
+        if (repairOn)
+        {
+            speedController.desiredSpeed = 0;
+        }
+
+        move();
+        
         warpPercent = (speedController.currentSpeed / maxWarp);
         warpFuelUse = warpCost * speedController.desiredSpeed;
         warpNumber = speedController.desiredSpeed;
@@ -169,6 +177,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             if (!repairOn)
             {
                 repairOn = true;
+                speedController.desiredSpeed = 0;
                 pv.RPC("deactivateShield", RpcTarget.AllBufferedViaServer);
             }
             else

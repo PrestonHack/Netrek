@@ -142,6 +142,7 @@ MonoBehaviour:
   pV: {fileID: 0}
   hullController: {fileID: 5939166433446968493}
   hullCollider: {fileID: 216703446938768913}
+  playerController: {fileID: 0}
 --- !u!1001 &333317102242858040
 PrefabInstance:
   m_ObjectHideFlags: 0

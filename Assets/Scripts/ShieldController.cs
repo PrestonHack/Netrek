@@ -12,10 +12,13 @@ public class ShieldController : MonoBehaviour
     private HullController hullController;
     [SerializeField]
     private PolygonCollider2D hullCollider;
+    [SerializeField]
+    private PlayerController playerController;
 
 
     private void Start()
     {
+        playerController = GetComponentInParent<PlayerController>();
         pV = this.gameObject.GetPhotonView();
     }
 
@@ -24,13 +27,13 @@ public class ShieldController : MonoBehaviour
         if(hullController.shieldHealth <= 0)
         {
             pV.RPC("shieldFailure", RpcTarget.AllBuffered);
-            hullController.hullHealth += hullController.shieldHealth;
         }    
     }
 
     [PunRPC]
     public void shieldFailure()
     {
+        playerController.shieldOn = false;
         this.gameObject.SetActive(false);
         hullCollider.enabled = true;
     }
@@ -40,10 +43,37 @@ public class ShieldController : MonoBehaviour
         if (Regex.IsMatch(collision.gameObject.name, "phaser"))
         {
             Debug.Log("phaser hit shield");
+            float dmg = collision.gameObject.GetComponentInParent<PhaserController>().damage;
+            float shieldHealth = hullController.shieldHealth;
+            if(shieldHealth >= dmg)
+            {
+                shieldHealth -= dmg;
+            }
+            else
+            {
+                float diff = dmg - shieldHealth;
+                float shieldDmg = dmg - diff;
+                shieldHealth -= shieldDmg;
+                hullController.hullHealth -= diff;
+
+            }
             hullController.shieldHealth -= collision.gameObject.GetComponentInParent<PhaserController>().damage;
         }
         if (Regex.IsMatch(collision.gameObject.name, "torp"))
         {
+            float dmg = collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
+            float shieldHealth = hullController.shieldHealth;
+            if(shieldHealth >= dmg)
+            {
+                shieldHealth -= dmg;
+            }
+            else
+            {
+                float diff = dmg - shieldHealth;
+                float shieldDmg = dmg - diff;
+                shieldHealth -= shieldDmg;
+                hullController.hullHealth -= diff;
+            }
             hullController.shieldHealth -= collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
             collision.gameObject.transform.parent.gameObject.SetActive(false);
         }
