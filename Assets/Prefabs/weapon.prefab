@@ -1,27 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5566796216385793419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4733399433248517563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 2
-  OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 8323538877473053124}
-  viewIdField: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &6769792799519742632
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,30 +188,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8463884457337444945, guid: 39a84247342d21b44a15de3843f8bb18,
+        type: 3}
+      propertyPath: photonView
+      value: 
+      objectReference: {fileID: 7418595131780534503}
+    - target: {fileID: 6918303529838547826, guid: 39a84247342d21b44a15de3843f8bb18,
+        type: 3}
+      propertyPath: Synchronization
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 167344149031602600, guid: 39a84247342d21b44a15de3843f8bb18, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39a84247342d21b44a15de3843f8bb18, type: 3}
---- !u!1 &4733399433248517563 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5135947614657916462, guid: 39a84247342d21b44a15de3843f8bb18,
-    type: 3}
-  m_PrefabInstance: {fileID: 501839717007033237}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4603464231003047471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4112963777488766394, guid: 39a84247342d21b44a15de3843f8bb18,
     type: 3}
   m_PrefabInstance: {fileID: 501839717007033237}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8323538877473053124 stripped
+--- !u!114 &7418595131780534503 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8463884457337444945, guid: 39a84247342d21b44a15de3843f8bb18,
+  m_CorrespondingSourceObject: {fileID: 6918303529838547826, guid: 39a84247342d21b44a15de3843f8bb18,
     type: 3}
   m_PrefabInstance: {fileID: 501839717007033237}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4733399433248517563}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f3e065567b42c40b3be2bc1acc9c6c, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3640215183458776373

@@ -69,7 +69,7 @@ public class UIController : MonoBehaviour
         cam.GetComponent<AudioListener>().enabled = false;
         cam.GetComponent<AudioSource>().enabled = false;
         GameObject readySound = GameObject.Find("ReadySound");
-        readySound.GetComponent<AudioSource>().enabled = true;
+        //readySound.GetComponent<AudioSource>().enabled = true;
     }
 
 }

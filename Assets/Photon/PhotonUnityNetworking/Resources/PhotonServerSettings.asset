@@ -53,5 +53,9 @@ MonoBehaviour:
   - shieldFailure
   - phaserHit
   - deactivateShield
+  - moveLine
+  - phaserDamage
+  - torpDamage
+  - sizeCollider
   DisableAutoOpenWizard: 1
   ShowSettings: 1

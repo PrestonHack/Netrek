@@ -77,6 +77,11 @@ public class PressorController : MonoBehaviour
         RotateTowards(point);
     }
 
+    public void toggle()
+    {
+        photonView.RPC("turnOff", RpcTarget.AllBufferedViaServer);
+    }
+
     [PunRPC]
     public void turnOff()
     {

@@ -76,6 +76,11 @@ public class TractorController : MonoBehaviour
         RotateTowards(point);
     }
 
+    public void toggle()
+    {
+        photonView.RPC("turnOff", RpcTarget.AllBufferedViaServer);
+    }
+
     [PunRPC]
     public void turnOff()
     {

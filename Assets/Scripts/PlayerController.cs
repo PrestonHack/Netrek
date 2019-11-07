@@ -92,9 +92,18 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private HullController hullController;
     [SerializeField]
     private SpeedController speedController;
+    [SerializeField]
+    private TractorController tractorController;
+    [SerializeField]
+    private PressorController pressorController;
+    [SerializeField]
+    private PhaserController phaserController;
     // Start is called before the first frame update
     void Start()
     {
+        phaserController = GetComponentInChildren<PhaserController>();
+        pressorController = GetComponentInChildren<PressorController>();
+        tractorController = GetComponentInChildren<TractorController>();
         repairOn = false;
         warpNumber = 0;
         teamShipCanvas = GameObject.Find("TeamShipCanvas").GetComponent<Canvas>();
@@ -166,7 +175,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         Debug.DrawLine(start, crosshairDebug);
 
         //shield code
-        if (Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S) && hullController.shieldHealth > 0 && !repairOn)
+        if ((Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S)) && (hullController.shieldHealth > 0 && !repairOn))
         {
             pv.RPC("activateShield", RpcTarget.AllBufferedViaServer);
         }
@@ -195,7 +204,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             {
                 cloak.SetActive(false);
                 cloakOn = false;
-                weapon.SetActive(true);
                 shipSprite.enabled = true;
                 if (this.gameObject.layer == 10)
                 {
@@ -219,7 +227,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
             {
                 cloak.SetActive(true);
                 cloakOn = true;
-                weapon.SetActive(false);
+                phaserController.toggle();
+                pressorController.toggle();
+                tractorController.toggle();
                 shipSprite.enabled = false;
                 if(this.gameObject.layer == 10)
                 {
@@ -263,7 +273,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             shipSprite.enabled = false;
             cloak.SetActive(true);
             shield.layer = layer;
-
         }
         else
         {  

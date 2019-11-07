@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickTimer: 0
   nextTime: 0
-  warpSpeed: 0.05
+  warpSpeed: 0.065
   moveSpeed: 0
   rotationSpeed: 0
   speedPercent: 0

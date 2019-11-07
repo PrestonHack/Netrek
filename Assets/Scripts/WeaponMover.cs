@@ -21,6 +21,9 @@ public class WeaponMover : MonoBehaviour
         crosshairPosition = Input.mousePosition;
         crosshairPoint = cam.ScreenToWorldPoint(new Vector3(crosshairPosition.x, crosshairPosition.y, crosshairPosition.z));
         crosshairPoint = new Vector2(crosshairPoint.x, crosshairPoint.y);
+    }
+    private void FixedUpdate()
+    {
         RotateTowards(crosshairPoint);
     }
 

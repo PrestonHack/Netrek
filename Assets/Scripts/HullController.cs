@@ -22,9 +22,12 @@ public class HullController : MonoBehaviour
     private GameObject shipSprite;
     [SerializeField]
     torpedoBehavior torpBehavior;
+    [SerializeField]
+    private PhotonView pV;
     // Start is called before the first frame update
     void Start()
     {
+        pV = this.gameObject.GetComponent<PhotonView>();
         hullHealth = hullMaxHealth;
         shieldHealth = shieldMaxHealth;
     }
@@ -39,21 +42,27 @@ public class HullController : MonoBehaviour
         
         if(hullHealth <= 0)
         {
-            this.gameObject.GetComponent<PhotonView>().RPC("die", RpcTarget.AllBufferedViaServer);
+            pV.RPC("die", RpcTarget.AllBufferedViaServer);
         }
 
         
         if (explosionAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !explosionAnimator.IsInTransition(0))
         {
-            this.gameObject.GetComponent<PhotonView>().RPC("endDie", RpcTarget.AllBufferedViaServer);
+            pV.RPC("endDie", RpcTarget.AllBufferedViaServer);
         }
     }
     [PunRPC]
     public void endDie()
     {
         explosion.SetActive(false);
-        this.gameObject.SetActive(false);
-        Destroy(this.gameObject.transform.parent.gameObject);
+        if (pV.IsMine)
+        {
+            PhotonNetwork.Destroy(this.transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(this.transform.root.gameObject);
+        }
     }
 
     [PunRPC]

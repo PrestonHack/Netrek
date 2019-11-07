@@ -38,60 +38,69 @@ public class ShieldController : MonoBehaviour
         hullCollider.enabled = true;
     }
 
+    private void torpDamage(Collider2D collision)
+    {
+        float dmg = collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
+        float shieldHealth = hullController.shieldHealth;
+        if (shieldHealth >= dmg)
+        {
+            shieldHealth -= dmg;
+        }
+        else
+        {
+            float diff = dmg - shieldHealth;
+            float shieldDmg = dmg - diff;
+            shieldHealth -= shieldDmg;
+            hullController.hullHealth -= diff;
+        }
+        hullController.shieldHealth -= collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
+        collision.gameObject.transform.parent.gameObject.SetActive(false);
+    }
+
+    private void phaserDamage(Collider2D collision)
+    {
+        Debug.Log("phaser hit shield");
+        float dmg = collision.gameObject.GetComponentInParent<PhaserController>().damage;
+        float shieldHealth = hullController.shieldHealth;
+        if (shieldHealth >= dmg)
+        {
+            shieldHealth -= dmg;
+            Debug.Log("phaser hit shield for: " + dmg + "remaining shield health: " + shieldHealth + "hit by: " + collision.transform.root.gameObject.name);
+        }
+        else
+        {
+            float diff = dmg - shieldHealth;
+            float shieldDmg = dmg - diff;
+            shieldHealth -= shieldDmg;
+            hullController.hullHealth -= diff;
+            Debug.Log("phaser hit shield for: " + shieldDmg + "remaining shield health: " + shieldHealth + "Phaser hit hull for remaining damge of: " + diff);
+        }
+        hullController.shieldHealth = shieldHealth;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Regex.IsMatch(collision.gameObject.name, "phaser"))
         {
-            Debug.Log("phaser hit shield");
-            float dmg = collision.gameObject.GetComponentInParent<PhaserController>().damage;
-            float shieldHealth = hullController.shieldHealth;
-            if(shieldHealth >= dmg)
-            {
-                shieldHealth -= dmg;
-            }
-            else
-            {
-                float diff = dmg - shieldHealth;
-                float shieldDmg = dmg - diff;
-                shieldHealth -= shieldDmg;
-                hullController.hullHealth -= diff;
-
-            }
-            hullController.shieldHealth -= collision.gameObject.GetComponentInParent<PhaserController>().damage;
+            phaserDamage(collision);
         }
         if (Regex.IsMatch(collision.gameObject.name, "torp"))
         {
-            float dmg = collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
-            float shieldHealth = hullController.shieldHealth;
-            if(shieldHealth >= dmg)
-            {
-                shieldHealth -= dmg;
-            }
-            else
-            {
-                float diff = dmg - shieldHealth;
-                float shieldDmg = dmg - diff;
-                shieldHealth -= shieldDmg;
-                hullController.hullHealth -= diff;
-            }
-            hullController.shieldHealth -= collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
-            collision.gameObject.transform.parent.gameObject.SetActive(false);
+            torpDamage(collision);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (col.transform.root.name != this.gameObject.transform.root.name && col.gameObject.name == "tractor")
+        if (collision.transform.root.name != this.gameObject.transform.root.name && collision.gameObject.name == "tractor")
         {
-            this.gameObject.transform.parent.parent.position -= (this.gameObject.transform.position - col.transform.position).normalized * 0.0015f;
-
+            this.gameObject.transform.parent.parent.position -= (this.gameObject.transform.position - collision.transform.position).normalized * 0.0015f;
         }
-        if (col.transform.root.name != this.gameObject.transform.root.name && col.gameObject.name == "pressor")
+        if (collision.transform.root.name != this.gameObject.transform.root.name && collision.gameObject.name == "pressor")
         {
-            this.gameObject.transform.parent.parent.position -= (col.transform.position - this.gameObject.transform.position).normalized * 0.0015f;
-
-
+            this.gameObject.transform.parent.parent.position -= (collision.transform.position - this.gameObject.transform.position).normalized * 0.0015f;
         }
+       
     }
 
 
