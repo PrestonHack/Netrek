@@ -42,13 +42,13 @@ public class HullController : MonoBehaviour
         
         if(hullHealth <= 0)
         {
-            pV.RPC("die", RpcTarget.AllBufferedViaServer);
+            pV.RPC("die", RpcTarget.All);
         }
 
         
         if (explosionAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !explosionAnimator.IsInTransition(0))
         {
-            pV.RPC("endDie", RpcTarget.AllBufferedViaServer);
+            pV.RPC("endDie", RpcTarget.All);
         }
     }
     [PunRPC]
@@ -69,8 +69,7 @@ public class HullController : MonoBehaviour
     public void die()
     {
         shipSprite.SetActive(false);
-        explosion.SetActive(true);
-        
+        explosion.SetActive(true);        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

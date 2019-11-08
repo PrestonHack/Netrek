@@ -2118,11 +2118,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 8703913358735303248, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 2631201915604063077}
     - target: {fileID: 8230079081521256887, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2178,41 +2173,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 945387147577984450, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: m_Layer
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5467194648549287432, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: m_Layer
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733399433248517563, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: m_Layer
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 1519911968186397339}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 2631201915604063077}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 1519911968186397339}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 2631201915604063077}
     - target: {fileID: 8323538877473053124, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: phaserWeaponTemp
@@ -2258,6 +2218,46 @@ PrefabInstance:
       propertyPath: temperatureController
       value: 
       objectReference: {fileID: 2418126807804947617}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 1519911968186397339}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2631201915604063077}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 1519911968186397339}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2631201915604063077}
+    - target: {fileID: 8703913358735303248, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2631201915604063077}
+    - target: {fileID: 4733399433248517563, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: m_Layer
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467194648549287432, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: m_Layer
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 945387147577984450, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: m_Layer
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c6381c5902f4a41867ccc739ec0649, type: 3}
 --- !u!61 &6034101118551646887 stripped
