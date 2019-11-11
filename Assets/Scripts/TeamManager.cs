@@ -1,11 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using Photon.Pun.UtilityScripts;
 using Photon.Pun;
-using ExitGames.Client.Photon;
-using Photon.Realtime;
 
 public class TeamManager : Photon.Pun.MonoBehaviourPun
 {

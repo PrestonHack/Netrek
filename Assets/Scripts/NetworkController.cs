@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
-using System;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {

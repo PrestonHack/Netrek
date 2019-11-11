@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 using System.Text.RegularExpressions;
 
@@ -15,27 +13,10 @@ public class ShieldController : MonoBehaviour
     [SerializeField]
     private PlayerController playerController;
 
-
     private void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
         pV = this.gameObject.GetPhotonView();
-    }
-
-    private void Update()
-    {
-        if(hullController.shieldHealth <= 0)
-        {
-            pV.RPC("shieldFailure", RpcTarget.AllBuffered);
-        }    
-    }
-
-    [PunRPC]
-    public void shieldFailure()
-    {
-        playerController.shieldOn = false;
-        this.gameObject.SetActive(false);
-        hullCollider.enabled = true;
     }
 
     private void torpDamage(Collider2D collision)
@@ -59,27 +40,25 @@ public class ShieldController : MonoBehaviour
 
     private void phaserDamage(Collider2D collision)
     {
-        Debug.Log("phaser hit shield");
         float dmg = collision.gameObject.GetComponentInParent<PhaserController>().damage;
         float shieldHealth = hullController.shieldHealth;
-        if (shieldHealth >= dmg)
+        float diff = 0;
+        float shieldDmg = dmg;
+        if (dmg > shieldHealth)
         {
-            shieldHealth -= dmg;
-            Debug.Log("phaser hit shield for: " + dmg + "remaining shield health: " + shieldHealth + "hit by: " + collision.transform.root.gameObject.name);
+            diff = dmg - shieldHealth;
+            shieldDmg = dmg - diff;
+            collision.gameObject.GetComponentInParent<PhaserController>().damage = diff;
+            dmg = collision.gameObject.GetComponentInParent<PhaserController>().damage;
         }
-        else
-        {
-            float diff = dmg - shieldHealth;
-            float shieldDmg = dmg - diff;
-            shieldHealth -= shieldDmg;
-            hullController.hullHealth -= diff;
-            Debug.Log("phaser hit shield for: " + shieldDmg + "remaining shield health: " + shieldHealth + "Phaser hit hull for remaining damge of: " + diff);
-        }
-        hullController.shieldHealth = shieldHealth;
+        hullController.shieldHealth -= shieldDmg;
+        hullController.hullHealth -= diff;
+        collision.gameObject.GetComponentInParent<PhaserController>().damage = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {   
+
         if (Regex.IsMatch(collision.gameObject.name, "phaser"))
         {
             phaserDamage(collision);
@@ -87,7 +66,7 @@ public class ShieldController : MonoBehaviour
         if (Regex.IsMatch(collision.gameObject.name, "torp"))
         {
             torpDamage(collision);
-        }
+        }        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -99,8 +78,7 @@ public class ShieldController : MonoBehaviour
         if (collision.transform.root.name != this.gameObject.transform.root.name && collision.gameObject.name == "pressor")
         {
             this.gameObject.transform.parent.parent.position -= (collision.transform.position - this.gameObject.transform.position).normalized * 0.0015f;
-        }
-       
+        }       
     }
 
 

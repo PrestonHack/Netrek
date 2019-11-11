@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 
 public class TractorController : MonoBehaviour
@@ -93,7 +91,6 @@ public class TractorController : MonoBehaviour
     [PunRPC]
     public void fireTractorRPC(Vector2 p)
     {
-
         if (!lineRenderer.enabled)
         {
             lineRenderer.SetPosition(1, new Vector3(p.x, p.y, 0));
@@ -125,12 +122,6 @@ public class TractorController : MonoBehaviour
         tractorCollider.offset = new Vector2(0, tractorCollider.size.y / 2);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("OnTriggerEnter2D_Tractor");
-        Debug.Log(col.GetComponentInParent<Transform>().parent.name);
-
-    }
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.GetComponentInParent<Transform>().root.name != this.gameObject.GetComponentInParent<Transform>().root.name)
@@ -139,10 +130,8 @@ public class TractorController : MonoBehaviour
             lineRenderer.SetPosition(1, col.transform.position);
             point = new Vector2(col.transform.position.x, col.transform.position.y);
             photonView.RPC("moveBeam", RpcTarget.AllBuffered, point);
-
         }
     }
-
 
     void RotateTowards(Vector2 target)
     {

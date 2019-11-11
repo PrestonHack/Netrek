@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FuelController : MonoBehaviour
 {
@@ -14,8 +12,7 @@ public class FuelController : MonoBehaviour
     public float totalFuelCost;
     [SerializeField]
     private float rechargeRate;
-    [SerializeField]
-    private PlayerController playerController;
+    public PlayerController playerController;
     [SerializeField]
     private TractorController tractorController;
     [SerializeField]

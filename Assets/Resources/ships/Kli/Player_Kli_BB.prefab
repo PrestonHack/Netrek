@@ -105,6 +105,7 @@ MonoBehaviour:
   shieldMaxHealth: 130
   shieldHealth: 0
   shieldPercent: 0
+  shieldCollider: {fileID: 6397624727850654085}
   hullCollider: {fileID: 8689338695601127382}
   explosionAnimator: {fileID: 7765839267774879448}
   explosion: {fileID: 2852734595179904288}
@@ -242,7 +243,7 @@ PrefabInstance:
     - target: {fileID: 6701312513731032418, guid: f9af4c181ac34be429dda7827cd0013d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6701312513731032418, guid: f9af4c181ac34be429dda7827cd0013d,
         type: 3}
@@ -407,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 6640222893000067265, guid: ac658086f6ed8174a8704d8616f7b545,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6640222893000067265, guid: ac658086f6ed8174a8704d8616f7b545,
         type: 3}
@@ -492,7 +493,7 @@ PrefabInstance:
     - target: {fileID: 1660765991417628476, guid: 3e35e5661d968694693a807db4663ca0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1660765991417628476, guid: 3e35e5661d968694693a807db4663ca0,
         type: 3}
@@ -534,6 +535,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7189668938500665612}
     m_Modifications:
+    - target: {fileID: 4709644822447154726, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 5595545431521288538, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -589,15 +595,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4709644822447154726, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerCamera
-      objectReference: {fileID: 0}
     - target: {fileID: 4005944643529296498, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 201080631
+      value: 1274822455
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed9ab58d1ca0f449aca6b3dbf4fa084, type: 3}
@@ -626,26 +627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7189668938500665612}
     m_Modifications:
-    - target: {fileID: 6401626337789657937, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7935122084800089107, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 8360978733958958070}
-    - target: {fileID: 7935122084800089107, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 662951346147860572}
-    - target: {fileID: 7034255652973039393, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 2402279759848598976, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: m_Name
@@ -709,36 +690,6 @@ PrefabInstance:
     - target: {fileID: 1758672043885736738, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: playerCam
-      value: 
-      objectReference: {fileID: 8360978733958958070}
-    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: mapCam
-      value: 
-      objectReference: {fileID: 7024150996928243703}
-    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: al
-      value: 
-      objectReference: {fileID: 281915995115928535}
-    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: playerUI
-      value: 
-      objectReference: {fileID: 8624769025942966142}
-    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: dashManager
-      value: 
-      objectReference: {fileID: 4392370953414392444}
-    - target: {fileID: 1469733147995298429, guid: 4a57ae880a98f61439fec6381f942568,
-        type: 3}
-      propertyPath: viewIdField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2716501529068860233, guid: 4a57ae880a98f61439fec6381f942568,
@@ -836,14 +787,74 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2716501529068860233, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: phaserController
+      value: 
+      objectReference: {fileID: 2308176995432233036}
+    - target: {fileID: 2716501529068860233, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: pressorController
+      value: 
+      objectReference: {fileID: 6838176148732776761}
+    - target: {fileID: 2716501529068860233, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: tractorController
+      value: 
+      objectReference: {fileID: 2690453692364144594}
+    - target: {fileID: 1469733147995298429, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: viewIdField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 8360978733958958070}
+    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: mapCam
+      value: 
+      objectReference: {fileID: 7024150996928243703}
+    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: al
+      value: 
+      objectReference: {fileID: 281915995115928535}
+    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 8624769025942966142}
+    - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: dashManager
+      value: 
+      objectReference: {fileID: 4392370953414392444}
     - target: {fileID: 7907801276169212034, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: m_Layer
       value: 23
       objectReference: {fileID: 0}
-    - target: {fileID: 1130350318115752965, guid: 4a57ae880a98f61439fec6381f942568,
+    - target: {fileID: 7034255652973039393, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
-      propertyPath: m_LocalPosition.z
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790168238554076061, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5226294216885053562, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 8360978733958958070}
+    - target: {fileID: 2844829671212875803, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: viewIdField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4108379449077534425, guid: 4a57ae880a98f61439fec6381f942568,
@@ -851,20 +862,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 27
       objectReference: {fileID: 0}
-    - target: {fileID: 5226294216885053562, guid: 4a57ae880a98f61439fec6381f942568,
+    - target: {fileID: 6401626337789657937, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 8360978733958958070}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8904290888849501218, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: m_Layer
-      value: 23
+      value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 8213840349085132689, guid: 4a57ae880a98f61439fec6381f942568,
+    - target: {fileID: 4419075126196588520, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: m_Layer
-      value: 23
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1562549941838635768, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
@@ -876,16 +887,16 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 8360978733958958070}
-    - target: {fileID: 2844829671212875803, guid: 4a57ae880a98f61439fec6381f942568,
+    - target: {fileID: 7935122084800089107, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
-      propertyPath: viewIdField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419075126196588520, guid: 4a57ae880a98f61439fec6381f942568,
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 8360978733958958070}
+    - target: {fileID: 7935122084800089107, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
-      propertyPath: m_Layer
-      value: 23
-      objectReference: {fileID: 0}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 662951346147860572}
     - target: {fileID: 4885881617199010798, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: cam
@@ -926,6 +937,16 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1130350318115752965, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213840349085132689, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 346981391210922913, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: m_IsTrigger
@@ -946,9 +967,92 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6445314724972560370, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728481117546351501, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: fuelController
+      value: 
+      objectReference: {fileID: 1523978601086993983}
+    - target: {fileID: 7728481117546351501, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: temperatureController
+      value: 
+      objectReference: {fileID: 5864364679283986675}
+    - target: {fileID: 7728481117546351501, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 8360978733958958070}
+    - target: {fileID: 7728481117546351501, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: phaserWeaponTemp
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728481117546351501, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: phaserCost
+      value: 940
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728481117546351501, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: phaserDamage
+      value: 105
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7880521688412833223, guid: 4a57ae880a98f61439fec6381f942568, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a57ae880a98f61439fec6381f942568, type: 3}
+--- !u!1 &1413702719996276880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6401626337789657937, guid: 4a57ae880a98f61439fec6381f942568,
+    type: 3}
+  m_PrefabInstance: {fileID: 5424970711567266753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2308176995432233036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7728481117546351501, guid: 4a57ae880a98f61439fec6381f942568,
+    type: 3}
+  m_PrefabInstance: {fileID: 5424970711567266753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f3e065567b42c40b3be2bc1acc9c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &662951346147860572 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4790168238554076061, guid: 4a57ae880a98f61439fec6381f942568,
+    type: 3}
+  m_PrefabInstance: {fileID: 5424970711567266753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2690453692364144594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7935122084800089107, guid: 4a57ae880a98f61439fec6381f942568,
+    type: 3}
+  m_PrefabInstance: {fileID: 5424970711567266753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346da1c6c0e52074f826fa1f31026d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6838176148732776761 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1562549941838635768, guid: 4a57ae880a98f61439fec6381f942568,
+    type: 3}
+  m_PrefabInstance: {fileID: 5424970711567266753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a726ba4bfbfe98d4d9fdf28bce0b6be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7647044719834275329 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2402279759848598976, guid: 4a57ae880a98f61439fec6381f942568,
@@ -1009,42 +1113,6 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 5424970711567266753}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1413702719996276880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6401626337789657937, guid: 4a57ae880a98f61439fec6381f942568,
-    type: 3}
-  m_PrefabInstance: {fileID: 5424970711567266753}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &662951346147860572 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4790168238554076061, guid: 4a57ae880a98f61439fec6381f942568,
-    type: 3}
-  m_PrefabInstance: {fileID: 5424970711567266753}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2690453692364144594 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7935122084800089107, guid: 4a57ae880a98f61439fec6381f942568,
-    type: 3}
-  m_PrefabInstance: {fileID: 5424970711567266753}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 346da1c6c0e52074f826fa1f31026d8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6838176148732776761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1562549941838635768, guid: 4a57ae880a98f61439fec6381f942568,
-    type: 3}
-  m_PrefabInstance: {fileID: 5424970711567266753}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a726ba4bfbfe98d4d9fdf28bce0b6be9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5842912060432095244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1052,46 +1120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6715906328519445544}
     m_Modifications:
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: 7997176474289897608}
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: tractorController
-      value: 
-      objectReference: {fileID: 2690453692364144594}
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: pressorController
-      value: 
-      objectReference: {fileID: 6838176148732776761}
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: cloakFuelCost
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: shieldFuelCost
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: tractorFuelCost
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: rechargeRate
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
-        type: 3}
-      propertyPath: maxFuel
-      value: 14000
-      objectReference: {fileID: 0}
     - target: {fileID: 7755313598833601922, guid: 2e0f148e031a78249b24711697d13a12,
         type: 3}
       propertyPath: m_Name
@@ -1135,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8909890126761755650, guid: 2e0f148e031a78249b24711697d13a12,
         type: 3}
@@ -1151,6 +1179,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 7997176474289897608}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: tractorController
+      value: 
+      objectReference: {fileID: 2690453692364144594}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: pressorController
+      value: 
+      objectReference: {fileID: 6838176148732776761}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: cloakFuelCost
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: shieldFuelCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: tractorFuelCost
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: rechargeRate
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913554708036116019, guid: 2e0f148e031a78249b24711697d13a12,
+        type: 3}
+      propertyPath: maxFuel
+      value: 14000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e0f148e031a78249b24711697d13a12, type: 3}
@@ -1226,7 +1294,7 @@ PrefabInstance:
     - target: {fileID: 2614440005477590498, guid: d1d6a24b2e0c065408ed763f4dcac79b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2614440005477590498, guid: d1d6a24b2e0c065408ed763f4dcac79b,
         type: 3}
@@ -1702,7 +1770,7 @@ PrefabInstance:
     - target: {fileID: 3685174674060618335, guid: b48a7fefb54bf124a91ae70d36a1ff3a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3685174674060618335, guid: b48a7fefb54bf124a91ae70d36a1ff3a,
         type: 3}
@@ -1787,7 +1855,7 @@ PrefabInstance:
     - target: {fileID: 4161701654132233474, guid: 26e4dcba977c2bf42b407b01e7f5bda7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4161701654132233474, guid: 26e4dcba977c2bf42b407b01e7f5bda7,
         type: 3}
@@ -1914,46 +1982,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6715906328519445544}
     m_Modifications:
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: 7997176474289897608}
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: tractorController
-      value: 
-      objectReference: {fileID: 2690453692364144594}
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: pressorController
-      value: 
-      objectReference: {fileID: 6838176148732776761}
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: maxWeaponTemp
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: maxEngineTemp
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: engineCoolRate
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: weaponCoolRate
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
-        type: 3}
-      propertyPath: tractorTemp
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5435339994529818771, guid: 57253866f86419747ad05d16bd845a5b,
         type: 3}
       propertyPath: m_Name
@@ -1997,7 +2025,7 @@ PrefabInstance:
     - target: {fileID: 790207544079481459, guid: 57253866f86419747ad05d16bd845a5b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 790207544079481459, guid: 57253866f86419747ad05d16bd845a5b,
         type: 3}
@@ -2013,6 +2041,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 7997176474289897608}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: tractorController
+      value: 
+      objectReference: {fileID: 2690453692364144594}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: pressorController
+      value: 
+      objectReference: {fileID: 6838176148732776761}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: maxWeaponTemp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: maxEngineTemp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: engineCoolRate
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: weaponCoolRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361008844246502355, guid: 57253866f86419747ad05d16bd845a5b,
+        type: 3}
+      propertyPath: tractorTemp
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57253866f86419747ad05d16bd845a5b, type: 3}
@@ -2035,21 +2103,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6715906328519445544}
     m_Modifications:
-    - target: {fileID: 3975725501121927835, guid: a64cabafadd9e3d49bfc27120ec25030,
-        type: 3}
-      propertyPath: accelRate
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 3975725501121927835, guid: a64cabafadd9e3d49bfc27120ec25030,
-        type: 3}
-      propertyPath: deccelRate
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 3975725501121927835, guid: a64cabafadd9e3d49bfc27120ec25030,
-        type: 3}
-      propertyPath: turnRate
-      value: 7.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1928075485935087349, guid: a64cabafadd9e3d49bfc27120ec25030,
         type: 3}
       propertyPath: m_Name
@@ -2093,7 +2146,7 @@ PrefabInstance:
     - target: {fileID: 930578850475012707, guid: a64cabafadd9e3d49bfc27120ec25030,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 930578850475012707, guid: a64cabafadd9e3d49bfc27120ec25030,
         type: 3}
@@ -2109,6 +2162,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975725501121927835, guid: a64cabafadd9e3d49bfc27120ec25030,
+        type: 3}
+      propertyPath: accelRate
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975725501121927835, guid: a64cabafadd9e3d49bfc27120ec25030,
+        type: 3}
+      propertyPath: deccelRate
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975725501121927835, guid: a64cabafadd9e3d49bfc27120ec25030,
+        type: 3}
+      propertyPath: turnRate
+      value: 7.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64cabafadd9e3d49bfc27120ec25030, type: 3}

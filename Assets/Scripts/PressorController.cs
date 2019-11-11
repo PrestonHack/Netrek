@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 
 public class PressorController : MonoBehaviour
@@ -125,18 +123,6 @@ public class PressorController : MonoBehaviour
         pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
     }
 
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("OnCollisionEnter2D_Pressor");
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("OnTriggerEnter2D_Pressor");
-        Debug.Log(col.GetComponentInParent<Transform>().parent.name);
-    }
     private void OnTriggerStay2D(Collider2D col)
     {
         
@@ -146,8 +132,6 @@ public class PressorController : MonoBehaviour
             lineRenderer.SetPosition(1, col.transform.position);
             point = new Vector2(col.transform.position.x, col.transform.position.y);
             photonView.RPC("moveBeam", RpcTarget.AllBuffered, point);
-
-
         }        
     }
 

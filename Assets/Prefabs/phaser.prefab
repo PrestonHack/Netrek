@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5135947614657916462
+--- !u!1 &4394937214246898959
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,14 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4112963777488766394}
-  - component: {fileID: 8463884457337444945}
-  - component: {fileID: 1086168556598147199}
-  - component: {fileID: 3633095239650118174}
-  - component: {fileID: 5007242604753150367}
-  - component: {fileID: 1259032141891776737}
-  - component: {fileID: 6918303529838547826}
-  - component: {fileID: 5006017365697319424}
+  - component: {fileID: 4805156063758493339}
+  - component: {fileID: 1066995953185831280}
+  - component: {fileID: 8406427976813304670}
+  - component: {fileID: 5318788438485756223}
+  - component: {fileID: 4523361863179993790}
+  - component: {fileID: 7693135763221107648}
+  - component: {fileID: 1136968044902468073}
   m_Layer: 0
   m_Name: phaser
   m_TagString: Untagged
@@ -23,27 +22,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4112963777488766394
+--- !u!4 &4805156063758493339
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
+  m_GameObject: {fileID: 4394937214246898959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8463884457337444945
+--- !u!114 &1066995953185831280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
+  m_GameObject: {fileID: 4394937214246898959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15f3e065567b42c40b3be2bc1acc9c6c, type: 3}
@@ -51,14 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaserOn: 0
   currentLength: 0
-  lineRenderer: {fileID: 1086168556598147199}
-  phaserCollider: {fileID: 3633095239650118174}
+  lineRenderer: {fileID: 8406427976813304670}
+  phaserCollider: {fileID: 5318788438485756223}
   cam: {fileID: 0}
   angle: 0
-  soundClip: {fileID: 1259032141891776737}
+  soundClip: {fileID: 7693135763221107648}
   mousePosition: {x: 0, y: 0}
   point: {x: 0, y: 0}
-  photonView: {fileID: 6918303529838547826}
+  photonView: {fileID: 1136968044902468073}
   direction: {x: 0, y: 0}
   start: {x: 0, y: 0}
   end: {x: 0, y: 0}
@@ -75,13 +74,14 @@ MonoBehaviour:
   fireRate: 1
   nextTime: 0
   layerMask: 0
---- !u!120 &1086168556598147199
+  notLayers: 0
+--- !u!120 &8406427976813304670
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
+  m_GameObject: {fileID: 4394937214246898959}
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -171,13 +171,13 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!61 &3633095239650118174
+--- !u!61 &5318788438485756223
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
+  m_GameObject: {fileID: 4394937214246898959}
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
@@ -195,16 +195,16 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 1}
+  m_Size: {x: 0.01, y: 0.0001}
   m_EdgeRadius: 0
---- !u!50 &5007242604753150367
+--- !u!50 &4523361863179993790
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
+  m_GameObject: {fileID: 4394937214246898959}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -218,13 +218,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!82 &1259032141891776737
+--- !u!82 &7693135763221107648
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
+  m_GameObject: {fileID: 4394937214246898959}
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -314,13 +314,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6918303529838547826
+--- !u!114 &1136968044902468073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
+  m_GameObject: {fileID: 4394937214246898959}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -329,43 +329,10 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 2
+  Synchronization: 0
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 5006017365697319424}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5006017365697319424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135947614657916462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 0
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 0
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0

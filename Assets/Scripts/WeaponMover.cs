@@ -1,7 +1,4 @@
-﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponMover : MonoBehaviour
 {
@@ -21,10 +18,11 @@ public class WeaponMover : MonoBehaviour
         crosshairPosition = Input.mousePosition;
         crosshairPoint = cam.ScreenToWorldPoint(new Vector3(crosshairPosition.x, crosshairPosition.y, crosshairPosition.z));
         crosshairPoint = new Vector2(crosshairPoint.x, crosshairPoint.y);
+        RotateTowards(crosshairPoint);
+
     }
     private void FixedUpdate()
     {
-        RotateTowards(crosshairPoint);
     }
 
     private void RotateTowards(Vector2 target)

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Text.RegularExpressions;
 using Photon.Pun;
 
@@ -12,6 +10,8 @@ public class HullController : MonoBehaviour
     public float shieldMaxHealth;
     public float shieldHealth;
     public float shieldPercent;
+    [SerializeField]
+    private CircleCollider2D shieldCollider;
     [SerializeField]
     private PolygonCollider2D hullCollider;
     [SerializeField]
@@ -75,18 +75,20 @@ public class HullController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("HullController_TriggerEnter: " + other.gameObject.name);
-        
-        if (Regex.IsMatch(other.gameObject.name, "torp"))
+        if (!shieldCollider.gameObject.activeInHierarchy)
         {
-            Debug.Log("TORP!");
-            torpBehavior = other.gameObject.GetComponentInParent<torpedoBehavior>();
-            hullHealth -= torpBehavior.damage;
-            torpBehavior.playerController.torpCount--;
-            other.gameObject.transform.parent.gameObject.SetActive(false);
-        }  
-        if(Regex.IsMatch(other.gameObject.name, "phaser"))
-        {
-            hullHealth -= other.gameObject.GetComponentInParent<PhaserController>().damage;
+            if (Regex.IsMatch(other.gameObject.name, "torp"))
+            {
+                Debug.Log("TORP!");
+                torpBehavior = other.gameObject.GetComponentInParent<torpedoBehavior>();
+                hullHealth -= torpBehavior.damage;
+                torpBehavior.playerController.torpCount--;
+                other.gameObject.transform.parent.gameObject.SetActive(false);
+            }
+            if (Regex.IsMatch(other.gameObject.name, "phaser"))
+            {
+                hullHealth -= other.gameObject.GetComponentInParent<PhaserController>().damage;
+            }
         }
     } 
 }

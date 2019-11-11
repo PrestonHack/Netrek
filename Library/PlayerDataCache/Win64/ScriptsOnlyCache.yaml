@@ -60,6 +60,7 @@ ScriptsOnlyBuild:
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -790,7 +791,7 @@ ScriptsOnlyBuild:
     className: ConnectAndJoinRandom
   - hash:
       serializedVersion: 2
-      Hash: 7073e3c3ae869852e1865928f7e2e8a5
+      Hash: a49c9e8b02f43592ecbdd3089e254311
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HullController
@@ -1396,7 +1397,7 @@ ScriptsOnlyBuild:
     className: Asteroid
   - hash:
       serializedVersion: 2
-      Hash: 14a7f0343b785e5b48e64c3dcedd4ed9
+      Hash: 32d3f0e0809d11a7a284b1d6fd091693
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using Photon.Realtime;
 using System.IO;
 using Photon.Pun.UtilityScripts;
-using System;
 
 
 public class UIController : MonoBehaviour
