@@ -409,10 +409,20 @@ PrefabInstance:
       propertyPath: pressorController
       value: 
       objectReference: {fileID: 895135521455452683}
+    - target: {fileID: 3263807282153393620, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: photonView
+      value: 
+      objectReference: {fileID: 6497976756746976566}
     - target: {fileID: 5636612349081616704, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: viewIdField
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682642430657880027, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5741330015352258328, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
@@ -433,6 +443,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: temperatureController
+      value: 
+      objectReference: {fileID: 6287319664043375905}
+    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: fuelController
+      value: 
+      objectReference: {fileID: 8570893518195550912}
+    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 358625574053118858}
+    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: phaserWeaponTemp
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: phaserCost
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: phaserDamage
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 860915970012144469, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
@@ -544,41 +584,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5682642430657880027, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: temperatureController
-      value: 
-      objectReference: {fileID: 6287319664043375905}
-    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: fuelController
-      value: 
-      objectReference: {fileID: 8570893518195550912}
-    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 358625574053118858}
-    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: phaserWeaponTemp
-      value: 96
-      objectReference: {fileID: 0}
-    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: phaserCost
-      value: 960
-      objectReference: {fileID: 0}
-    - target: {fileID: 197351339521785904, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: phaserDamage
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 777fcedc52f727e47bd5caf8bfd57d7f, type: 3}
 --- !u!4 &567220220685817939 stripped
@@ -597,6 +602,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b05cacba29c3f54fb198e3ffe502bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6497976756746976566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5636612349081616704, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1446841303595940982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611536657919127915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!60 &4901040034209427093 stripped

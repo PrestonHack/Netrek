@@ -260,12 +260,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emblem: 
   shipSprite: {fileID: 6918328936639733137}
-  crosshairPosition: {x: 0, y: 0, z: 0}
   navPoint: {x: 0, y: 0}
-  crosshairPoint: {x: 0, y: 0}
+  start: {x: 0, y: 0}
+  end: {x: 0, y: 0}
+  point: {x: 0, y: 0}
   angle: 0
   cam: {fileID: 786418070887657398}
-  fuelController: {fileID: 6041860859350798257}
   temperatureController: {fileID: 72810596384920852}
   torpDamage: 30
   torpCost: 270
@@ -277,33 +277,25 @@ MonoBehaviour:
   warpFuelUse: 0
   torp: {fileID: 0}
   torpCount: 0
-  crosshairDebug: {x: 0, y: 0}
   weapon: {fileID: 8174718709304538668}
   shieldOn: 0
   repairOn: 0
-  shield: {fileID: 3532686908923647210}
   cloakOn: 0
+  shield: {fileID: 3532686908923647210}
   cloak: {fileID: 477182663197227190}
   mapCloak: {fileID: 1244288572536626862}
   mapEmblem: {fileID: 709800243649930175}
   playerLabel: {fileID: 7803742496405755785}
-  navPosition: {x: 0, y: 0, z: 0}
-  point: {x: 0, y: 0, z: 0}
-  rotationSpeed: 0
   playerSpeed: 0
   fireRate: 0.1
   nextFire: 0
-  start: {x: 0, y: 0, z: 0}
-  end: {x: 0, y: 0, z: 0}
   length: 0
-  currentPosition: {x: 0, y: 0}
-  lastPosition: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
   teamShipCanvas: {fileID: 0}
-  pv: {fileID: 3578193751360747257}
+  photonView: {fileID: 0}
   distance: 0
   hullCollider: {fileID: 3637711483742223084}
   hullController: {fileID: 416024703265414388}
+  fuelController: {fileID: 6041860859350798257}
   speedController: {fileID: 8753003802656848909}
   tractorController: {fileID: 8274097101222816445}
   pressorController: {fileID: 676387544924750934}

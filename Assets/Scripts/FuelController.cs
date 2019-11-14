@@ -10,19 +10,15 @@ public class FuelController : MonoBehaviour
     public float maxFuel;
     public float currentFuel;
     public float totalFuelCost;
-    [SerializeField]
-    private float rechargeRate;
+    public float rechargeRate;
     public PlayerController playerController;
     [SerializeField]
     private TractorController tractorController;
     [SerializeField]
     private PressorController pressorController;
-    [SerializeField]
-    private float shieldFuelCost;
-    [SerializeField]
-    private float cloakFuelCost;
-    [SerializeField]
-    private float tractorFuelCost;
+    public float shieldFuelCost;
+    public float cloakFuelCost;    
+    public float tractorFuelCost;
     // Start is called before the first frame update
     void Start()
     {

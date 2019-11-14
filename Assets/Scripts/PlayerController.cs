@@ -19,8 +19,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float angle;
     [SerializeField]
     private Camera cam;
-    [SerializeField]
-    private FuelController fuelController;
+
     [SerializeField]
     private TemperatureController temperatureController;
     [SerializeField]
@@ -29,8 +28,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private int torpCost;
     [SerializeField]
     private int torpWeaponTemp;
-    [SerializeField]
-    private float warpCost;
+    public float warpCost;
     public float maxWarp;
     public float warpNumber;
     public float warpPercent;
@@ -66,9 +64,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     float distance;
     [SerializeField]
-    private Collider2D hullCollider;
-    [SerializeField]
-    private HullController hullController;
+    private Collider2D hullCollider;   
+    public HullController hullController;
+    public FuelController fuelController;
     [SerializeField]
     private SpeedController speedController;
     [SerializeField]
@@ -110,7 +108,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             navPoint = transform.position + transform.up;
             end = navPoint;
         }
-        Debug.DrawLine(start, end, Color.yellow);
 
         if (speedController.desiredSpeed != 0)
         {
@@ -138,14 +135,18 @@ public class PlayerController : MonoBehaviourPunCallbacks
             temperatureController.currentWeaponTemp += torpWeaponTemp / 10;
             torpCount++;
         }
-        //Debug.DrawLine(start, crosshairDebug);
         //shield code
         if ((Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S)) && (hullController.shieldHealth > 0 && !repairOn))
         {
             photonView.RPC("activateShield", RpcTarget.AllBufferedViaServer);
         }
+        if((fuelController.currentFuel < fuelController.shieldFuelCost) && shieldOn)
+        {
+            shieldOn = false;
+            photonView.RPC("activateShield", RpcTarget.AllBufferedViaServer);
+        }
         //repair code
-        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
         {
             if (!repairOn)
             {
@@ -168,22 +169,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
                 cloak.SetActive(false);
                 cloakOn = false;
                 shipSprite.enabled = true;
-                if (this.gameObject.layer == 10)
-                {
-                    layer = 10;
-                }
-                else if (this.gameObject.layer == 11)
-                {
-                    layer = 11;
-                }
-                else if (this.gameObject.layer == 12)
-                {
-                    layer = 12;
-                }
-                else
-                {
-                    layer = 13;
-                }
+                layer = this.gameObject.layer;
             }
             else
             {
@@ -212,6 +198,15 @@ public class PlayerController : MonoBehaviourPunCallbacks
             }
             photonView.RPC("activateCloak", RpcTarget.OthersBuffered, cloakOn, layer);
         }
+        if (cloakOn && fuelController.currentFuel < fuelController.cloakFuelCost)
+        {
+            cloak.SetActive(false);
+            cloakOn = false;
+            shipSprite.enabled = true;
+            photonView.RPC("activateCloak", RpcTarget.OthersBuffered, cloakOn, this.gameObject.layer);
+        }
+
+
     }
 
     [PunRPC]
@@ -225,7 +220,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void activateCloak(bool on, int layer)
     {
-        if (on)
+        if(on)
         {
             mapCloak.SetActive(true);
             playerLabel.SetActive(false);
@@ -342,6 +337,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public static Vector2 DegreeToVector2(float degree)
     {
         return RadianToVector2(degree * Mathf.Deg2Rad);
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(start, end);
     }
 
 }

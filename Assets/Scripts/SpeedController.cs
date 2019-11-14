@@ -5,6 +5,8 @@ using System;
 public class SpeedController : MonoBehaviour
 {
     [SerializeField]
+    private PlayerController playerController;
+    [SerializeField]
     private float tickTimer;
     [SerializeField]
     private float nextTime;
@@ -15,21 +17,26 @@ public class SpeedController : MonoBehaviour
     public float speedPercent;
     public float currentSpeed;
     public float desiredSpeed;
+    public float allowedSpeed;
     public float accelRate;
     public float deccelRate;
     public float turnRate;
     public float maxSpeed;
+    private float maxSpeedAllowed;
 
     private void Start()
     {
         tickTimer = 0.1f;
         currentSpeed = 0;
         rotationSpeed = turnRate;
+        playerController = GetComponentInParent<PlayerController>();
+        maxSpeedAllowed = maxSpeed;
     }
 
     private void Update()
     {
         speedPercent = (currentSpeed / maxSpeed);
+
         if(Regex.IsMatch(Input.inputString, "[0-9)!@]"))
         {
             if(Input.inputString == "@")
@@ -67,20 +74,44 @@ public class SpeedController : MonoBehaviour
                 currentSpeed -= deccelRate/1000;
             }
         }
+
         currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
         currentSpeed = (float)Math.Round(currentSpeed, 1);
         moveSpeed = currentSpeed * warpSpeed;
         rotationSpeed = turnRate / (currentSpeed * currentSpeed);
+
+        if(playerController.fuelController.currentFuel < playerController.warpFuelUse)
+        {
+            if(playerController.fuelController.rechargeRate/playerController.warpCost < desiredSpeed)
+            {
+                allowedSpeed = playerController.fuelController.rechargeRate / playerController.warpCost;
+                allowedSpeed = (float)Math.Truncate((decimal)allowedSpeed);
+                desiredSpeed = allowedSpeed;
+            }
+        }
+        else
+        {
+            allowedSpeed = maxSpeedAllowed;
+        }
+
+        if(playerController.hullController.hullHealth < playerController.hullController.hullMaxHealth)
+        {
+            maxSpeedAllowed = maxSpeed * playerController.hullController.hullHealth / playerController.hullController.hullMaxHealth;
+            maxSpeedAllowed = (float)Math.Truncate((decimal)maxSpeedAllowed);
+        }
+        else
+        {
+            maxSpeedAllowed = maxSpeed;
+        }
+
+        if(desiredSpeed > maxSpeedAllowed)
+        {
+            desiredSpeed = maxSpeedAllowed;
+        }
+
+        playerController.maxWarp = maxSpeedAllowed;
+
     }
 
 }
 
-
-/*
-public void move()
-{
-    playerSpeed = getMoveSpeed();
-    RotateTowards(navPoint);
-    transform.position += transform.up * playerSpeed * Time.deltaTime;
-}
-*/

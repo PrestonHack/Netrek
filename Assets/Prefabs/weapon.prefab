@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8703913358735303248}
   - component: {fileID: 4402156942705237500}
   - component: {fileID: 1673043764304661041}
-  - component: {fileID: 161550059629404704}
+  - component: {fileID: 7114445171198783754}
   m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
@@ -83,11 +83,11 @@ MonoBehaviour:
   Synchronization: 2
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 161550059629404704}
+  - {fileID: 7114445171198783754}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &161550059629404704
+--- !u!114 &7114445171198783754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_RotationModel:
     SynchronizeEnabled: 1
     InterpolateOption: 0
-    InterpolateRotateTowardsSpeed: 360
+    InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
   m_ScaleModel:
     SynchronizeEnabled: 0
@@ -190,6 +190,11 @@ PrefabInstance:
     - target: {fileID: 6033579781013494137, guid: f3876ac6ed971c4459359c7f79a621da,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733021929299205684, guid: f3876ac6ed971c4459359c7f79a621da,
+        type: 3}
+      propertyPath: Synchronization
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -270,6 +275,11 @@ PrefabInstance:
     - target: {fileID: 5994222510181041341, guid: 160e38cace763de45a5b32dfe0ac2d7b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523660940667865263, guid: 160e38cace763de45a5b32dfe0ac2d7b,
+        type: 3}
+      propertyPath: Synchronization
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

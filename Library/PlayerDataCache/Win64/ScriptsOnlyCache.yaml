@@ -875,7 +875,7 @@ ScriptsOnlyBuild:
     className: BestRegionInPrefsProperty
   - hash:
       serializedVersion: 2
-      Hash: 3b0f4de15be13b7d77957a084d569098
+      Hash: 29debe416c908493c677e4d94c4bf097
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpeedController
@@ -1397,7 +1397,7 @@ ScriptsOnlyBuild:
     className: Asteroid
   - hash:
       serializedVersion: 2
-      Hash: 32d3f0e0809d11a7a284b1d6fd091693
+      Hash: d213f8d0aa3332ddede0ae40d52d4a07
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4673915101806752207}
   - component: {fileID: 6767742029791405932}
   - component: {fileID: 2733021929299205684}
-  - component: {fileID: 296615984184486715}
   - component: {fileID: 1686294025776078311}
   m_Layer: 0
   m_Name: pressor
@@ -197,43 +196,10 @@ MonoBehaviour:
   Synchronization: 2
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 296615984184486715}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &296615984184486715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4582998618244395255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 0
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 0
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &1686294025776078311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,11 +212,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a726ba4bfbfe98d4d9fdf28bce0b6be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressorOn: 0
   lineRenderer: {fileID: 8113526952432592659}
   pressorCollider: {fileID: 4673915101806752207}
   parentTransform: {fileID: 0}
   point: {x: 0, y: 0}
   cam: {fileID: 0}
-  rotationSpeed: 50
+  direction: {x: 0, y: 0}
+  start: {x: 0, y: 0}
+  end: {x: 0, y: 0}
+  distance: 0
+  currentLength: 0
+  maxRange: 2.25
   angle: 0
   photonView: {fileID: 2733021929299205684}

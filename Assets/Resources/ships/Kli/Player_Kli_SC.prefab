@@ -1385,6 +1385,36 @@ PrefabInstance:
       propertyPath: parentTransform
       value: 
       objectReference: {fileID: 6235367815652087496}
+    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2965769467968173119}
+    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: temperatureController
+      value: 
+      objectReference: {fileID: 3040965654786685856}
+    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: fuelController
+      value: 
+      objectReference: {fileID: 2864270321375529925}
+    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: phaserWeaponTemp
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: phaserCost
+      value: 520
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: phaserDamage
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 3616035088747931267, guid: a7e2fa1379f721d4ab2258fc88279aba,
         type: 3}
       propertyPath: m_Layer
@@ -1394,6 +1424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331754051704037867, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1732495288315517357, guid: a7e2fa1379f721d4ab2258fc88279aba,
         type: 3}
@@ -1503,41 +1538,6 @@ PrefabInstance:
     - target: {fileID: 1289668250331084, guid: a7e2fa1379f721d4ab2258fc88279aba, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1331754051704037867, guid: a7e2fa1379f721d4ab2258fc88279aba,
-        type: 3}
-      propertyPath: m_Layer
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 2965769467968173119}
-    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
-        type: 3}
-      propertyPath: temperatureController
-      value: 
-      objectReference: {fileID: 3040965654786685856}
-    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
-        type: 3}
-      propertyPath: fuelController
-      value: 
-      objectReference: {fileID: 2864270321375529925}
-    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
-        type: 3}
-      propertyPath: phaserWeaponTemp
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
-        type: 3}
-      propertyPath: phaserCost
-      value: 520
-      objectReference: {fileID: 0}
-    - target: {fileID: 2326136110863799700, guid: a7e2fa1379f721d4ab2258fc88279aba,
-        type: 3}
-      propertyPath: phaserDamage
-      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7e2fa1379f721d4ab2258fc88279aba, type: 3}

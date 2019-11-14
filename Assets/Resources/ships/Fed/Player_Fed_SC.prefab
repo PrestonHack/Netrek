@@ -1528,6 +1528,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9181391363019170676, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145213918883900717, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: viewIdField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 3590445302281923909}
+    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: al
+      value: 
+      objectReference: {fileID: 5058222137800744292}
+    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: mapCam
+      value: 
+      objectReference: {fileID: 4867650387843125346}
+    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 8373717773053254590}
+    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: dashManager
+      value: 
+      objectReference: {fileID: 5063182925785996065}
     - target: {fileID: 3948315639178876780, guid: 5257819eef49d9242b56cff89b6ff634,
         type: 3}
       propertyPath: cam
@@ -1643,42 +1678,7 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 2495153675841036411}
-    - target: {fileID: 9145213918883900717, guid: 5257819eef49d9242b56cff89b6ff634,
-        type: 3}
-      propertyPath: viewIdField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
-        type: 3}
-      propertyPath: playerCam
-      value: 
-      objectReference: {fileID: 3590445302281923909}
-    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
-        type: 3}
-      propertyPath: al
-      value: 
-      objectReference: {fileID: 5058222137800744292}
-    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
-        type: 3}
-      propertyPath: mapCam
-      value: 
-      objectReference: {fileID: 4867650387843125346}
-    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
-        type: 3}
-      propertyPath: playerUI
-      value: 
-      objectReference: {fileID: 8373717773053254590}
-    - target: {fileID: 4826380755750000485, guid: 5257819eef49d9242b56cff89b6ff634,
-        type: 3}
-      propertyPath: dashManager
-      value: 
-      objectReference: {fileID: 5063182925785996065}
     - target: {fileID: 3373299129436949888, guid: 5257819eef49d9242b56cff89b6ff634,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9181391363019170676, guid: 5257819eef49d9242b56cff89b6ff634,
         type: 3}
       propertyPath: m_Layer
       value: 10

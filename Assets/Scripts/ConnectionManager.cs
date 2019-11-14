@@ -58,11 +58,6 @@ public class ConnectionManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel(1);
     }
 
-    void Update()
-    {
-        
-    }
-
     private void getNetworkInfo()
     {
         ping = PhotonNetwork.GetPing();

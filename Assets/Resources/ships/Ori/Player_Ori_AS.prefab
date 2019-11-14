@@ -712,6 +712,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1097841621837149715, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2109219789672381446, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -852,6 +857,56 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: phaserWeaponTemp
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: phaserCost
+      value: 560
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: phaserDamage
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: lineRenderer
+      value: 
+      objectReference: {fileID: 2164921888664730267}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: phaserCollider
+      value: 
+      objectReference: {fileID: 2554342188845435130}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 5693412169652813634}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 27438858403394053}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: photonView
+      value: 
+      objectReference: {fileID: 7306434132239263788}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: fuelController
+      value: 
+      objectReference: {fileID: 478444528357840984}
+    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: temperatureController
+      value: 
+      objectReference: {fileID: 6765412808232921973}
     - target: {fileID: 5372836685558304099, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
         type: 3}
       propertyPath: cam
@@ -947,61 +1002,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1097841621837149715, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: phaserWeaponTemp
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: phaserCost
-      value: 560
-      objectReference: {fileID: 0}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: phaserDamage
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 2164921888664730267}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: phaserCollider
-      value: 
-      objectReference: {fileID: 2554342188845435130}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 5693412169652813634}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: soundClip
-      value: 
-      objectReference: {fileID: 27438858403394053}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: photonView
-      value: 
-      objectReference: {fileID: 7306434132239263788}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: fuelController
-      value: 
-      objectReference: {fileID: 478444528357840984}
-    - target: {fileID: 4854244823977552376, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
-        type: 3}
-      propertyPath: temperatureController
-      value: 
-      objectReference: {fileID: 6765412808232921973}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8b7acd56edeecb4195ca9f5acdda6bd, type: 3}
 --- !u!4 &4212145109542882635 stripped

@@ -429,7 +429,7 @@ MonoBehaviour:
   nextFire: 0
   length: 0
   teamShipCanvas: {fileID: 0}
-  photonView: {fileID: 0}
+  photonView: {fileID: 8471186039559454827}
   distance: 0
   hullCollider: {fileID: 887433691811263351}
   hullController: {fileID: 7699073740045608486}
@@ -2319,10 +2319,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 161550059629404704, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 945387147577984450, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: m_Layer
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992253275984132392, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934297549121248782, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8323538877473053124, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
