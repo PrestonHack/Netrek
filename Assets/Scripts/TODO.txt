@@ -1,15 +1,14 @@
 TODO 
 UI flags for kill shields and repair
-
 torp detonation 
-acceleration 
-speed limits 
-limits for fuel and temps etc. 
-
-6 player / leaderboard ui
-7 gameboard 
-8 match making lobby
-9 voice chat
-10 user login 
+area alerts red yellow 
+ship explosion damage
+star base transwarp 
+plasma torps 
+player / leaderboard ui
+gameboard 
+match making lobby
+voice chat
+user login 
 
 
