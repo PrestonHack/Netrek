@@ -429,6 +429,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7624534839148868233, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: cam

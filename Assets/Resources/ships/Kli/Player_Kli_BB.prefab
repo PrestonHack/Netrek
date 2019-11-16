@@ -702,6 +702,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 8907060453372733342, guid: 4a57ae880a98f61439fec6381f942568,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 463657518597653387, guid: 4a57ae880a98f61439fec6381f942568,
         type: 3}
       propertyPath: playerCam

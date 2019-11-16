@@ -1010,6 +1010,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 3431064829889963240, guid: bf19114c7bf2587419352eccec9b539c,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5250593697913340752, guid: bf19114c7bf2587419352eccec9b539c,
         type: 3}
       propertyPath: m_Layer

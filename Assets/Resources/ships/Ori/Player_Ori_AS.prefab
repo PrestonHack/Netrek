@@ -832,6 +832,11 @@ PrefabInstance:
       propertyPath: pressorController
       value: 
       objectReference: {fileID: 7899834844169206830}
+    - target: {fileID: 5508562249616357560, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3639273287827652377, guid: e8b7acd56edeecb4195ca9f5acdda6bd,
         type: 3}
       propertyPath: m_Layer

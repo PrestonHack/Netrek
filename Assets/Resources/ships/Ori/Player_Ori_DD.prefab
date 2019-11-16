@@ -1401,6 +1401,11 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1284113218314094209, guid: 3540a299ba3f5d942a25fc196bb4d1fc,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4210598811437910526, guid: 3540a299ba3f5d942a25fc196bb4d1fc,
         type: 3}
       propertyPath: m_RootOrder

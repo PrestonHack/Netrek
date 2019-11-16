@@ -1544,6 +1544,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6053945640756663929, guid: a83134ef90af0c94d9ae9353be88a637,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8000086596999718486, guid: a83134ef90af0c94d9ae9353be88a637,
         type: 3}
       propertyPath: playerCam

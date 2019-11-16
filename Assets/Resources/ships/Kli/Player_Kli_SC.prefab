@@ -1220,6 +1220,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7082949538611620312, guid: a7e2fa1379f721d4ab2258fc88279aba,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6233699801996506962, guid: a7e2fa1379f721d4ab2258fc88279aba,
         type: 3}
       propertyPath: cam

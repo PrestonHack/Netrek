@@ -8,13 +8,11 @@
 // <author>developer@exitgames.com</author>
 // ----------------------------------------------------------------------------
 
-
 namespace Photon.Pun
 {
     using UnityEngine;
     using System.Collections.Generic;
-
-
+    
     /// <summary>
     /// This class helps you to synchronize position, rotation and scale
     /// of a GameObject. It also gives you many different options to make
@@ -31,7 +29,8 @@ namespace Photon.Pun
         //The PositionModel, RotationModel and ScaleMode store the data you are able to
         //configure in the inspector while the "control" objects below are actually moving
         //the object and calculating all the inter- and extrapolation
-
+                
+        
         [SerializeField]
         public PhotonTransformViewPositionModel m_PositionModel = new PhotonTransformViewPositionModel();
 
@@ -168,7 +167,8 @@ namespace Photon.Pun
             FixedSpeed,
             EstimatedSpeed,
             SynchronizeValues,
-            Lerp
+            Lerp,
+            EstimatedSpeedWithLerp
         }
 
 
@@ -189,7 +189,7 @@ namespace Photon.Pun
         public InterpolateOptions InterpolateOption = InterpolateOptions.EstimatedSpeed;
         public float InterpolateMoveTowardsSpeed = 1f;
 
-        public float InterpolateLerpSpeed = 1f;
+        public float InterpolateLerpSpeed = .001f; // was 1f changed manually for test
 
         public ExtrapolateOptions ExtrapolateOption = ExtrapolateOptions.Disabled;
         public float ExtrapolateSpeed = 1f;
@@ -294,6 +294,21 @@ namespace Photon.Pun
 
                 case PhotonTransformViewPositionModel.InterpolateOptions.Lerp:
                     currentPosition = Vector3.Lerp(currentPosition, targetPosition, Time.deltaTime * m_Model.InterpolateLerpSpeed);
+                    break;
+
+                case PhotonTransformViewPositionModel.InterpolateOptions.EstimatedSpeedWithLerp:
+                    if (m_OldNetworkPositions.Count == 0)
+                    {
+                        // special case: we have no previous updates in memory, so we can't guess a speed!
+                        break;
+                    }
+
+                    // knowing the last (incoming) position and the one before, we can guess a speed.
+                    // note that the speed is times sendRateOnSerialize! we send X updates/sec, so our estimate has to factor that in.
+                    estimatedSpeed = (Vector3.Distance(m_NetworkPosition, GetOldestStoredNetworkPosition()) / m_OldNetworkPositions.Count) * PhotonNetwork.SerializationRate;
+
+                    // move towards the targetPosition (including estimates, if that's active) with the speed calculated from the last updates.
+                    currentPosition = Vector3.Lerp(Vector3.MoveTowards(currentPosition, targetPosition, Time.deltaTime * estimatedSpeed), targetPosition, Time.deltaTime * m_Model.InterpolateLerpSpeed);
                     break;
             }
 

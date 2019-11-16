@@ -560,6 +560,11 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4794643470701946886, guid: fe49915037bb8eb4cab2d948885c5b3f,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6393426022534776914, guid: fe49915037bb8eb4cab2d948885c5b3f,
         type: 3}
       propertyPath: cam

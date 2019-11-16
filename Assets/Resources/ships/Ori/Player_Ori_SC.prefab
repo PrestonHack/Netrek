@@ -300,6 +300,11 @@ PrefabInstance:
       propertyPath: dashManager
       value: 
       objectReference: {fileID: 7337322261675310635}
+    - target: {fileID: 4092759778428454269, guid: 4b202505aede835419e623b3086bba9e,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5550516357745861227, guid: 4b202505aede835419e623b3086bba9e,
         type: 3}
       propertyPath: m_Layer

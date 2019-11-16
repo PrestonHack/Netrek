@@ -1678,6 +1678,11 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 2495153675841036411}
+    - target: {fileID: 2100554965974150962, guid: 5257819eef49d9242b56cff89b6ff634,
+        type: 3}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3373299129436949888, guid: 5257819eef49d9242b56cff89b6ff634,
         type: 3}
       propertyPath: m_Layer

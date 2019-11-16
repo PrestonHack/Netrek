@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using System;
 
+
 public class SpeedController : MonoBehaviour
 {
     [SerializeField]
@@ -37,17 +38,17 @@ public class SpeedController : MonoBehaviour
     {
         speedPercent = (currentSpeed / maxSpeed);
 
-        if(Regex.IsMatch(Input.inputString, "[0-9)!@]"))
+        if (Regex.IsMatch(Input.inputString, "[0-9)!@]"))
         {
-            if(Input.inputString == "@")
+            if (Input.inputString == "@")
             {
                 desiredSpeed = 12;
             }
-            else if(Input.inputString == "!")
+            else if (Input.inputString == "!")
             {
                 desiredSpeed = 11;
             }
-            else if(Input.inputString == ")")
+            else if (Input.inputString == ")")
             {
                 desiredSpeed = 10;
             }
@@ -56,22 +57,22 @@ public class SpeedController : MonoBehaviour
                 desiredSpeed = float.Parse(Input.inputString);
             }
 
-            if(desiredSpeed > maxSpeed)
+            if (desiredSpeed > maxSpeed)
             {
                 desiredSpeed = maxSpeed;
             }
         }
 
-        if(Time.time > nextTime)
+        if (Time.time > nextTime)
         {
             nextTime = Time.time + tickTimer;
-            if(desiredSpeed > currentSpeed)
+            if (desiredSpeed > currentSpeed)
             {
-                currentSpeed += accelRate/1000;
+                currentSpeed += accelRate / 1000;
             }
-            else if(desiredSpeed < currentSpeed)
+            else if (desiredSpeed < currentSpeed)
             {
-                currentSpeed -= deccelRate/1000;
+                currentSpeed -= deccelRate / 1000;
             }
         }
 
@@ -80,9 +81,9 @@ public class SpeedController : MonoBehaviour
         moveSpeed = currentSpeed * warpSpeed;
         rotationSpeed = turnRate / (currentSpeed * currentSpeed);
 
-        if(playerController.fuelController.currentFuel < playerController.warpFuelUse)
+        if (playerController.fuelController.currentFuel < playerController.warpFuelUse)
         {
-            if(playerController.fuelController.rechargeRate/playerController.warpCost < desiredSpeed)
+            if (playerController.fuelController.rechargeRate / playerController.warpCost < desiredSpeed)
             {
                 allowedSpeed = playerController.fuelController.rechargeRate / playerController.warpCost;
                 allowedSpeed = (float)Math.Truncate((decimal)allowedSpeed);
@@ -94,7 +95,7 @@ public class SpeedController : MonoBehaviour
             allowedSpeed = maxSpeedAllowed;
         }
 
-        if(playerController.hullController.hullHealth < playerController.hullController.hullMaxHealth)
+        if (playerController.hullController.hullHealth < playerController.hullController.hullMaxHealth)
         {
             maxSpeedAllowed = maxSpeed * playerController.hullController.hullHealth / playerController.hullController.hullMaxHealth;
             maxSpeedAllowed = (float)Math.Truncate((decimal)maxSpeedAllowed);
@@ -104,7 +105,7 @@ public class SpeedController : MonoBehaviour
             maxSpeedAllowed = maxSpeed;
         }
 
-        if(desiredSpeed > maxSpeedAllowed)
+        if (desiredSpeed > maxSpeedAllowed)
         {
             desiredSpeed = maxSpeedAllowed;
         }
@@ -114,4 +115,3 @@ public class SpeedController : MonoBehaviour
     }
 
 }
-
