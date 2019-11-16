@@ -63,7 +63,7 @@ public class PressorController : MonoBehaviour
             if (pressorOn && currentLength > maxRange)
             {
                 photonView.RPC("turnOff", RpcTarget.All);
-            }
+            }    
         }
         lineRenderer.material.color = Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.9f, 1f);
         lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.1f, 0.5f));

@@ -54,6 +54,16 @@ public class FuelController : MonoBehaviour
         }
 
         fuelPercent = (currentFuel/maxFuel);
+
+        if (tractorController.tractorOn && currentFuel < tractorFuelCost)
+        {
+            tractorController.toggle();
+        }
+        if(pressorController.pressorOn && currentFuel < tractorFuelCost)
+        {
+            pressorController.toggle();
+        }
+
     }
 
 }

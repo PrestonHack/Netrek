@@ -403,7 +403,6 @@ MonoBehaviour:
   point: {x: 0, y: 0}
   angle: 0
   cam: {fileID: 2631201915604063077}
-  fuelController: {fileID: 6242468620060588272}
   temperatureController: {fileID: 2418126807804947617}
   torpDamage: 30
   torpCost: 270
@@ -433,6 +432,7 @@ MonoBehaviour:
   distance: 0
   hullCollider: {fileID: 887433691811263351}
   hullController: {fileID: 7699073740045608486}
+  fuelController: {fileID: 6242468620060588272}
   speedController: {fileID: 7291117954465541042}
   tractorController: {fileID: 4139617562539289877}
   pressorController: {fileID: 4810580694111339518}
@@ -2319,15 +2319,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 161550059629404704, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 945387147577984450, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: m_Layer
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 161550059629404704, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7992253275984132392, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}

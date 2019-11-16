@@ -35,7 +35,9 @@ public class ShieldController : MonoBehaviour
             hullController.hullHealth -= diff;
         }
         hullController.shieldHealth -= collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
+        collision.gameObject.GetComponent<torpedoBehavior>().playerController.torpCount--;
         collision.gameObject.transform.parent.gameObject.SetActive(false);
+        
     }
 
     private void phaserDamage(Collider2D collision)

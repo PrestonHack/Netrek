@@ -133,7 +133,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             photonView.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage);
             fuelController.currentFuel -= torpCost;
             temperatureController.currentWeaponTemp += torpWeaponTemp / 10;
-            torpCount++;
         }
         //shield code
         if ((Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S)) && (hullController.shieldHealth > 0 && !repairOn))
@@ -205,8 +204,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             shipSprite.enabled = true;
             photonView.RPC("activateCloak", RpcTarget.OthersBuffered, cloakOn, this.gameObject.layer);
         }
-
-
     }
 
     [PunRPC]
@@ -289,7 +286,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
         torpBehavior.playerController = this;
         torp.transform.position = position;
         torp.transform.rotation = rotation;        
-        torp.SetActive(true);            
+        torp.SetActive(true);
+        this.torpCount++;
     }
 
     public void move()
