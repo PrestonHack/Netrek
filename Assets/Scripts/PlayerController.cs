@@ -76,6 +76,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private PressorController pressorController;
     [SerializeField]
     private PhaserController phaserController;
+    [SerializeField]
+    private DockController dockController;
     // Start is called before the first frame update
     void Start()
     {
@@ -119,7 +121,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
             speedController.desiredSpeed = 0;
         }
 
-        move();
+        if (!dockController.docked)
+        {
+            move();
+        }
+        else
+        {
+            speedController.desiredSpeed = 0;
+        }
         
         warpPercent = (speedController.currentSpeed / maxWarp);
         warpFuelUse = warpCost * speedController.desiredSpeed;
@@ -140,7 +149,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             photonView.RPC("activateShield", RpcTarget.AllBufferedViaServer);
         }
-        if((fuelController.currentFuel < fuelController.shieldFuelCost) && shieldOn)
+        if((fuelController.currentFuel <= fuelController.shieldFuelCost) && shieldOn)
         {
             shieldOn = false;
             photonView.RPC("activateShield", RpcTarget.AllBufferedViaServer);

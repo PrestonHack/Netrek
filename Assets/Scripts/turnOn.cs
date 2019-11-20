@@ -18,11 +18,14 @@ public class turnOn : MonoBehaviour
     private GameObject playerUI;
     [SerializeField]
     private GameObject dashManager;
+    [SerializeField]
+    private DockController dockController;
     // Start is called before the first frame update
     void Start()
     {
         if (pv.IsMine)
         {
+            dockController.enabled = true;
             mapCam.enabled = true;
             playerCam.enabled = true;
             pc.enabled = true;

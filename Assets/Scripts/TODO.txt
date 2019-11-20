@@ -1,4 +1,5 @@
 TODO 
+starbase docking completion
 UI flags for kill shields and repair
 torp detonation self det and incoming det
 area alerts red yellow 

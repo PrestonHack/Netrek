@@ -57,5 +57,7 @@ MonoBehaviour:
   - phaserDamage
   - torpDamage
   - sizeCollider
+  - findDock
+  - unDock
   DisableAutoOpenWizard: 1
   ShowSettings: 1

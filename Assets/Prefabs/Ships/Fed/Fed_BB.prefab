@@ -50,12 +50,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emblem: 
   shipSprite: {fileID: 0}
-  crosshairPosition: {x: 0, y: 0, z: 0}
   navPoint: {x: 0, y: 0}
-  crosshairPoint: {x: 0, y: 0}
+  start: {x: 0, y: 0}
+  end: {x: 0, y: 0}
+  point: {x: 0, y: 0}
   angle: 0
   cam: {fileID: 0}
-  fuelController: {fileID: 0}
   temperatureController: {fileID: 0}
   torpDamage: 0
   torpCost: 0
@@ -67,37 +67,30 @@ MonoBehaviour:
   warpFuelUse: 0
   torp: {fileID: 0}
   torpCount: 0
-  crosshairDebug: {x: 0, y: 0}
   weapon: {fileID: 0}
   shieldOn: 0
   repairOn: 0
-  shield: {fileID: 8453397924447729460}
   cloakOn: 0
+  shield: {fileID: 8453397924447729460}
   cloak: {fileID: 0}
   mapCloak: {fileID: 0}
   mapEmblem: {fileID: 0}
   playerLabel: {fileID: 0}
-  navPosition: {x: 0, y: 0, z: 0}
-  point: {x: 0, y: 0, z: 0}
-  rotationSpeed: 0
   playerSpeed: 0
   fireRate: 0.2
   nextFire: 0
-  start: {x: 0, y: 0, z: 0}
-  end: {x: 0, y: 0, z: 0}
   length: 0
-  currentPosition: {x: 0, y: 0}
-  lastPosition: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
   teamShipCanvas: {fileID: 0}
-  pv: {fileID: 3053211479751805298}
+  photonView: {fileID: 0}
   distance: 0
   hullCollider: {fileID: 0}
   hullController: {fileID: 0}
+  fuelController: {fileID: 0}
   speedController: {fileID: 0}
   tractorController: {fileID: 0}
   pressorController: {fileID: 0}
   phaserController: {fileID: 0}
+  dockController: {fileID: 0}
 --- !u!114 &3053211479751805298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +166,7 @@ MonoBehaviour:
   al: {fileID: 0}
   playerUI: {fileID: 0}
   dashManager: {fileID: 0}
+  dockController: {fileID: 0}
 --- !u!60 &3934766385735279563
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -233,7 +227,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7324610931941930909}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5022155437042521870
 SpriteRenderer:
@@ -314,7 +308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7324610931941930909}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6663636246254674928
 SpriteRenderer:
@@ -393,6 +387,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7359188271015603600}
   - {fileID: 4827804443402695914}
   - {fileID: 9174365623249851536}
   m_Father: {fileID: 3724137237533103585}
@@ -448,3 +443,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &7047532064677902119
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7324610931941930909}
+    m_Modifications:
+    - target: {fileID: 7716979934733200414, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_Name
+      value: Dock
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90d0a89ea40cb2046a7d497d734c1501, type: 3}
+--- !u!4 &7359188271015603600 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 571055205841771191, guid: 90d0a89ea40cb2046a7d497d734c1501,
+    type: 3}
+  m_PrefabInstance: {fileID: 7047532064677902119}
+  m_PrefabAsset: {fileID: 0}
