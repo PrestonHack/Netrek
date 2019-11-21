@@ -9,6 +9,16 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     private string emblem;
     [SerializeField]
+    private float timePast;
+    [SerializeField]
+    private float orbitRadius = 0.1f;
+    [SerializeField]
+    private Vector2 orbitCoords;
+    [SerializeField]
+    private Vector2 orbitCenter;
+    [SerializeField]
+    private Quaternion orbitRotation;
+    [SerializeField]
     private SpriteRenderer shipSprite;
     [SerializeField]
     private Vector2 navPoint;
@@ -20,9 +30,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float angle;
     [SerializeField]
     private Camera cam;
-
-    [SerializeField]
-    private TemperatureController temperatureController;
     [SerializeField]
     private int torpDamage;
     [SerializeField]
@@ -41,6 +48,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public bool shieldOn;
     public bool repairOn;
     public bool cloakOn;
+    public bool orbiting;
     [SerializeField]
     private GameObject shield;
     [SerializeField]
@@ -78,6 +86,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private PhaserController phaserController;
     [SerializeField]
     private DockController dockController;
+    [SerializeField]
+    private TemperatureController temperatureController;   
     // Start is called before the first frame update
     void Start()
     {
@@ -94,6 +104,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        timePast += Time.deltaTime;
         distance = Vector2.Distance(navPoint, start);
         //move cam
         cam.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10);
@@ -121,7 +132,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             speedController.desiredSpeed = 0;
         }
 
-        if (!dockController.docked)
+        if (!dockController.docked && !orbiting)
         {
             move();
         }
@@ -129,11 +140,32 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             speedController.desiredSpeed = 0;
         }
-        
+
+        if (orbiting)
+        {
+            orbitCoords.x = Mathf.Cos(timePast);
+            orbitCoords.y = Mathf.Sin(timePast); 
+            orbitCoords = orbitCoords * orbitRadius;            
+            orbitRotation = Quaternion.AngleAxis(-Mathf.Atan2(orbitCoords.x, orbitCoords.y) * Mathf.Rad2Deg -180, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, orbitRotation, Time.deltaTime);
+            transform.position = orbitCenter + orbitCoords;
+        }
+
         warpPercent = (speedController.currentSpeed / maxWarp);
         warpFuelUse = warpCost * speedController.desiredSpeed;
         warpNumber = speedController.desiredSpeed;
         rotationSpeed = speedController.rotationSpeed;
+        //orbit code
+        if (Input.GetKeyDown(KeyCode.O) && !orbiting)
+        {
+            orbitCenter = transform.position;
+            orbiting = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.O) && orbiting)
+        {
+            orbiting = false;
+        }
+
         //torpedo code
         if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy && fuelController.currentFuel >= torpCost && torpCount < 8)
         {
