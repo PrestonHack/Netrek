@@ -20,11 +20,14 @@ public class turnOn : MonoBehaviour
     private GameObject dashManager;
     [SerializeField]
     private DockController dockController;
+    [SerializeField]
+    private OrbitController orbitController;
     // Start is called before the first frame update
     void Start()
     {
         if (pv.IsMine)
         {
+            orbitController.enabled = true;
             dockController.enabled = true;
             mapCam.enabled = true;
             playerCam.enabled = true;

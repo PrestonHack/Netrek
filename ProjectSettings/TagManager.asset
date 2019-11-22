@@ -41,7 +41,7 @@ TagManager:
   - Ori_Cloak
   - Rom_Cloak
   - Tractor
-  - 
+  - Planet
   m_SortingLayers:
   - name: Default
     uniqueID: 0
