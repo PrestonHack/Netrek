@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\OrbitController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -87,6 +86,7 @@
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\MyTransformView.cs" />
     <Compile Include="Assets\Scripts\NetworkController.cs" />
+    <Compile Include="Assets\Scripts\OrbitController.cs" />
     <Compile Include="Assets\Scripts\PhaserController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
