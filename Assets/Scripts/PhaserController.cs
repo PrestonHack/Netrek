@@ -60,7 +60,6 @@ public class PhaserController : MonoBehaviour
 
     void Update()
     {      
-
         if (Input.GetMouseButtonDown(0) && photonView.IsMine && fuelController.currentFuel >= phaserCost && Time.time > nextTime && !phaserOn && !fuelController.playerController.cloakOn)
         {
             if (photonView.IsMine)
@@ -79,7 +78,6 @@ public class PhaserController : MonoBehaviour
                 else
                 { 
                     end = new Vector2(transform.position.x, transform.position.y) + (direction.normalized * distance);
-
                 }
                 distance = Mathf.Clamp(Vector2.Distance(transform.position, end), 0, maxRange);
                 phaserOn = true;

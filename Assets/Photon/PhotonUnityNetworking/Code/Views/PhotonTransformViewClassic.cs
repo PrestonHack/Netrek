@@ -189,7 +189,7 @@ namespace Photon.Pun
         public InterpolateOptions InterpolateOption = InterpolateOptions.EstimatedSpeed;
         public float InterpolateMoveTowardsSpeed = 1f;
 
-        public float InterpolateLerpSpeed = .001f; // was 1f changed manually for test
+        public float InterpolateLerpSpeed = 3f; // was 1f changed manually for test
 
         public ExtrapolateOptions ExtrapolateOption = ExtrapolateOptions.Disabled;
         public float ExtrapolateSpeed = 1f;

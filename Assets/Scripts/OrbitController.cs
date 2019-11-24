@@ -19,10 +19,6 @@ public class OrbitController : MonoBehaviour
     [SerializeField]
     private PlayerController playerController;
     
-    void Start()
-    {
-        playerController = GetComponentInParent<PlayerController>();
-    }
 
     void Update()
     {

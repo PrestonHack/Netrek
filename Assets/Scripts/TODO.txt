@@ -1,4 +1,5 @@
 TODO 
+tractor pressor bug with rotation need to separate weapon object into their own prefabs and change the controller some.
 starbase docking completion
 UI flags for kill shields and repair
 torp detonation self det and incoming det

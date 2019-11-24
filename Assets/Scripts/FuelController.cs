@@ -57,7 +57,7 @@ public class FuelController : MonoBehaviour
 
         if (tractorController.tractorOn && currentFuel < tractorFuelCost)
         {
-            tractorController.toggle();
+            tractorController.off();
         }
         if(pressorController.pressorOn && currentFuel < tractorFuelCost)
         {
