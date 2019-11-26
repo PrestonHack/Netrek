@@ -7,7 +7,8 @@ ScriptsOnlyBuild:
     - DockEndPoint
     - DockManager
     - DrawSampleVecs
-    - EndPointController
+    - EndPointControllerPressor
+    - EndPointControllerTractor
     - FuelController
     - HullController
     - OrbitController
@@ -205,49 +206,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 12002}
+      Script: {instanceID: 11964}
     - Class: 114
-      Script: {instanceID: 12100}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12106}
+      Script: {instanceID: 12102}
     - Class: 114
-      Script: {instanceID: 12120}
+      Script: {instanceID: 12108}
     - Class: 114
       Script: {instanceID: 12122}
     - Class: 114
-      Script: {instanceID: 12130}
+      Script: {instanceID: 12124}
     - Class: 114
-      Script: {instanceID: 12174}
+      Script: {instanceID: 12132}
     - Class: 114
-      Script: {instanceID: 12194}
+      Script: {instanceID: 12176}
     - Class: 114
-      Script: {instanceID: 12256}
+      Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12298}
+      Script: {instanceID: 12258}
     - Class: 114
-      Script: {instanceID: 12356}
+      Script: {instanceID: 12300}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12358}
     - Class: 114
-      Script: {instanceID: 12478}
+      Script: {instanceID: 12452}
     - Class: 114
-      Script: {instanceID: 12568}
+      Script: {instanceID: 12480}
     - Class: 114
-      Script: {instanceID: 12584}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12756}
+      Script: {instanceID: 12586}
     - Class: 114
-      Script: {instanceID: 12818}
+      Script: {instanceID: 12758}
     - Class: 114
-      Script: {instanceID: 12930}
+      Script: {instanceID: 12820}
     - Class: 114
-      Script: {instanceID: 12956}
+      Script: {instanceID: 12932}
     - Class: 114
-      Script: {instanceID: 12970}
+      Script: {instanceID: 12958}
     - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 12972}
     - Class: 114
-      Script: {instanceID: 26212}
+      Script: {instanceID: 12984}
+    - Class: 114
+      Script: {instanceID: 85886}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -320,7 +323,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11864}
     - Class: 114
-      Script: {instanceID: 12930}
+      Script: {instanceID: 12932}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -572,7 +575,7 @@ ScriptsOnlyBuild:
     className: BezierSpline
   - hash:
       serializedVersion: 2
-      Hash: de60eeb175339bbfc18b59168f4b571a
+      Hash: bf78af9cba8076a0f87deb13df0d19ed
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OrbitController
@@ -956,7 +959,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: cdee0f5d461701f5381f62331057a5fc
+      Hash: accf5dee6053b7162598a34a88d4feba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TractorController
@@ -1316,7 +1319,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d84f3684a6f149d659540042ccc56c9b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TextRotation
@@ -1326,6 +1329,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: AppVersionProperty
+  - hash:
+      serializedVersion: 2
+      Hash: 1e8f92f5f6bc2df9738c9992da328509
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EndPointControllerTractor
   - hash:
       serializedVersion: 2
       Hash: ae1347d9113eee8b83c5c8047dcf31a8
@@ -1394,7 +1403,7 @@ ScriptsOnlyBuild:
     className: RoomListView
   - hash:
       serializedVersion: 2
-      Hash: f91979e8f9960da033801755980bd921
+      Hash: d3561f3ff167c90a402e25ff6631a073
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PressorController
@@ -1868,10 +1877,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 1e8f92f5f6bc2df9738c9992da328509
+      Hash: 077e29b3fdf582a61c1b639a73860a7d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: EndPointController
+    className: EndPointControllerPressor
   platform: 19
   scenePathNames:
   - Assets/Scenes/newscene.unity

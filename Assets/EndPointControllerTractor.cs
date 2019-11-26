@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class EndPointController : MonoBehaviour
+public class EndPointControllerTractor : MonoBehaviour
 {
     public bool isOn;
     [SerializeField]
@@ -15,7 +15,7 @@ public class EndPointController : MonoBehaviour
     [SerializeField]
     private PhotonView photonView;
     [SerializeField]
-    private Vector2 point;
+    public Vector2 point;
     [SerializeField]
     private Vector2 direction;
     [SerializeField]
@@ -39,7 +39,7 @@ public class EndPointController : MonoBehaviour
             }
             else
             {
-                tractorController.toggle();
+                tractorController.toggle();                
             }
         }
         if (isOn && photonView.IsMine)
@@ -53,8 +53,10 @@ public class EndPointController : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Endpoint");
-        point = collision.transform.position;
+        if (collision.transform.root.name != this.gameObject.transform.root.name)
+        {
+            point = collision.transform.position;
+        }
     }
     
 }

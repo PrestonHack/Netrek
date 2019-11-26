@@ -21,7 +21,6 @@ public class TextRotation : MonoBehaviour
     void Update()
     {
         radians = (-90) * Mathf.Deg2Rad;
-        hardPoint = (Vector2)this.transform.position + (Vector2)shipTransform.position;
         hardPointCoords.x = Mathf.Cos(radians);
         hardPointCoords.y = Mathf.Sin(radians);
         hardPoint = hardPointCoords * 0.15f;

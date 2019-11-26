@@ -5,17 +5,17 @@ public class PressorController : MonoBehaviour
 {
     public bool pressorOn;
     [SerializeField]
+    private EndPointControllerPressor endPointController;
+    [SerializeField]
     private LineRenderer lineRenderer;
     [SerializeField]
     private BoxCollider2D pressorCollider;
     [SerializeField]
-    private Transform parentTransform;
-    private Vector3 mousePosition;
-    public Vector2 point;
-    [SerializeField]
     private Camera cam;
     [SerializeField]
-    private Vector2 direction;
+    private PhotonView photonView;
+    public Vector2 point;
+    public Vector2 direction;
     [SerializeField]
     private Vector2 start;
     [SerializeField]
@@ -23,61 +23,50 @@ public class PressorController : MonoBehaviour
     [SerializeField]
     public float distance;
     [SerializeField]
-    public float currentLength; 
+    public float currentLength;
     [SerializeField]
     private float maxRange = 2.25f;
     [SerializeField]
     private float angle;
     [SerializeField]
-    private PhotonView photonView;
+    private Vector2 hardPointCoords;
+    [SerializeField]
+    private float radians;
 
-    private void Start()
-    {
-        point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
-    }
 
     void Update()
     {
-        Vector2 size = pressorCollider.size;
-        size.y = new Vector2(transform.position.x - lineRenderer.GetPosition(1).x, transform.position.y - lineRenderer.GetPosition(1).y).magnitude;
-        pressorCollider.size = size;
-        pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
+        //setting hardpoint position manually
+        radians = (endPointController.shipTransform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
+        hardPointCoords.x = Mathf.Cos(radians);
+        hardPointCoords.y = Mathf.Sin(radians);
+        hardPointCoords = hardPointCoords * 0.1f;
+        transform.position = (Vector2)endPointController.shipTransform.position + hardPointCoords;
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {          
-            if (photonView.IsMine)
-            {
-                currentLength = 0;
-                mousePosition = Input.mousePosition;
-                point = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y));
-                start = new Vector2(transform.position.x,transform.position.y);
-                direction = point - start;
-                distance = Mathf.Clamp(Vector2.Distance(start, point), 0, maxRange);
-                end = start + (direction.normalized * distance);
-                photonView.RPC("firePressorRPC", RpcTarget.AllBuffered, end);
-            }
-        }
-        if (photonView.IsMine)
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, endPointController.gameObject.transform.position);
+
+        if (pressorOn)
         {
-            currentLength = Vector2.Distance(transform.position, end);
-            if (pressorOn && currentLength > maxRange)
-            {
-                photonView.RPC("turnOff", RpcTarget.All);
-            }    
+            RotateTowards(endPointController.gameObject.transform.position);
+            setCollider();
+            lineRenderer.material.color = Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.9f, 1f);
+            lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.1f, 0.5f));
         }
-        lineRenderer.material.color = Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.9f, 1f);
-        lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.15f, 0.15f, 1f, 1f, 0.1f, 0.5f));
-        lineRenderer.SetPosition(0, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z));
-
+        else
+        {
+            RotateTowards(cam.ScreenToWorldPoint(Input.mousePosition));
+        }
     }
-    private void FixedUpdate()
+
+    public void off()
     {
-        RotateTowards(point);
+        photonView.RPC("turnOff", RpcTarget.AllBuffered);
     }
 
     public void toggle()
     {
-        photonView.RPC("turnOff", RpcTarget.AllBufferedViaServer);
+        photonView.RPC("enableTractor", RpcTarget.AllBuffered);
     }
 
     [PunRPC]
@@ -85,54 +74,50 @@ public class PressorController : MonoBehaviour
     {
         lineRenderer.enabled = false;
         pressorCollider.enabled = false;
-        point = Vector2.one;
         pressorOn = false;
+        endPointController.isOn = false;
     }
 
     [PunRPC]
-    public void firePressorRPC(Vector2 p)
+    public void enableTractor()
     {
         if (!lineRenderer.enabled)
         {
-            lineRenderer.SetPosition(1, new Vector3(p.x, p.y, 0));
-            Vector2 size = pressorCollider.size;
-            size.y = new Vector2(transform.position.x - p.x, transform.position.y - p.y).magnitude;
-            pressorCollider.size = size;
-            pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
             lineRenderer.enabled = true;
             pressorCollider.enabled = true;
             pressorOn = true;
+            endPointController.isOn = true;
         }
         else
         {
             lineRenderer.enabled = false;
             pressorCollider.enabled = false;
-            point = Vector2.one;
             pressorOn = false;
+            endPointController.isOn = false;
+            endPointController.gameObject.transform.position = this.gameObject.transform.position;
         }
     }
 
-    [PunRPC]
-    public void moveBeam(Vector2 p)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        point = p;
-        lineRenderer.SetPosition(1, new Vector3(p.x, p.y, 0));
-        Vector2 size = pressorCollider.size;
-        size.y = new Vector2(transform.position.x - p.x, transform.position.y - p.y).magnitude;
-        pressorCollider.size = size;
-        pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
+        if (collision.GetComponentInParent<Transform>().root.name != this.gameObject.GetComponentInParent<Transform>().root.name)
+        {
+            moveSelf(collision);
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    private void moveSelf(Collider2D collision)
     {
-        
-        if (col.GetComponentInParent<Transform>().root.name != this.gameObject.GetComponentInParent<Transform>().root.name)
-        {
-            parentTransform.parent.parent.transform.position -= (col.transform.position - parentTransform.parent.parent.transform.position).normalized * 0.0005f;
-            lineRenderer.SetPosition(1, col.transform.position);
-            point = new Vector2(col.transform.position.x, col.transform.position.y);
-            photonView.RPC("moveBeam", RpcTarget.AllBuffered, point);
-        }        
+        endPointController.shipTransform.position -= (collision.transform.position - endPointController.shipTransform.position).normalized * 0.0005f;
+        endPointController.point = collision.transform.position;
+    }
+
+    private void setCollider()
+    {
+        Vector2 size = pressorCollider.size;
+        size.y = new Vector2(transform.position.x - lineRenderer.GetPosition(1).x, transform.position.y - lineRenderer.GetPosition(1).y).magnitude;
+        pressorCollider.size = size;
+        pressorCollider.offset = new Vector2(0, pressorCollider.size.y / 2);
     }
 
     void RotateTowards(Vector2 target)
@@ -142,7 +127,7 @@ public class PressorController : MonoBehaviour
         direction.Normalize();
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
-        transform.rotation = rotation;
+        this.transform.rotation = rotation;
     }
 }
 

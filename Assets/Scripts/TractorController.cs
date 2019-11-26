@@ -5,7 +5,7 @@ public class TractorController : MonoBehaviour
 {
     public bool tractorOn;
     [SerializeField]
-    private EndPointController endPointController;
+    private EndPointControllerTractor endPointController;
     [SerializeField]
     private LineRenderer lineRenderer;
     [SerializeField]
@@ -29,8 +29,6 @@ public class TractorController : MonoBehaviour
     [SerializeField]
     private float angle;
     [SerializeField]
-    private Vector3 hardPoint;
-    [SerializeField]
     private Vector2 hardPointCoords;
     [SerializeField]
     private float radians;
@@ -40,18 +38,25 @@ public class TractorController : MonoBehaviour
     {
         //setting hardpoint position manually
         radians = (endPointController.shipTransform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
-        hardPoint = this.transform.position + endPointController.shipTransform.position;
         hardPointCoords.x = Mathf.Cos(radians);
         hardPointCoords.y = Mathf.Sin(radians);
-        hardPoint = hardPointCoords * 0.1f;
-        transform.position = endPointController.shipTransform.position + hardPoint;
+        hardPointCoords = hardPointCoords * 0.1f;
+        transform.position = (Vector2)endPointController.shipTransform.position + hardPointCoords;
 
-        RotateTowards(endPointController.gameObject.transform.position);
-        setCollider();
-        lineRenderer.material.color = Random.ColorHSV(0.17f, 0.3f, 1f, 1f, 0.9f, 1f);
-        lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.17f, 0.4f, 1f, 1f, 0.1f, 0.5f));
-        lineRenderer.SetPosition(0, transform.position); 
+        lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, endPointController.gameObject.transform.position);
+
+        if (tractorOn)
+        {            
+            RotateTowards(endPointController.gameObject.transform.position);
+            setCollider();
+            lineRenderer.material.color = Random.ColorHSV(0.17f, 0.3f, 1f, 1f, 0.9f, 1f);
+            lineRenderer.material.SetColor("_EmissionColor", Random.ColorHSV(0.17f, 0.4f, 1f, 1f, 0.1f, 0.5f));
+        }
+        else
+        {
+            RotateTowards(cam.ScreenToWorldPoint(Input.mousePosition));
+        }
     }
 
     public void off()
@@ -71,7 +76,6 @@ public class TractorController : MonoBehaviour
         tractorCollider.enabled = false;
         tractorOn = false;
         endPointController.isOn = false;
-
     }
 
     [PunRPC]
@@ -90,7 +94,7 @@ public class TractorController : MonoBehaviour
             tractorCollider.enabled = false;
             tractorOn = false;
             endPointController.isOn = false;
-
+            endPointController.gameObject.transform.position = this.gameObject.transform.position;
         }
     }
 
@@ -104,8 +108,8 @@ public class TractorController : MonoBehaviour
 
     private void moveSelf(Collider2D collision)
     {
-        //transform.parent.parent.transform.position -= (transform.parent.parent.transform.position - collision.transform.position).normalized * 0.0005f;
-        endPointController.end = collision.transform.position;
+        endPointController.shipTransform.position -= (endPointController.shipTransform.position - collision.transform.position).normalized * 0.0005f;
+        endPointController.point = collision.transform.position;
     }
 
     private void setCollider()
@@ -123,7 +127,7 @@ public class TractorController : MonoBehaviour
         direction.Normalize();
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
-        this.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime); ;
+        this.transform.rotation = rotation;
     }
 
 }

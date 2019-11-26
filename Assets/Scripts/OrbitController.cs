@@ -5,8 +5,6 @@ using UnityEngine;
 public class OrbitController : MonoBehaviour
 {
     [SerializeField]
-    private float radian;
-    [SerializeField]
     private float entryRadians;
     [SerializeField]
     private Vector2 entryPoint;
@@ -21,8 +19,7 @@ public class OrbitController : MonoBehaviour
     public bool orbiting;
     public bool orbitEnabled;
     [SerializeField]
-    private PlayerController playerController;
-    
+    private PlayerController playerController;    
 
     void Update()
     {
@@ -32,7 +29,6 @@ public class OrbitController : MonoBehaviour
             entryPoint = entryPoint - orbitCenter;
             entryPoint.Normalize();
             entryRadians = Mathf.Atan2(entryPoint.y, entryPoint.x);
-            radian = entryRadians;
         }
 
         if (Input.GetKeyDown(KeyCode.O) && !orbiting && orbitEnabled)
@@ -46,9 +42,9 @@ public class OrbitController : MonoBehaviour
 
         if (orbiting)
         {
-            radian += 0.01f;
-            orbitCoords.x = Mathf.Cos(radian);
-            orbitCoords.y = Mathf.Sin(radian);
+            entryRadians += 0.01f;
+            orbitCoords.x = Mathf.Cos(entryRadians);
+            orbitCoords.y = Mathf.Sin(entryRadians);
             orbitCoords = orbitCoords * orbitRadius;
             orbitRotation = Quaternion.AngleAxis(-Mathf.Atan2(orbitCoords.x, orbitCoords.y) * Mathf.Rad2Deg + 90, Vector3.forward);
             transform.parent.parent.rotation = orbitRotation;
