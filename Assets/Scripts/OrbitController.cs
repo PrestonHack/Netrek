@@ -5,7 +5,11 @@ using UnityEngine;
 public class OrbitController : MonoBehaviour
 {
     [SerializeField]
-    private float timePast;
+    private float radian;
+    [SerializeField]
+    private float entryRadians;
+    [SerializeField]
+    private Vector2 entryPoint;
     [SerializeField]
     private float orbitRadius;
     [SerializeField]
@@ -22,7 +26,14 @@ public class OrbitController : MonoBehaviour
 
     void Update()
     {
-        timePast += Time.deltaTime;
+        if (orbitEnabled && !orbiting)
+        {
+            entryPoint = (Vector2)transform.position;
+            entryPoint = entryPoint - orbitCenter;
+            entryPoint.Normalize();
+            entryRadians = Mathf.Atan2(entryPoint.y, entryPoint.x);
+            radian = entryRadians;
+        }
 
         if (Input.GetKeyDown(KeyCode.O) && !orbiting && orbitEnabled)
         {
@@ -35,8 +46,9 @@ public class OrbitController : MonoBehaviour
 
         if (orbiting)
         {
-            orbitCoords.x = Mathf.Cos(timePast * 0.4f);
-            orbitCoords.y = Mathf.Sin(timePast * 0.4f);
+            radian += 0.01f;
+            orbitCoords.x = Mathf.Cos(radian);
+            orbitCoords.y = Mathf.Sin(radian);
             orbitCoords = orbitCoords * orbitRadius;
             orbitRotation = Quaternion.AngleAxis(-Mathf.Atan2(orbitCoords.x, orbitCoords.y) * Mathf.Rad2Deg + 90, Vector3.forward);
             transform.parent.parent.rotation = orbitRotation;
