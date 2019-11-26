@@ -344,7 +344,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 0
     TeleportIfDistanceGreaterThan: 0
-    InterpolateOption: 5
+    InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
     ExtrapolateOption: 2
@@ -1556,31 +1556,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 786418070887657398}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6824730959019750707}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 786418070887657398}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6824730959019750707}
     - target: {fileID: 8703913358735303248, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 786418070887657398}
+    - target: {fileID: 1673043764304661041, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: viewIdField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 786418070887657398}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6824730959019750707}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 786418070887657398}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6824730959019750707}
     - target: {fileID: 5467194648549287432, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: m_Layer
@@ -1590,11 +1595,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1673043764304661041, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: viewIdField
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8029775099588088409, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}

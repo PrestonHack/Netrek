@@ -455,18 +455,8 @@ PrefabInstance:
     - target: {fileID: 7624534839148868233, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: m_PositionModel.InterpolateOption
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 358625574053118858}
-    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6609449464902517614}
     - target: {fileID: 143126379673265064, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: m_Layer
@@ -512,6 +502,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 3075263773215730846, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: viewIdField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994724527676622079, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 358625574053118858}
+    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 358625574053118858}
+    - target: {fileID: 1763193873248374397, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6609449464902517614}
     - target: {fileID: 7190105548029288598, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: parentTransform
@@ -527,16 +537,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 3075263773215730846, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: viewIdField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994724527676622079, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 358625574053118858}
     - target: {fileID: 8522271721118171303, guid: 777fcedc52f727e47bd5caf8bfd57d7f,
         type: 3}
       propertyPath: m_Layer

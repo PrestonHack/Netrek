@@ -938,31 +938,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 7660403256840533571}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6042346489451213758}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 7660403256840533571}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6042346489451213758}
     - target: {fileID: 8703913358735303248, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 7660403256840533571}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 7660403256840533571}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6042346489451213758}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 7660403256840533571}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6042346489451213758}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c6381c5902f4a41867ccc739ec0649, type: 3}
 --- !u!1 &8943733113108623521 stripped
@@ -1815,7 +1815,7 @@ PrefabInstance:
     - target: {fileID: 6053945640756663929, guid: a83134ef90af0c94d9ae9353be88a637,
         type: 3}
       propertyPath: m_PositionModel.InterpolateOption
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8000086596999718486, guid: a83134ef90af0c94d9ae9353be88a637,
         type: 3}

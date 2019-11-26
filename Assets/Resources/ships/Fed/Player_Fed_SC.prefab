@@ -1998,7 +1998,7 @@ PrefabInstance:
     - target: {fileID: 2100554965974150962, guid: 5257819eef49d9242b56cff89b6ff634,
         type: 3}
       propertyPath: m_PositionModel.InterpolateOption
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3373299129436949888, guid: 5257819eef49d9242b56cff89b6ff634,
         type: 3}
@@ -2412,31 +2412,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 3590445302281923909}
-    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 965088580637451108}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 3590445302281923909}
-    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 965088580637451108}
     - target: {fileID: 8703913358735303248, guid: c7c6381c5902f4a41867ccc739ec0649,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 3590445302281923909}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 3590445302281923909}
+    - target: {fileID: 6796550371376399929, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 965088580637451108}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 3590445302281923909}
+    - target: {fileID: 2729831285906483410, guid: c7c6381c5902f4a41867ccc739ec0649,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 965088580637451108}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c6381c5902f4a41867ccc739ec0649, type: 3}
 --- !u!1 &2495153675841036411 stripped

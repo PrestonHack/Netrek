@@ -41,6 +41,9 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PhotonTransformViewClassicEditor
+    - Photon.Pun.PhotonViewInspector
     PhotonUnityNetworking.Utilities.dll:
     - Photon.Pun.UtilityScripts.PunTeams
     PhotonUnityNetworking.dll:
@@ -66,7 +69,6 @@ ScriptsOnlyBuild:
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -250,7 +252,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12984}
     - Class: 114
-      Script: {instanceID: 85886}
+      Script: {instanceID: 13018}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1847,6 +1849,12 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: 077e29b3fdf582a61c1b639a73860a7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EndPointControllerPressor
+  - hash:
+      serializedVersion: 2
       Hash: c8283c7732e3b6aa70d28f1fed4430ca
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -1875,12 +1883,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 077e29b3fdf582a61c1b639a73860a7d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EndPointControllerPressor
   platform: 19
   scenePathNames:
   - Assets/Scenes/newscene.unity

@@ -1845,7 +1845,7 @@ PrefabInstance:
     - target: {fileID: -8722194618103443852, guid: f17c184746788834faab785019ea8b2c,
         type: 3}
       propertyPath: m_PositionModel.InterpolateOption
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7199298625616596203, guid: f17c184746788834faab785019ea8b2c,
         type: 3}
@@ -1897,16 +1897,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 5617432659831301660, guid: f17c184746788834faab785019ea8b2c,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 8080912036770814019}
-    - target: {fileID: 5617432659831301660, guid: f17c184746788834faab785019ea8b2c,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6149727528036699553}
     - target: {fileID: 4731347875098536468, guid: f17c184746788834faab785019ea8b2c,
         type: 3}
       propertyPath: m_Layer
@@ -1952,25 +1942,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 3910633724108638455, guid: f17c184746788834faab785019ea8b2c,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 8080912036770814019}
-    - target: {fileID: 3910633724108638455, guid: f17c184746788834faab785019ea8b2c,
-        type: 3}
-      propertyPath: parentTransform
-      value: 
-      objectReference: {fileID: 6149727528036699553}
     - target: {fileID: 3883312910290064486, guid: f17c184746788834faab785019ea8b2c,
         type: 3}
       propertyPath: m_Layer
       value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280595122553817868, guid: f17c184746788834faab785019ea8b2c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9160522139782595839, guid: f17c184746788834faab785019ea8b2c,
         type: 3}
@@ -1982,6 +1957,31 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 8080912036770814019}
+    - target: {fileID: 5617432659831301660, guid: f17c184746788834faab785019ea8b2c,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 8080912036770814019}
+    - target: {fileID: 5617432659831301660, guid: f17c184746788834faab785019ea8b2c,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6149727528036699553}
+    - target: {fileID: 3910633724108638455, guid: f17c184746788834faab785019ea8b2c,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 8080912036770814019}
+    - target: {fileID: 3910633724108638455, guid: f17c184746788834faab785019ea8b2c,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 6149727528036699553}
+    - target: {fileID: 7280595122553817868, guid: f17c184746788834faab785019ea8b2c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2578326985196071110, guid: f17c184746788834faab785019ea8b2c,
         type: 3}
       propertyPath: m_Layer

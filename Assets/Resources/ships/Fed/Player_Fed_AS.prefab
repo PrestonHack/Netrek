@@ -893,6 +893,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7523660940667865263, guid: 160e38cace763de45a5b32dfe0ac2d7b,
+        type: 3}
+      propertyPath: Synchronization
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523660940667865263, guid: 160e38cace763de45a5b32dfe0ac2d7b,
+        type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 6439808206104858573}
     - target: {fileID: 4102832479193812760, guid: 160e38cace763de45a5b32dfe0ac2d7b,
         type: 3}
       propertyPath: parentTransform
@@ -913,20 +923,15 @@ PrefabInstance:
       propertyPath: endPointController
       value: 
       objectReference: {fileID: 7663474630915244338}
-    - target: {fileID: 7523660940667865263, guid: 160e38cace763de45a5b32dfe0ac2d7b,
+    - target: {fileID: 6403022641121308096, guid: 160e38cace763de45a5b32dfe0ac2d7b,
         type: 3}
-      propertyPath: Synchronization
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7523660940667865263, guid: 160e38cace763de45a5b32dfe0ac2d7b,
-        type: 3}
-      propertyPath: ObservedComponents.Array.data[0]
-      value: 
-      objectReference: {fileID: 6439808206104858573}
-    - target: {fileID: 6029395456038289323, guid: 160e38cace763de45a5b32dfe0ac2d7b,
-        type: 3}
-      propertyPath: m_RootOrder
+      propertyPath: m_PositionModel.SynchronizeEnabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403022641121308096, guid: 160e38cace763de45a5b32dfe0ac2d7b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7771227005013254975, guid: 160e38cace763de45a5b32dfe0ac2d7b,
         type: 3}
@@ -938,9 +943,9 @@ PrefabInstance:
       propertyPath: shipTransform
       value: 
       objectReference: {fileID: 5388329335459793647}
-    - target: {fileID: 6403022641121308096, guid: 160e38cace763de45a5b32dfe0ac2d7b,
+    - target: {fileID: 6029395456038289323, guid: 160e38cace763de45a5b32dfe0ac2d7b,
         type: 3}
-      propertyPath: m_PositionModel.SynchronizeEnabled
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2420,6 +2425,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3627678975819897367, guid: f3876ac6ed971c4459359c7f79a621da,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1686294025776078311, guid: f3876ac6ed971c4459359c7f79a621da,
         type: 3}
       propertyPath: parentTransform
@@ -2444,11 +2454,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Synchronization
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3627678975819897367, guid: f3876ac6ed971c4459359c7f79a621da,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2932848631825262731, guid: f3876ac6ed971c4459359c7f79a621da,
         type: 3}
