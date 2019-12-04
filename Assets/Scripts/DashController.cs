@@ -5,7 +5,18 @@ using System;
 
 public class DashController : MonoBehaviour
 {
- 
+    [SerializeField]
+    private TMP_Text killCountText;
+    [SerializeField]
+    private TMP_Text torpCountText;
+    [SerializeField]
+    private Image alertImage;
+    [SerializeField]
+    private Image lockFlagImage;
+    [SerializeField]
+    private Image repairFlagImage;
+    [SerializeField]
+    private Image shieldFlagImage;
     [SerializeField]
     private TMP_Text armys;
     [SerializeField]
@@ -40,7 +51,10 @@ public class DashController : MonoBehaviour
     private Image hullImage;
     [SerializeField]
     private HullController hullController;
-
+    [SerializeField]
+    private Color32 switchOnColor = new Color32(234, 84, 0, 200);
+    [SerializeField]
+    private Color32 switchOffColor = new Color32(255, 255, 255, 100);
 
     // Update is called once per frame
     void Update()
@@ -62,6 +76,26 @@ public class DashController : MonoBehaviour
 
         speed.text = string.Format("Sp[{0}/{1}]", playerController.warpNumber, playerController.maxWarp);
         speedImage.fillAmount = playerController.warpPercent;
+
+        torpCountText.text = string.Format("Torps: {0}", playerController.torpCount.ToString());
+
+        if (playerController.repairOn)
+        {
+            repairFlagImage.color = switchOnColor;
+        }
+        else
+        {
+            repairFlagImage.color = switchOffColor;
+        }
+
+        if (playerController.shieldOn)
+        {
+            shieldFlagImage.color = switchOnColor;
+        }
+        else
+        {
+            shieldFlagImage.color = switchOffColor;
+        }
 
     }
 }
