@@ -76,8 +76,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private DockController dockController;
     [SerializeField]
     private TemperatureController temperatureController;
-    [SerializeField]
-    private OrbitController orbitController;
+    public OrbitController orbitController;
     // Start is called before the first frame update
     void Start()
     {
@@ -332,11 +331,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
         if (col.transform.root.name != this.gameObject.transform.root.name && col.gameObject.name == "tractor")
         {
             this.gameObject.transform.position -= (this.gameObject.transform.position - col.transform.position).normalized * 0.0015f;
+            orbitController.orbiting = false;
 
         }
         if (col.transform.root.name != this.gameObject.transform.root.name && col.gameObject.name == "pressor")
         {
             this.gameObject.transform.position -= (col.transform.position - this.gameObject.transform.position).normalized * 0.0015f;
+            orbitController.orbiting = false;
+
         }
     }
 

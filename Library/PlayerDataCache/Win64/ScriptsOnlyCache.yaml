@@ -41,9 +41,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonTransformViewClassicEditor
-    - Photon.Pun.PhotonViewInspector
     PhotonUnityNetworking.Utilities.dll:
     - Photon.Pun.UtilityScripts.PunTeams
     PhotonUnityNetworking.dll:
@@ -69,6 +66,7 @@ ScriptsOnlyBuild:
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -1141,7 +1139,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 412f301e4fe21da1b0d8333b6171a9cd
+      Hash: 18f18baf0ad05c18b7831ec4625dd28c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DashController

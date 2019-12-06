@@ -76,11 +76,13 @@ public class ShieldController : MonoBehaviour
         if (collision.transform.root.name != this.gameObject.transform.root.name && collision.gameObject.name == "tractor")
         {
             this.gameObject.transform.parent.parent.position -= (this.gameObject.transform.position - collision.transform.position).normalized * 0.0015f;
+            playerController.orbitController.orbiting = false;
         }
         if (collision.transform.root.name != this.gameObject.transform.root.name && collision.gameObject.name == "pressor")
         {
             this.gameObject.transform.parent.parent.position -= (collision.transform.position - this.gameObject.transform.position).normalized * 0.0015f;
-        }       
+            playerController.orbitController.orbiting = false;
+        }
     }
 
 
