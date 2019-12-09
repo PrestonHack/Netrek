@@ -1,5 +1,5 @@
 TODO 
-torp detonation self det and incoming det
+incoming det
 area alerts red yellow 
 ship explosion damage
 star base transwarp 

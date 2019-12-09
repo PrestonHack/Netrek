@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DetenationController.cs" />
     <Compile Include="Assets\EndPointControllerPressor.cs" />
     <Compile Include="Assets\EndPointControllerTractor.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />

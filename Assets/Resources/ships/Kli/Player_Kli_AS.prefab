@@ -270,6 +270,9 @@ MonoBehaviour:
   point: {x: 0, y: 0}
   angle: 0
   cam: {fileID: 786418070887657398}
+  torpCount: 0
+  torps: []
+  torp: {fileID: 0}
   torpDamage: 30
   torpCost: 270
   torpWeaponTemp: 27
@@ -278,8 +281,6 @@ MonoBehaviour:
   warpNumber: 0
   warpPercent: 0
   warpFuelUse: 0
-  torp: {fileID: 0}
-  torpCount: 0
   weapon: {fileID: 8174718709304538668}
   shieldOn: 0
   repairOn: 0

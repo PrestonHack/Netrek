@@ -27,12 +27,21 @@ public class torpedoBehavior : MonoBehaviour
         
     }
 
+    public void detonate()
+    {
+        if (playerController != null)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
     IEnumerator hide()
     {
         yield return new WaitForSeconds(ttl);       
         this.gameObject.SetActive(false);
         if(playerController != null)
         {
+            playerController.torps.Remove(this);
             playerController.torpCount--;
         }
     }

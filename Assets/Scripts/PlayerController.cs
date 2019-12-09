@@ -2,7 +2,7 @@
 using UnityEngine;
 using TMPro;
 using Photon.Pun.UtilityScripts;
-
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float angle;
     [SerializeField]
     private Camera cam;
+    public int torpCount;
+    public List<torpedoBehavior> torps = new List<torpedoBehavior>();
+    [SerializeField]
+    private GameObject torp;
     [SerializeField]
     private int torpDamage;
     [SerializeField]
@@ -31,9 +35,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public float warpNumber;
     public float warpPercent;
     public float warpFuelUse;
-    [SerializeField]
-    private GameObject torp;
-    public int torpCount;
     public GameObject weapon;
     public bool shieldOn;
     public bool repairOn;
@@ -146,6 +147,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
             fuelController.currentFuel -= torpCost;
             temperatureController.currentWeaponTemp += torpWeaponTemp / 10;
         }
+
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown(KeyCode.D))
+        {
+            photonView.RPC("detOwnTorp",RpcTarget.AllBufferedViaServer);
+        }
+
         //shield code
         if ((Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.S)) && (hullController.shieldHealth > 0 && !repairOn))
         {
@@ -275,6 +282,17 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
+    public void detOwnTorp()
+    {
+        if(torpCount != 0)
+        {
+            torps[torpCount - torps.Count].detonate();
+            torps.RemoveAt(torpCount - torps.Count);
+            torpCount--;
+        }
+    }
+
+    [PunRPC]
     public void fireTorp(Vector3 position, Quaternion rotation, int layer, int damage)
     {        
         if(layer == 10)
@@ -293,12 +311,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             torp = PoolManager.Instance.romRequestTorp();
         }
+        
         torpedoBehavior torpBehavior = torp.GetComponent<torpedoBehavior>();
         torpBehavior.damage = damage;
         torpBehavior.playerController = this;
         torp.transform.position = position;
         torp.transform.rotation = rotation;        
         torp.SetActive(true);
+        torps.Add(torpBehavior);
         this.torpCount++;
     }
 
