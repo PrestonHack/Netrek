@@ -288,7 +288,7 @@ PrefabInstance:
     - target: {fileID: 7161174181191949268, guid: 5516c70c72f48b54abbc33b62a88020c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7161174181191949268, guid: 5516c70c72f48b54abbc33b62a88020c,
         type: 3}
@@ -335,6 +335,16 @@ PrefabInstance:
       propertyPath: tractorController
       value: 
       objectReference: {fileID: 4102832479193812760}
+    - target: {fileID: 6563397260596332352, guid: 5516c70c72f48b54abbc33b62a88020c,
+        type: 3}
+      propertyPath: endPointCollider
+      value: 
+      objectReference: {fileID: 5386088117479359175}
+    - target: {fileID: 8823136997161723576, guid: 5516c70c72f48b54abbc33b62a88020c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5516c70c72f48b54abbc33b62a88020c, type: 3}
 --- !u!4 &6029395456038289323 stripped
@@ -355,3 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851b2caadf40bad4aaa2c4cf761a676b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &5386088117479359175 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8823136997161723576, guid: 5516c70c72f48b54abbc33b62a88020c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3516518291367601279}
+  m_PrefabAsset: {fileID: 0}

@@ -8,6 +8,7 @@ public class EndPointControllerTractor : MonoBehaviour
     public bool isOn;
     [SerializeField]
     private TractorController tractorController;
+    public CircleCollider2D endPointCollider;
     [SerializeField]
     public Transform shipTransform;
     [SerializeField]

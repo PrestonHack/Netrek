@@ -141,9 +141,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
         if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy && fuelController.currentFuel >= torpCost && torpCount < 8)
         {
             nextFire = Time.time + fireRate;
+            torpCount++;
             Vector3 weaponPosition = weapon.transform.position;
             Quaternion weaponRotation = weapon.transform.rotation;
-            photonView.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage);
+            photonView.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage, torpCount);
             fuelController.currentFuel -= torpCost;
             temperatureController.currentWeaponTemp += torpWeaponTemp / 10;
         }
@@ -228,7 +229,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void setEmblemName(string em, string nickname)
     {
-        this.gameObject.transform.root.gameObject.name = nickname;
+        gameObject.transform.root.gameObject.name = nickname;
+        emblem = em;
         playerLabel.GetComponentInChildren<TMP_Text>().text = em;
         mapEmblem.GetComponentInChildren<TMP_Text>().text = em;
     }
@@ -286,14 +288,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         if(torpCount != 0)
         {
-            torps[torpCount - torps.Count].detonate();
-            torps.RemoveAt(torpCount - torps.Count);
+            torps[0].detonate();
+            torps.RemoveAt(0);
             torpCount--;
         }
     }
 
     [PunRPC]
-    public void fireTorp(Vector3 position, Quaternion rotation, int layer, int damage)
+    public void fireTorp(Vector3 position, Quaternion rotation, int layer, int damage, int count)
     {        
         if(layer == 10)
         {
@@ -319,7 +321,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         torp.transform.rotation = rotation;        
         torp.SetActive(true);
         torps.Add(torpBehavior);
-        this.torpCount++;
+        torpCount = count;
     }
 
     public void move()

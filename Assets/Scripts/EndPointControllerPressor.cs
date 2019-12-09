@@ -8,6 +8,7 @@ public class EndPointControllerPressor : MonoBehaviour
     public bool isOn;
     [SerializeField]
     private PressorController pressorController;
+    public CircleCollider2D endPointCollider;
     [SerializeField]
     public Transform shipTransform;
     [SerializeField]

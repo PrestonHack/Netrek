@@ -87,6 +87,7 @@ public class PressorController : MonoBehaviour
             pressorCollider.enabled = true;
             pressorOn = true;
             endPointController.isOn = true;
+            endPointController.endPointCollider.enabled = true;
         }
         else
         {
@@ -95,6 +96,7 @@ public class PressorController : MonoBehaviour
             pressorOn = false;
             endPointController.isOn = false;
             endPointController.gameObject.transform.position = this.gameObject.transform.position;
+            endPointController.endPointCollider.enabled = false;
         }
     }
 

@@ -87,6 +87,7 @@ public class TractorController : MonoBehaviour
             tractorCollider.enabled = true;
             tractorOn = true;
             endPointController.isOn = true;
+            endPointController.endPointCollider.enabled = true;
         }
         else
         {
@@ -95,6 +96,7 @@ public class TractorController : MonoBehaviour
             tractorOn = false;
             endPointController.isOn = false;
             endPointController.gameObject.transform.position = this.gameObject.transform.position;
+            endPointController.endPointCollider.enabled = false;
         }
     }
 

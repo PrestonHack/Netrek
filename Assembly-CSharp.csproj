@@ -62,9 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DetenationController.cs" />
-    <Compile Include="Assets\EndPointControllerPressor.cs" />
-    <Compile Include="Assets\EndPointControllerTractor.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -79,10 +76,13 @@
     <Compile Include="Assets\Scripts\collionstest.cs" />
     <Compile Include="Assets\Scripts\ConnectionManager.cs" />
     <Compile Include="Assets\Scripts\DashController.cs" />
+    <Compile Include="Assets\Scripts\DetenationController.cs" />
     <Compile Include="Assets\Scripts\DockController.cs" />
     <Compile Include="Assets\Scripts\DockEndPoint.cs" />
     <Compile Include="Assets\Scripts\DockManager.cs" />
     <Compile Include="Assets\Scripts\DrawSampleVecs.cs" />
+    <Compile Include="Assets\Scripts\EndPointControllerPressor.cs" />
+    <Compile Include="Assets\Scripts\EndPointControllerTractor.cs" />
     <Compile Include="Assets\Scripts\FuelController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HullController.cs" />
