@@ -102,7 +102,7 @@
     <Compile Include="Assets\Scripts\TeamManager.cs" />
     <Compile Include="Assets\Scripts\TemperatureController.cs" />
     <Compile Include="Assets\Scripts\TextRotation.cs" />
-    <Compile Include="Assets\Scripts\torpedoBehavior.cs" />
+    <Compile Include="Assets\Scripts\TorpedoBehavior.cs" />
     <Compile Include="Assets\Scripts\TractorController.cs" />
     <Compile Include="Assets\Scripts\turnOn.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />

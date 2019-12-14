@@ -21,7 +21,8 @@ public class ShieldController : MonoBehaviour
 
     private void torpDamage(Collider2D collision)
     {
-        float dmg = collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
+        TorpedoBehavior torpedoBehavior = collision.transform.parent.GetComponent<TorpedoBehavior>();
+        float dmg = torpedoBehavior.damage;
         float shieldHealth = hullController.shieldHealth;
         if (shieldHealth >= dmg)
         {
@@ -34,15 +35,18 @@ public class ShieldController : MonoBehaviour
             shieldHealth -= shieldDmg;
             hullController.hullHealth -= diff;
         }
-        hullController.shieldHealth -= collision.gameObject.GetComponentInParent<torpedoBehavior>().damage;
-        collision.gameObject.GetComponent<torpedoBehavior>().playerController.torpCount--;
-        collision.gameObject.transform.parent.gameObject.SetActive(false);
+        hullController.shieldHealth -= torpedoBehavior.damage;
+        torpedoBehavior.gameObject.SetActive(false);
+
+        torpedoBehavior.playerController.torpCount--;
+        torpedoBehavior.playerController.torps.Remove(torpedoBehavior);
         
     }
 
     private void phaserDamage(Collider2D collision)
     {
-        float dmg = collision.gameObject.GetComponentInParent<PhaserController>().damage;
+        PhaserController phaserController = collision.GetComponent<PhaserController>();
+        float dmg = phaserController.damage;
         float shieldHealth = hullController.shieldHealth;
         float diff = 0;
         float shieldDmg = dmg;
@@ -50,12 +54,12 @@ public class ShieldController : MonoBehaviour
         {
             diff = dmg - shieldHealth;
             shieldDmg = dmg - diff;
-            collision.gameObject.GetComponentInParent<PhaserController>().damage = diff;
-            dmg = collision.gameObject.GetComponentInParent<PhaserController>().damage;
+            phaserController.damage = diff;
+            dmg = phaserController.damage;
         }
         hullController.shieldHealth -= shieldDmg;
         hullController.hullHealth -= diff;
-        collision.gameObject.GetComponentInParent<PhaserController>().damage = 0;
+        phaserController.damage = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

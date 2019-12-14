@@ -25,12 +25,12 @@ ScriptsOnlyBuild:
     - TeamManager
     - TemperatureController
     - TextRotation
+    - TorpedoBehavior
     - TractorController
     - UIController
     - UIManager
     - WeaponMover
     - collionstest
-    - torpedoBehavior
     - turnOn
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
@@ -677,7 +677,7 @@ ScriptsOnlyBuild:
       Hash: 0883b702239473be7b6f2e6fe84f0021
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: torpedoBehavior
+    className: TorpedoBehavior
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -830,7 +830,7 @@ ScriptsOnlyBuild:
     className: ConnectAndJoinRandom
   - hash:
       serializedVersion: 2
-      Hash: a49c9e8b02f43592ecbdd3089e254311
+      Hash: 61648183cb55a5814fd8657d15ac063e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HullController
@@ -1442,7 +1442,7 @@ ScriptsOnlyBuild:
     className: Asteroid
   - hash:
       serializedVersion: 2
-      Hash: 05c98824bb85397b9b1ee500e9fbf28f
+      Hash: fecd7f0c364eeb8129f19c403b0979a5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

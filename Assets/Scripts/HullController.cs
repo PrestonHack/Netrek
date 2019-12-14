@@ -21,7 +21,7 @@ public class HullController : MonoBehaviour
     [SerializeField]
     private GameObject shipSprite;
     [SerializeField]
-    torpedoBehavior torpBehavior;
+    TorpedoBehavior torpBehavior;
     [SerializeField]
     private PhotonView pV;
     // Start is called before the first frame update
@@ -80,9 +80,10 @@ public class HullController : MonoBehaviour
             if (Regex.IsMatch(other.gameObject.name, "torp"))
             {
                 Debug.Log("TORP!");
-                torpBehavior = other.gameObject.GetComponentInParent<torpedoBehavior>();
+                torpBehavior = other.gameObject.GetComponentInParent<TorpedoBehavior>();
                 hullHealth -= torpBehavior.damage;
                 torpBehavior.playerController.torpCount--;
+                torpBehavior.playerController.torps.Remove(torpBehavior);
                 other.gameObject.transform.parent.gameObject.SetActive(false);
             }
             if (Regex.IsMatch(other.gameObject.name, "phaser"))

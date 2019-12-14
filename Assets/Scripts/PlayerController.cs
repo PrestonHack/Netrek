@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField]
     private Camera cam;
     public int torpCount;
-    public List<torpedoBehavior> torps = new List<torpedoBehavior>();
+    public List<TorpedoBehavior> torps = new List<TorpedoBehavior>();
     [SerializeField]
     private GameObject torp;
     [SerializeField]
@@ -134,9 +134,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         warpFuelUse = warpCost * speedController.desiredSpeed;
         warpNumber = speedController.desiredSpeed;
         rotationSpeed = speedController.rotationSpeed;
-        //orbit code
-       
-
+      
         //torpedo code
         if (Input.GetKey(KeyCode.T) && Time.time > nextFire && !Input.GetKey(KeyCode.LeftShift) && !cloak.activeInHierarchy && fuelController.currentFuel >= torpCost && torpCount < 8)
         {
@@ -144,7 +142,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
             torpCount++;
             Vector3 weaponPosition = weapon.transform.position;
             Quaternion weaponRotation = weapon.transform.rotation;
-            photonView.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage, torpCount);
+            photonView.RPC("setTorpCount", RpcTarget.All,torpCount);
+            photonView.RPC("fireTorp", RpcTarget.AllViaServer, weaponPosition, weaponRotation, this.gameObject.layer, torpDamage);
             fuelController.currentFuel -= torpCost;
             temperatureController.currentWeaponTemp += torpWeaponTemp / 10;
         }
@@ -194,9 +193,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
             {
                 cloak.SetActive(true);
                 cloakOn = true;
-                phaserController.toggle();
-                pressorController.toggle();
-                tractorController.toggle();
+                phaserController.turnOff();
+                pressorController.off();
+                tractorController.off();
                 shipSprite.enabled = false;
                 if(this.gameObject.layer == 10)
                 {
@@ -295,7 +294,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void fireTorp(Vector3 position, Quaternion rotation, int layer, int damage, int count)
+    public void setTorpCount(int count)
+    {
+        torpCount = count;
+    }
+
+    [PunRPC]
+    public void fireTorp(Vector3 position, Quaternion rotation, int layer, int damage)
     {        
         if(layer == 10)
         {
@@ -314,14 +319,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
             torp = PoolManager.Instance.romRequestTorp();
         }
         
-        torpedoBehavior torpBehavior = torp.GetComponent<torpedoBehavior>();
+        TorpedoBehavior torpBehavior = torp.GetComponent<TorpedoBehavior>();
         torpBehavior.damage = damage;
         torpBehavior.playerController = this;
         torp.transform.position = position;
         torp.transform.rotation = rotation;        
         torp.SetActive(true);
         torps.Add(torpBehavior);
-        torpCount = count;
     }
 
     public void move()
@@ -354,24 +358,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             this.gameObject.transform.position -= (this.gameObject.transform.position - col.transform.position).normalized * 0.0015f;
             orbitController.orbiting = false;
-
         }
         if (col.transform.root.name != this.gameObject.transform.root.name && col.gameObject.name == "pressor")
         {
             this.gameObject.transform.position -= (col.transform.position - this.gameObject.transform.position).normalized * 0.0015f;
             orbitController.orbiting = false;
-
         }
-    }
-
-    public static Vector2 RadianToVector2(float radian)
-    {
-        return new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
-    }
-
-    public static Vector2 DegreeToVector2(float degree)
-    {
-        return RadianToVector2(degree * Mathf.Deg2Rad);
     }
 
     public void OnDrawGizmos()
@@ -379,5 +371,4 @@ public class PlayerController : MonoBehaviourPunCallbacks
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(start, end);
     }
-
 }

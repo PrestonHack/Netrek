@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class torpedoBehavior : MonoBehaviour
+public class TorpedoBehavior : MonoBehaviour
 {
  
     [SerializeField]
@@ -10,22 +10,16 @@ public class torpedoBehavior : MonoBehaviour
     private float ttl;
     public PlayerController playerController;
     public int damage;
-    // Start is called before the first frame update
+
     private void OnEnable()
     {
         StartCoroutine(hide());      
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position += transform.up * 1 * Time.deltaTime;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
+    }    
 
     public void detonate()
     {

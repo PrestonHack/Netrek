@@ -61,5 +61,6 @@ MonoBehaviour:
   - unDock
   - enableTractor
   - detOwnTorp
+  - setTorpCount
   DisableAutoOpenWizard: 1
   ShowSettings: 1

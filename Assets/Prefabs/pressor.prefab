@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2733021929299205684}
   - component: {fileID: 1686294025776078311}
   - component: {fileID: 358488309712756304}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: pressor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
